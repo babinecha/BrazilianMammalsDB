@@ -1,0 +1,3069 @@
+#### MONTAGEM DO BANCO DE REFERÊNCIA DE MAMÍFEROS (COI, 12S E 16S)
+
+
+### 1. Baixar sequencias
+
+### 1.1. Genbank - manualmente (https://www.ncbi.nlm.nih.gov)
+
+## 1.1.1. GENOMA
+
+# A) buscar por nome das espécies (150 espécies por vez)
+"Blastocerus dichotomus"[Organism] OR
+"Mazama americana"[Organism] OR...
+AND (mitochondrion[filter] AND ("10000"[SLEN] : "20000"[SLEN]))
+
+# B) buscar por gênero (150 espécies por vez)
+"Blastocerus"[Organism] OR
+"Mazama"[Organism] OR...
+AND (mitochondrion[filter] AND ("10000"[SLEN] : "20000"[SLEN]))
+
+# C) OUTRAS CLASSES - Actinopteri
+"Actinopteri"[Organism]
+AND (mitochondrion[filter] AND ("10000"[SLEN] : "20000"[SLEN]))
+
+# D) OUTRAS CLASSES - Amphibia
+"Amphibia"[Organism]
+AND (mitochondrion[filter] AND ("10000"[SLEN] : "20000"[SLEN]))
+
+# E) OUTRAS CLASSES - Aves
+"Aves"[Organism]
+AND (mitochondrion[filter] AND ("10000"[SLEN] : "20000"[SLEN]))
+
+# F) OUTRAS CLASSES - Insecta
+"Insecta"[Organism]
+AND (mitochondrion[filter] AND ("10000"[SLEN] : "20000"[SLEN]))
+
+# G) OUTRAS CLASSES - Lepidosauria
+"Lepidosauria"[Organism]
+AND (mitochondrion[filter] AND ("10000"[SLEN] : "20000"[SLEN]))
+
+## 1.1.2. COI
+
+# A) buscar por nome das espécies (150 espécies por vez)
+"Blastocerus dichotomus"[Organism] OR
+"Mazama americana"[Organism] OR...
+AND coi[gene] AND ("200"[SLEN] : "2000"[SLEN]) AND mitochondrion[filter]
+
+# B) buscar por gênero (150 espécies por vez)
+"Blastocerus"[Organism] OR
+"Mazama"[Organism] OR...
+AND coi[gene] AND ("200"[SLEN] : "2000"[SLEN]) AND mitochondrion[filter]
+
+## 1.1.3. 12S
+
+# A) buscar por nome das espécies (150 espécies por vez)
+"Blastocerus dichotomus"[Organism] OR
+"Mazama americana"[Organism] OR...
+AND 12s[all fields] AND ("200"[SLEN] : "2000"[SLEN]) AND mitochondrion[filter]
+
+# B) buscar por gênero (150 espécies por vez)
+"Blastocerus"[Organism] OR
+"Mazama"[Organism] OR...
+AND 12s[all fields] AND ("200"[SLEN] : "2000"[SLEN]) AND mitochondrion[filter]
+
+## 1.1.4. 16S
+
+# A) buscar por nome das espécies (150 espécies por vez)
+"Blastocerus dichotomus"[Organism] OR
+"Mazama americana"[Organism] OR...
+AND 16s[all fields] AND ("200"[SLEN] : "2000"[SLEN]) AND mitochondrion[filter]
+
+# B) buscar gênero (150 espécies por vez)
+"Blastocerus"[Organism] OR
+"Mazama"[Organism] OR...
+AND 16s[all fields] AND ("200"[SLEN] : "2000"[SLEN]) AND mitochondrion[filter]
+
+
+
+
+### 1.2. BOLD (R package 'bold')
+
+## 1.2.1. Abrir lista de espécies de mamíferos brasileiros:
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+MAM_BRAZ_all_spp <- read.table("MAM_BRAZ_all_spp.txt", sep = "\t")
+nrow(MAM_BRAZ_all_spp)
+# 1120
+colnames(MAM_BRAZ_all_spp) <- c("Order","Family","Genus","Species")
+
+## 1.2.2. Excluir duplicadas
+MAM_BRAZ_all_spp_nd <- MAM_BRAZ_all_spp %>% group_by(Species) %>% filter(row_number()<=1)
+nrow(MAM_BRAZ_all_spp_nd)
+#1041
+
+## 1.2.3. Dividir lista de espécies (200 por vez)
+MAM_BRAZ_all_spp_split <- split(MAM_BRAZ_all_spp_nd$Species, ceiling(seq_along(MAM_BRAZ_all_spp_nd$Species)/200))
+# 6 vezes
+
+## 1.2.4. Excluir gêneros duplicados
+MAM_BRAZ_all_genus_nd <- MAM_BRAZ_all_spp %>% group_by(Genus) %>% filter(row_number()<=1)
+nrow(MAM_BRAZ_all_genus_nd)
+# 291 
+
+## 1.2.5. Baixar sequências:
+
+# A) espécies
+library(bold)
+MAM_BRAZ_boldseqs_spp1 <- bold_seq (taxon=MAM_BRAZ_all_spp_split[[1]])
+MAM_BRAZ_boldseqs_spp2 <- bold_seq (taxon=MAM_BRAZ_all_spp_split[[1]])
+MAM_BRAZ_boldseqs_spp3 <- bold_seq (taxon=MAM_BRAZ_all_spp_split[[1]])
+MAM_BRAZ_boldseqs_spp4 <- bold_seq (taxon=MAM_BRAZ_all_spp_split[[1]])
+MAM_BRAZ_boldseqs_spp5 <- bold_seq (taxon=MAM_BRAZ_all_spp_split[[1]])
+MAM_BRAZ_boldseqs_spp6 <- bold_seq (taxon=MAM_BRAZ_all_spp_split[[1]])
+
+# Juntar sequencias baixadas:
+MAM_BRAZ_boldseqs_list <- list(MAM_BRAZ_boldseqs_spp1,MAM_BRAZ_boldseqs_spp2,MAM_BRAZ_boldseqs_spp3,MAM_BRAZ_boldseqs_spp4,MAM_BRAZ_boldseqs_spp5,MAM_BRAZ_boldseqs_spp6)
+MAM_BRAZ_boldseqs_spp <- Reduce(function(x, y) merge(x, y, all=TRUE), MAM_BRAZ_boldseqs_list)
+nrow(MAM_BRAZ_boldseqs_spp)
+# 8625
+
+# B) gênero
+library(bold)
+MAM_BRAZ_boldseqs_genus <- bold_seq (taxon=MAM_BRAZ_all_genus_nd$Genus)
+nrow(MAM_BRAZ_boldseqs_genus)
+# 98472
+colnames(MAM_BRAZ_boldseqs_genus)
+# "processid" "identification" "marker" "accession" "sequence"
+
+## 1.2.5. Separar sequências por marcador:
+
+# lista de marcadores:
+boldseqs_markers <- MAM_BRAZ_boldseqs_genus %>% group_by(marker) %>% filter(row_number()<=1)
+boldseqs_markers <- boldseqs_markers$marker
+boldseqs_markers
+# [1] "COI-5P"     "COXIII"    
+# [3] "atp6"       "COII"      
+# [5] "CYTB"       "ND4L"      
+# [7] "ND3"        "ND6"       
+# [9] "ND4"        "ND2"       
+#[11] "ND1"        "ND5-0"     
+#[13] "16S"        "COI-3P"    
+#[15] "DBY-EX7-8"  "RAG2"      
+#[17] "D-loop"     "12S"       
+#[19] "IRBP"       "ITS"       
+#[21] "matK"       "COI-PSEUDO"
+#[23] "COI-NUMT"
+
+## COI:
+# A) espécies
+MAM_BRAZ_boldseqs_spp_COI5P <- subset(MAM_BRAZ_boldseqs_spp, marker =="COI-5P")
+nrow(MAM_BRAZ_boldseqs_spp_COI5P)
+# 7052
+MAM_BRAZ_boldseqs_spp_COI3P <- subset(MAM_BRAZ_boldseqs_spp, marker =="COI-3P")
+nrow(MAM_BRAZ_boldseqs_spp_COI3P)
+# 32
+MAM_BRAZ_boldseqs_spp_COI <- rbind (MAM_BRAZ_boldseqs_spp_COI5P, MAM_BRAZ_boldseqs_spp_COI3P)
+nrow(MAM_BRAZ_boldseqs_spp_COI)
+# 7084
+
+# Manter até 3 sequências por espécie:
+MAM_BRAZ_boldseqs_spp_COI_3seq <- MAM_BRAZ_boldseqs_spp_COI %>% group_by(identification) %>% filter(row_number()<=3)
+nrow(MAM_BRAZ_boldseqs_spp_COI_3seq)
+# 411
+
+# B) gêneros
+MAM_BRAZ_boldseqs_genus_COI5P <- subset(MAM_BRAZ_boldseqs_genus, marker =="COI-5P")
+nrow(MAM_BRAZ_boldseqs_genus_COI5P)
+# 82215
+MAM_BRAZ_boldseqs_genus_COI3P <- subset(MAM_BRAZ_boldseqs_genus, marker =="COI-3P")
+nrow(MAM_BRAZ_boldseqs_genus_COI3P)
+# 198
+MAM_BRAZ_boldseqs_genus_COI <- rbind (MAM_BRAZ_boldseqs_genus_COI5P, MAM_BRAZ_boldseqs_genus_COI3P)
+nrow(MAM_BRAZ_boldseqs_genus_COI)
+# 82413
+
+# Manter até 3 sequências por espécie:
+MAM_BRAZ_boldseqs_genus_COI_3seq <- MAM_BRAZ_boldseqs_genus_COI %>% group_by(identification) %>% filter(row_number()<=3)
+nrow(MAM_BRAZ_boldseqs_genus_COI_3seq)
+# 2925
+
+
+## 12S:
+# A) espécies
+MAM_BRAZ_boldseqs_spp_12S <- subset(MAM_BRAZ_boldseqs_spp, marker =="12S")
+nrow(MAM_BRAZ_boldseqs_spp_12S)
+# 12
+# B) gêneros
+MAM_BRAZ_boldseqs_genus_12S <- subset(MAM_BRAZ_boldseqs_genus, marker =="12S")
+nrow(MAM_BRAZ_boldseqs_genus_12S)
+# 45
+# C) Juntar spp e gêneros:
+MAM_BRAZ_boldseqs_12S <- rbind (MAM_BRAZ_boldseqs_spp_12S, MAM_BRAZ_boldseqs_genus_12S)
+nrow(MAM_BRAZ_boldseqs_12S)
+# 57
+# D) Excluir duplicadas:
+MAM_BRAZ_boldseqs_12S_nd <- MAM_BRAZ_boldseqs_12S %>% group_by(processid) %>% filter(row_number()<=1)
+nrow(MAM_BRAZ_boldseqs_12S_nd)
+# 45
+
+
+## 16S:
+# A) espécies
+MAM_BRAZ_boldseqs_spp_16S <- subset(MAM_BRAZ_boldseqs_spp, marker =="16S")
+nrow(MAM_BRAZ_boldseqs_spp_16S)
+# 42
+# B) gêneros
+MAM_BRAZ_boldseqs_genus_16S <- subset(MAM_BRAZ_boldseqs_genus, marker =="16S")
+nrow(MAM_BRAZ_boldseqs_genus_16S)
+# 123
+# C) Juntar spp e gêneros:
+MAM_BRAZ_boldseqs_16S <- rbind (MAM_BRAZ_boldseqs_spp_16S, MAM_BRAZ_boldseqs_genus_16S)
+nrow(MAM_BRAZ_boldseqs_16S)
+# 165
+# D) Excluir duplicadas:
+MAM_BRAZ_boldseqs_16S_nd <- MAM_BRAZ_boldseqs_16S %>% group_by(processid) %>% filter(row_number()<=1)
+nrow(MAM_BRAZ_boldseqs_16S_nd)
+# 123
+
+
+
+### 2. Obter ACC das sequências baixadas
+
+# A) GENOMA
+
+## 2.1. juntar arquivos fasta 
+cat MAM_genome*.fasta > MAM_genome.fasta
+cat AMPH_genome.fasta BIRD_genome.fasta BUG_genome.fasta FISH_genome.fasta REPT_genome.fasta > nMAM_genome.fasta
+
+## 2.2. Listar ACC do arquivo fasta:
+seqkit seq -n MAM_genome.fasta | awk '{print $1}' | cat > MAM_genome_ACC.txt
+seqkit seq -n MAM_genome_genus.fasta | awk '{print $1}' | cat > MAM_genome_genus_ACC.txt
+seqkit seq -n nMAM_genome.fasta | awk '{print $1}' | cat > nMAM_genome_ACC.txt
+
+
+# B) COI
+
+## 2.1. juntar arquivos fasta
+cat MAM_COI_spp*.fasta > MAM_COI_spp.fasta
+cat MAM_COI_genus*.fasta > MAM_COI_genus.fasta
+## 2.2. Listar ACC do arquivo fasta:
+seqkit seq -n MAM_COI_spp.fasta | awk '{print $1}' | cat > MAM_COI_spp_ACC.txt
+seqkit seq -n MAM_COI_genus.fasta | awk '{print $1}' | cat > MAM_COI_genus_ACC.txt
+
+# C) 12S
+
+## 2.1. juntar arquivos fasta
+cat MAM_12S_spp*.fasta > MAM_12S_spp.fasta
+cat MAM_12S_genus*.fasta > MAM_12S_genus.fasta
+## 2.2. Listar ACC do arquivo fasta:
+seqkit seq -n MAM_12S_spp.fasta | awk '{print $1}' | cat > MAM_12S_spp_ACC.txt
+seqkit seq -n MAM_12S_genus.fasta | awk '{print $1}' | cat > MAM_12S_genus_ACC.txt
+
+# D) 16S
+
+## 2.1. juntar arquivos fasta (usando WSL):
+cat MAM_16S_spp*.fasta > MAM_16S_spp.fasta
+cat MAM_16S_genus*.fasta > MAM_16S_genus.fasta
+## 2.2. Listar ACC do arquivo fasta:
+seqkit seq -n MAM_16S_spp.fasta | awk '{print $1}' | cat > MAM_16S_spp_ACC.txt
+seqkit seq -n MAM_16S_genus.fasta | awk '{print $1}' | cat > MAM_16S_genus_ACC.txt
+
+
+### 3. OBTER TAXONOMIA DE SEQUENCIAS BAIXADAS E ENXUGAR BANCO (no Rstudio)
+
+### A) GENOMA - espécies
+
+## 3.1. Abrir listas de ACC:
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+MAM_genome_ACC <- read.table("MAM_genome_ACC.txt") # 78197
+
+## 3.2. Baixar taxonomia do GENBANK:
+library(taxonomizr)
+setwd("~/Metabarcodes/Análises/Database/taxonomzr")
+prepareDatabase('accessionTaxa.sql')
+
+# 3.2.1. Obter taxid a partir dos Accession numbers:
+setwd("~/Metabarcodes/Análises/Database/taxonomzr")
+MAM_genome_taxid <- accessionToTaxa(MAM_genome_ACC$V1,"accessionTaxa.sql")
+# 3.2.2. Criar tabela com ACC e taxid:
+MAM_genome_table <- cbind(MAM_genome_ACC, MAM_genome_taxid)
+nrow(MAM_genome_table)
+# 78197
+# 3.2.3. Obter taxonomia a partir dos taxids:
+MAM_genome_taxa <- getTaxonomy(MAM_genome_taxid, 'accessionTaxa.sql')
+# 3.2.4. Adicionar taxonomia à tabela:
+MAM_genome_table <- cbind(MAM_genome_table, MAM_genome_taxa) # 21541 seqs
+# 3.2.5. Remover ACC sem taxonomia:
+MAM_genome_na.omit <- na.omit(MAM_genome_table)
+nrow(MAM_genome_na.omit)
+# 75960
+
+## 3.3. Corrigir nomes das espécies:
+# 3.3.1. retirar cf.
+MAM_genome_na.omit_spp <- MAM_genome_na.omit$species 
+MAM_genome_na.omit_cf. <- sub(" cf. "," ",MAM_genome_na.omit_spp) 
+# comparar spp e cf.
+setdiff(MAM_genome_na.omit_spp, MAM_genome_na.omit_cf.) # 0
+setdiff(MAM_genome_na.omit_cf., MAM_genome_na.omit_spp) # 0
+# 3.3.2. retirar aff.
+MAM_genome_na.omit_aff. <- sub(" aff. "," ",MAM_genome_na.omit_cf.) 
+# comparar cf. e aff.
+setdiff(MAM_genome_na.omit_cf., MAM_genome_na.omit_aff.) # 0
+setdiff(MAM_genome_na.omit_aff., MAM_genome_na.omit_cf.) # 0
+# 3.3.3. retirar "subespécies"
+MAM_genome_na.omit_subs <- data.frame(MAM_genome_na.omit_aff.)
+library(stringr)
+MAM_genome_na.omit_subs[c('genus','species','subspecies')] <- str_split_fixed(MAM_genome_na.omit_subs$MAM_genome_na.omit_aff.,' ',3)
+# 3.3.4. juntar gênero e espécie:
+library(tidyr)
+MAM_genome_spp2 <- unite(MAM_genome_na.omit_subs, col = "species", c("genus","species"), sep = " ")
+# comparar aff. e spp2$species
+setdiff(MAM_genome_na.omit_aff., MAM_genome_spp2$species) # 0
+setdiff(MAM_genome_spp2$species, MAM_genome_na.omit_aff.) # 0
+# comparar spp2$species MAM_genome_na.omit$species
+setdiff(MAM_genome_na.omit$species, MAM_genome_spp2$species) # 0
+setdiff(MAM_genome_spp2$species, MAM_genome_na.omit$species) # 0
+# 3.3.5. adicionar nova coluna com nomes de espécies corrigidas
+MAM_genome_na.omit <- cbind(MAM_genome_na.omit,MAM_genome_spp2$species)
+colnames(MAM_genome_na.omit)
+# [1] "V1"                     
+# [2] "MAM_genome_taxid"       
+# [3] "superkingdom"           
+# [4] "phylum"                 
+# [5] "class"                  
+# [6] "order"                  
+# [7] "family"                 
+# [8] "genus"                  
+# [9] "species"                
+#[10] "MAM_genome_spp2$species"
+# 3.3.6. remover coluna com nomes das espécies antes da correção
+MAM_genome_na.omit <- subset(MAM_genome_na.omit, select =-species)
+# 3.3.7. Mudar nome da nova coluna:
+colnames(MAM_genome_na.omit)[9]<-"species"
+
+## 3.4. Enxugar banco - manter até 3 sequências por espécie
+# 3.4.1. Ordenar tabelas de taxonomia por ACC:
+library(plyr)
+MAM_genome_na.omit <- arrange(MAM_genome_na.omit,V1)
+# 3.4.2. Manter até 3 sequências por espécie:
+library(dplyr)
+MAM_genome_3seq <- MAM_genome_na.omit %>% group_by(species) %>% filter(row_number()<=3)
+nrow(MAM_genome_3seq)
+# 715
+
+## 3.5. Salvar taxonomia no formato PIMBA
+# 3.5.1. MUDAR O FORMATO DA TAXONOMIA: TAXONOMIA SEPARADA POR ;
+library(tidyr)
+MAM_genome_tax <- unite(MAM_genome_3seq, col = "taxonomy", c("phylum", "class", "order", "family", "genus", "species"), sep = ";")
+# 3.5.2. Excluir colunas 2 e 3
+MAM_genome_tax <- MAM_genome_tax[,-c(2,3)]
+
+
+### B) GENOMA - gêneros
+
+## 3.1. Abrir listas de ACC:
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+MAM_genome_genus_ACC <- read.table("MAM_genome_genus_ACC.txt") # 2025
+
+## 3.2. Baixar taxonomia do GENBANK:
+library(taxonomizr)
+# 3.2.1. Obter taxid a partir dos Accession numbers:
+setwd("~/Metabarcodes/Análises/Database/taxonomzr")
+MAM_genome_genus_taxid <- accessionToTaxa(MAM_genome_genus_ACC$V1,"accessionTaxa.sql")
+# 3.2.2. Criar tabela com ACC e taxid:
+MAM_genome_genus_table <- cbind(MAM_genome_genus_ACC, MAM_genome_genus_taxid)
+nrow(MAM_genome_genus_table)
+# 2025
+# 3.2.3. Obter taxonomia a partir dos taxids:
+MAM_genome_genus_taxa <- getTaxonomy(MAM_genome_genus_taxid, 'accessionTaxa.sql')
+# 3.2.4. Adicionar taxonomia à tabela:
+MAM_genome_genus_table <- cbind(MAM_genome_genus_table, MAM_genome_genus_taxa) # 21541 seqs
+# 3.2.5. Remover ACC sem taxonomia:
+MAM_genome_genus_na.omit <- na.omit(MAM_genome_genus_table)
+nrow(MAM_genome_genus_na.omit)
+# 1943
+
+## 3.3. Corrigir nomes das espécies:
+# 3.3.1. retirar cf.
+MAM_genome_genus_na.omit_spp <- MAM_genome_genus_na.omit$species 
+MAM_genome_genus_na.omit_cf. <- sub(" cf. "," ",MAM_genome_genus_na.omit_spp) 
+# comparar spp e cf.
+setdiff(MAM_genome_genus_na.omit_spp, MAM_genome_genus_na.omit_cf.) # 0
+setdiff(MAM_genome_genus_na.omit_cf., MAM_genome_genus_na.omit_spp) # 0
+# 3.3.2. retirar aff.
+MAM_genome_genus_na.omit_aff. <- sub(" aff. "," ",MAM_genome_genus_na.omit_cf.) 
+# comparar cf. e aff.
+setdiff(MAM_genome_genus_na.omit_cf., MAM_genome_genus_na.omit_aff.) # 0
+setdiff(MAM_genome_genus_na.omit_aff., MAM_genome_genus_na.omit_cf.) # 0
+# 3.3.3. retirar "subespécies"
+MAM_genome_genus_na.omit_subs <- data.frame(MAM_genome_genus_na.omit_aff.)
+library(stringr)
+MAM_genome_genus_na.omit_subs[c('genus','species','subspecies')] <- str_split_fixed(MAM_genome_genus_na.omit_subs$MAM_genome_genus_na.omit_aff.,' ',3)
+# 3.3.4. juntar gênero e espécie:
+library(tidyr)
+MAM_genome_genus_spp2 <- unite(MAM_genome_genus_na.omit_subs, col = "species", c("genus","species"), sep = " ")
+# comparar aff. e spp2$species
+setdiff(MAM_genome_genus_na.omit_aff., MAM_genome_genus_spp2$species) # 27
+setdiff(MAM_genome_genus_spp2$species, MAM_genome_genus_na.omit_aff.) # 7
+# "Pteronotus sp." "Lycalopex sp." "Callithrix sp." "Saguinus sp." "Mico sp." "Pithecia sp." "Sylvilagus sp."
+# comparar spp2$species MAM_genome_genus_na.omit$species
+setdiff(MAM_genome_genus_na.omit$species, MAM_genome_genus_spp2$species) # 27
+setdiff(MAM_genome_genus_spp2$species, MAM_genome_genus_na.omit$species) # 7
+# 3.3.5. adicionar nova coluna com nomes de espécies corrigidas
+MAM_genome_genus_na.omit <- cbind(MAM_genome_genus_na.omit,MAM_genome_genus_spp2$species)
+colnames(MAM_genome_genus_na.omit)
+# [1] "V1"                           
+# [2] "MAM_genome_genus_taxid"       
+# [3] "superkingdom"                 
+# [4] "phylum"                       
+# [5] "class"                        
+# [6] "order"                        
+# [7] "family"                       
+# [8] "genus"                        
+# [9] "species"                      
+#[10] "MAM_genome_genus_spp2$species"
+# 3.3.6. remover coluna com nomes das espécies antes da correção
+MAM_genome_genus_na.omit <- subset(MAM_genome_genus_na.omit, select =-species)
+# 3.3.7. Mudar nome da nova coluna:
+colnames(MAM_genome_genus_na.omit)[9]<-"species"
+
+## 3.4. Enxugar banco - manter 1 sequência por espécie
+# 3.4.1. Ordenar tabelas de taxonomia por ACC:
+library(plyr)
+MAM_genome_genus_na.omit <- arrange(MAM_genome_genus_na.omit,V1)
+# 3.4.2. Manter 1 sequência por espécie:
+library(dplyr)
+MAM_genome_genus_1seq <- MAM_genome_genus_na.omit %>% group_by(species) %>% filter(row_number()<=1)
+nrow(MAM_genome_genus_1seq)
+# 280
+
+## 3.5. Salvar taxonomia no formato PIMBA
+# 3.5.1. MUDAR O FORMATO DA TAXONOMIA: TAXONOMIA SEPARADA POR ;
+library(tidyr)
+MAM_genome_genus_tax <- unite(MAM_genome_genus_1seq, col = "taxonomy", c("phylum", "class", "order", "family", "genus", "species"), sep = ";")
+# 3.5.2. Excluir colunas 2 e 3
+MAM_genome_genus_tax <- MAM_genome_genus_tax[,-c(2,3)]
+
+## 3.6. Juntar espécies e gêneros e salvar taxonomia no formato PIMBA
+# 3.6.1. Juntar taxonomias de espécies e gêneros
+MAM_genome_all <- rbind (MAM_genome_tax,MAM_genome_genus_tax)
+nrow(MAM_genome_all)
+# 995
+# 3.6.2. Remover duplicadas, mantendo até 3 sequências por espécie
+MAM_genome_nd <- MAM_genome_all %>% group_by(taxonomy) %>% filter(row_number()<=3)
+nrow(MAM_genome_nd)
+# 929
+# 3.6.3. Salvar txt com a taxonomia separada por ;
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+write.table(MAM_genome_nd, file = "MAM_genome_tax.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
+
+
+### C) GENOMA - outras classes
+
+## 3.1. Abrir listas de ACC:
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+nMAM_genome_ACC <- read.table("nMAM_genome_ACC.txt") # 26572
+
+## 3.2. Baixar taxonomia do GENBANK:
+library(taxonomizr)
+# 3.2.1. Obter taxid a partir dos Accession numbers:
+setwd("~/Metabarcodes/Análises/Database/taxonomzr")
+nMAM_genome_taxid <- accessionToTaxa(nMAM_genome_ACC$V1,"accessionTaxa.sql")
+# 3.2.2. Criar tabela com ACC e taxid:
+nMAM_genome_table <- cbind(nMAM_genome_ACC, nMAM_genome_taxid)
+nrow(nMAM_genome_table)
+# 26572
+# 3.2.3. Obter taxonomia a partir dos taxids:
+nMAM_genome_taxa <- getTaxonomy(nMAM_genome_taxid, 'accessionTaxa.sql')
+# 3.2.4. Adicionar taxonomia à tabela:
+nMAM_genome_table <- cbind(nMAM_genome_table, nMAM_genome_taxa)
+# 3.2.5. Remover ACC sem taxonomia:
+nMAM_genome_na.omit <- na.omit(nMAM_genome_table)
+nrow(nMAM_genome_na.omit)
+# 24719
+
+## 3.3. Corrigir nomes das espécies:
+# 3.3.1. retirar cf.
+nMAM_genome_na.omit_spp <- nMAM_genome_na.omit$species 
+nMAM_genome_na.omit_cf. <- sub(" cf. "," ",nMAM_genome_na.omit_spp) 
+# comparar spp e cf.
+setdiff(nMAM_genome_na.omit_spp, nMAM_genome_na.omit_cf.) # 46
+setdiff(nMAM_genome_na.omit_cf., nMAM_genome_na.omit_spp) # 45
+# 3.3.2. retirar aff.
+nMAM_genome_na.omit_aff. <- sub(" aff. "," ",nMAM_genome_na.omit_cf.) 
+# comparar cf. e aff.
+setdiff(nMAM_genome_na.omit_cf., nMAM_genome_na.omit_aff.) # 43
+setdiff(nMAM_genome_na.omit_aff., nMAM_genome_na.omit_cf.) # 43
+# 3.3.3. retirar "subespécies"
+nMAM_genome_na.omit_subs <- data.frame(nMAM_genome_na.omit_aff.)
+library(stringr)
+nMAM_genome_na.omit_subs[c('genus','species','subspecies')] <- str_split_fixed(nMAM_genome_na.omit_subs$nMAM_genome_na.omit_aff.,' ',3)
+# 3.3.4. juntar gênero e espécie:
+library(tidyr)
+nMAM_genome_spp2 <- unite(nMAM_genome_na.omit_subs, col = "species", c("genus","species"), sep = " ")
+# comparar aff. e spp2$species
+setdiff(nMAM_genome_na.omit_aff., nMAM_genome_spp2$species) # 421
+setdiff(nMAM_genome_spp2$species, nMAM_genome_na.omit_aff.) # 214
+# comparar spp2$species nMAM_genome_na.omit$species
+setdiff(nMAM_genome_na.omit$species, nMAM_genome_spp2$species) # 423
+setdiff(nMAM_genome_spp2$species, nMAM_genome_na.omit$species) # 215
+# 3.3.5. adicionar nova coluna com nomes de espécies corrigidas
+nMAM_genome_na.omit <- cbind(nMAM_genome_na.omit,nMAM_genome_spp2$species)
+colnames(nMAM_genome_na.omit)
+# [1] "V1"                     
+# [2] "nMAM_genome_taxid"       
+# [3] "superkingdom"           
+# [4] "phylum"                 
+# [5] "class"                  
+# [6] "order"                  
+# [7] "family"                 
+# [8] "genus"                  
+# [9] "species"                
+#[10] "nMAM_genome_spp2$species"
+# 3.3.6. remover coluna com nomes das espécies antes da correção
+nMAM_genome_na.omit <- subset(nMAM_genome_na.omit, select =-species)
+# 3.3.7. Mudar nome da nova coluna:
+colnames(nMAM_genome_na.omit)[9]<-"species"
+
+## 3.4. Enxugar banco - manter 1 sequência por gênero
+# 3.4.1. Ordenar tabelas de taxonomia por ACC:
+library(plyr)
+nMAM_genome_na.omit <- arrange(nMAM_genome_na.omit,V1)
+# 3.4.2. Manter 1 sequência por gênero:
+library(dplyr)
+nMAM_genome_1seq <- nMAM_genome_na.omit %>% group_by(genus) %>% filter(row_number()<=1)
+nrow(nMAM_genome_1seq)
+# 3571
+
+## 3.5. Salvar taxonomia no formato PIMBA
+# 3.5.1. MUDAR O FORMATO DA TAXONOMIA: TAXONOMIA SEPARADA POR ;
+library(tidyr)
+nMAM_genome_tax <- unite(nMAM_genome_1seq, col = "taxonomy", c("phylum", "class", "order", "family", "genus", "species"), sep = ";")
+# 3.5.2. Excluir colunas 2 e 3
+nMAM_genome_tax <- nMAM_genome_tax[,-c(2,3)]
+# 3.5.3. Salvar txt com a taxonomia separada por ;
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+write.table(nMAM_genome_tax, file = "nMAM_genome_tax.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
+
+## 3.6. Juntar mamíferos e outras classes e salvar taxonomia no formato PIMBA
+# 3.6.1. Juntar taxonomias de mamíferos e outras classes
+ALL_CLASS_genome <- rbind (MAM_genome_nd,nMAM_genome_tax)
+nrow(ALL_CLASS_genome)
+# 4500
+# 3.6.2. Salvar txt com a taxonomia separada por ;
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+write.table(ALL_CLASS_genome, file = "ALL_CLASS_genome_tax.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
+
+
+
+
+### D) COI - espécies
+
+## 3.1. Abrir listas de ACC:
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+MAM_COI_spp_ACC <- read.table("MAM_COI_spp_ACC.txt") # 15270
+
+## 3.2. Baixar taxonomia do GENBANK:
+library(taxonomizr)
+# 3.2.1. Obter taxid a partir dos Accession numbers:
+setwd("~/Metabarcodes/Análises/Database/taxonomzr")
+MAM_COI_taxid <- accessionToTaxa(MAM_COI_spp_ACC$V1,"accessionTaxa.sql")
+# 3.2.2. Criar tabela com ACC e taxid:
+MAM_COI_table <- cbind(MAM_COI_spp_ACC, MAM_COI_taxid)
+nrow(MAM_COI_table)
+# 15270
+# 3.2.3. Obter taxonomia a partir dos taxids:
+MAM_COI_taxa <- getTaxonomy(MAM_COI_taxid, 'accessionTaxa.sql')
+# 3.2.4. Adicionar taxonomia à tabela:
+MAM_COI_table <- cbind(MAM_COI_table, MAM_COI_taxa) # 21541 seqs
+# 3.2.5. Remover ACC sem taxonomia:
+MAM_COI_na.omit <- na.omit(MAM_COI_table)
+nrow(MAM_COI_na.omit)
+# 15225
+
+## 3.3. Baixar taxonomia do BOLD:
+# 3.3.1. Alterar nome da coluna (de processid para ID):
+colnames(MAM_BRAZ_boldseqs_spp_COI_3seq)[1] = "ID"
+# 3.3.2. Baixar taxonomia:
+library(bold)
+MAM_BRAZ_boldtax_spp_COI <- bold_identify_taxonomy(MAM_BRAZ_boldseqs_spp_COI_3seq)
+
+## 3.4. Juntar taxonomia Genbank e BOLD:
+# 3.4.1. Criar tabela boldtax:
+MAM_COI_bold_taxa <- data.frame(MAM_BRAZ_boldtax_spp_COI$ID, MAM_BRAZ_boldtax_spp_COI$species_taxID, MAM_BRAZ_boldtax_spp_COI$phylum_name, MAM_BRAZ_boldtax_spp_COI$class_name, MAM_BRAZ_boldtax_spp_COI$order_name, MAM_BRAZ_boldtax_spp_COI$family_name, MAM_BRAZ_boldtax_spp_COI$genus_name, MAM_BRAZ_boldtax_spp_COI$species_name)
+colnames(MAM_COI_bold_taxa) <- c("V1", "MAM_COI_taxid", "phylum", "class", "order", "family", "genus", "species")
+# 3.4.2. Excluir coluna "superkingdom"
+MAM_COI_GB_taxa <- subset(MAM_COI_na.omit, select=-superkingdom)
+# 3.4.3. Juntar tabelas:
+MAM_COI_spp_tax <- rbind(MAM_COI_GB_taxa, MAM_COI_bold_taxa)
+nrow(MAM_COI_spp_tax)
+# 15636
+
+## 3.5. Corrigir nomes das espécies:
+# 3.5.1. retirar cf.
+MAM_COI_spp_tax_spp <- MAM_COI_spp_tax$species 
+MAM_COI_spp_tax_cf. <- sub(" cf. "," ",MAM_COI_spp_tax_spp) 
+# comparar spp e cf.
+setdiff(MAM_COI_spp_tax_spp, MAM_COI_spp_tax_cf.) # 0
+setdiff(MAM_COI_spp_tax_cf., MAM_COI_spp_tax_spp) # 0
+# 3.5.2. retirar aff.
+MAM_COI_spp_tax_aff. <- sub(" aff. "," ",MAM_COI_spp_tax_cf.) 
+# comparar cf. e aff.
+setdiff(MAM_COI_spp_tax_cf., MAM_COI_spp_tax_aff.) # 0
+setdiff(MAM_COI_spp_tax_aff., MAM_COI_spp_tax_cf.) # 0
+# 3.5.3. retirar "subespécies"
+MAM_COI_spp_tax_subs <- data.frame(MAM_COI_spp_tax_aff.)
+library(stringr)
+MAM_COI_spp_tax_subs[c('genus','species','subspecies')] <- str_split_fixed(MAM_COI_spp_tax_subs$MAM_COI_spp_tax_aff.,' ',3)
+# 3.5.4. juntar gênero e espécie:
+library(tidyr)
+MAM_COI_spp2 <- unite(MAM_COI_spp_tax_subs, col = "species", c("genus","species"), sep = " ")
+# comparar aff. e spp2$species
+setdiff(MAM_COI_spp_tax_aff., MAM_COI_spp2$species) # 0
+setdiff(MAM_COI_spp2$species, MAM_COI_spp_tax_aff.) # 0
+# comparar spp2$species MAM_COI_spp_tax$species
+setdiff(MAM_COI_spp_tax$species, MAM_COI_spp2$species) # 0
+setdiff(MAM_COI_spp2$species, MAM_COI_spp_tax$species) # 0
+# 3.5.5. adicionar nova coluna com nomes de espécies corrigidas
+MAM_COI_spp_tax <- cbind(MAM_COI_spp_tax,MAM_COI_spp2$species)
+colnames(MAM_COI_spp_tax)
+# [1] "V1"                     
+# [2] "MAM_COI_taxid"       
+# [3] "phylum"                 
+# [4] "class"                  
+# [5] "order"                  
+# [6] "family"                 
+# [7] "genus"                  
+# [8] "species"                
+# [9] "MAM_COI_spp2$species"
+# 3.5.6. remover coluna com nomes das espécies antes da correção
+MAM_COI_spp_tax <- subset(MAM_COI_spp_tax, select =-species)
+# 3.5.7. Mudar nome da nova coluna:
+colnames(MAM_COI_spp_tax)[8]<-"species"
+
+## 3.5. Enxugar banco - manter até 3 sequências por espécie
+# 3.5.1. Ordenar tabelas de taxonomia por ACC:
+library(plyr)
+MAM_COI_spp_tax <- arrange(MAM_COI_spp_tax,V1)
+# 3.5.2. Manter até 3 sequências por espécie:
+library(dplyr)
+MAM_COI_spp_tax_3seq <- MAM_COI_spp_tax %>% group_by(species) %>% filter(row_number()<=3)
+nrow(MAM_COI_spp_tax_3seq)
+# 1110
+
+## 3.6. Salvar taxonomia no formato PIMBA
+# 3.6.1. MUDAR O FORMATO DA TAXONOMIA: TAXONOMIA SEPARADA POR ;
+library(tidyr)
+MAM_COI_spp_tax_PIMBA <- unite(MAM_COI_spp_tax_3seq, col = "taxonomy", c("phylum", "class", "order", "family", "genus", "species"), sep = ";")
+# 3.6.2. Excluir colunas taxid
+MAM_COI_spp_tax_PIMBA <- subset(MAM_COI_spp_tax_PIMBA, select =-MAM_COI_taxid)
+
+
+### E) COI - gêneros
+
+## 3.1. Abrir listas de ACC:
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+MAM_COI_genus_ACC <- read.table("MAM_COI_genus_ACC.txt") # 22098
+
+## 3.2. Baixar taxonomia do GENBANK:
+library(taxonomizr)
+# 3.2.1. Obter taxid a partir dos Accession numbers:
+setwd("~/Metabarcodes/Análises/Database/taxonomzr")
+MAM_COI_genus_taxid <- accessionToTaxa(MAM_COI_genus_ACC$V1,"accessionTaxa.sql")
+# 3.2.2. Criar tabela com ACC e taxid:
+MAM_COI_genus_table <- cbind(MAM_COI_genus_ACC, MAM_COI_genus_taxid)
+nrow(MAM_COI_genus_table)
+# 22098
+# 3.2.3. Obter taxonomia a partir dos taxids:
+MAM_COI_genus_taxa <- getTaxonomy(MAM_COI_genus_taxid, 'accessionTaxa.sql')
+# 3.2.4. Adicionar taxonomia à tabela:
+MAM_COI_genus_table <- cbind(MAM_COI_genus_table, MAM_COI_genus_taxa) # 21541 seqs
+# 3.2.5. Remover ACC sem taxonomia:
+MAM_COI_genus_na.omit <- na.omit(MAM_COI_genus_table)
+nrow(MAM_COI_genus_na.omit)
+# 22049
+
+## 3.3. Baixar taxonomia do BOLD:
+
+# 3.3.1. Alterar nome da coluna (de processid para ID):
+colnames(MAM_BRAZ_boldseqs_genus_COI_3seq)[1] = "ID"
+
+# 3.3.2. Dividir listas de IDs BOLD em grupos de 400 (máximo que dá pra baixar no BOLD por vez):
+MAM_COI_boldID_split <- split(MAM_BRAZ_boldseqs_genus_COI_3seq$ID, ceiling(seq_along(MAM_BRAZ_boldseqs_genus_COI_3seq$ID)/400))
+# 8 vezes
+
+# 3.3.3. Transformar listas em tabela:
+MAM_COI_boldID_split1 <- data.frame(MAM_COI_boldID_split[[1]])
+MAM_COI_boldID_split2 <- data.frame(MAM_COI_boldID_split[[2]])
+MAM_COI_boldID_split3 <- data.frame(MAM_COI_boldID_split[[3]])
+MAM_COI_boldID_split4 <- data.frame(MAM_COI_boldID_split[[4]])
+MAM_COI_boldID_split5 <- data.frame(MAM_COI_boldID_split[[5]])
+MAM_COI_boldID_split6 <- data.frame(MAM_COI_boldID_split[[6]])
+MAM_COI_boldID_split7 <- data.frame(MAM_COI_boldID_split[[7]])
+MAM_COI_boldID_split8 <- data.frame(MAM_COI_boldID_split[[8]])
+
+# 3.3.4. Renomear coluna de "ID":
+colnames(MAM_COI_boldID_split1)[1] = "ID"
+colnames(MAM_COI_boldID_split2)[1] = "ID"
+colnames(MAM_COI_boldID_split3)[1] = "ID"
+colnames(MAM_COI_boldID_split4)[1] = "ID"
+colnames(MAM_COI_boldID_split5)[1] = "ID"
+colnames(MAM_COI_boldID_split6)[1] = "ID"
+colnames(MAM_COI_boldID_split7)[1] = "ID"
+colnames(MAM_COI_boldID_split8)[1] = "ID"
+
+# 3.3.4. Baixar taxonomia:
+library(bold)
+MAM_BRAZ_boldtax_genus_COI1 <- bold_identify_taxonomy(MAM_COI_boldID_split1)
+MAM_BRAZ_boldtax_genus_COI2 <- bold_identify_taxonomy(MAM_COI_boldID_split2)
+MAM_BRAZ_boldtax_genus_COI3 <- bold_identify_taxonomy(MAM_COI_boldID_split3)
+MAM_BRAZ_boldtax_genus_COI4 <- bold_identify_taxonomy(MAM_COI_boldID_split4)
+MAM_BRAZ_boldtax_genus_COI5 <- bold_identify_taxonomy(MAM_COI_boldID_split5)
+MAM_BRAZ_boldtax_genus_COI6 <- bold_identify_taxonomy(MAM_COI_boldID_split6)
+MAM_BRAZ_boldtax_genus_COI7 <- bold_identify_taxonomy(MAM_COI_boldID_split7)
+MAM_BRAZ_boldtax_genus_COI8 <- bold_identify_taxonomy(MAM_COI_boldID_split8)
+
+# 3.3.5. Juntar tabelas:
+MAM_BRAZ_boldtax_genus_COI_list <- list(
+MAM_BRAZ_boldtax_genus_COI1,
+MAM_BRAZ_boldtax_genus_COI2,
+MAM_BRAZ_boldtax_genus_COI3,
+MAM_BRAZ_boldtax_genus_COI4,
+MAM_BRAZ_boldtax_genus_COI5,
+MAM_BRAZ_boldtax_genus_COI6,
+MAM_BRAZ_boldtax_genus_COI7,
+MAM_BRAZ_boldtax_genus_COI8
+)
+MAM_BRAZ_boldtax_genus_COI <- Reduce(function(x, y) merge(x, y, all=TRUE), MAM_BRAZ_boldtax_genus_COI_list)
+nrow(MAM_BRAZ_boldtax_genus_COI)
+# 2925
+
+## 3.4. Juntar taxonomia Genbank e BOLD:
+# 3.4.1. Criar tabela boldtax:
+MAM_COI_bold_genus_taxa <- data.frame(MAM_BRAZ_boldtax_genus_COI$ID, MAM_BRAZ_boldtax_genus_COI$species_taxID, MAM_BRAZ_boldtax_genus_COI$phylum_name, MAM_BRAZ_boldtax_genus_COI$class_name, MAM_BRAZ_boldtax_genus_COI$order_name, MAM_BRAZ_boldtax_genus_COI$family_name, MAM_BRAZ_boldtax_genus_COI$genus_name, MAM_BRAZ_boldtax_genus_COI$species_name)
+colnames(MAM_COI_bold_genus_taxa) <- c("V1", "MAM_COI_genus_taxid", "phylum", "class", "order", "family", "genus", "species")
+# 3.4.2. Excluir coluna "superkingdom"
+MAM_COI_GB_genus_taxa <- subset(MAM_COI_genus_na.omit, select=-superkingdom)
+# 3.4.3. Juntar tabelas:
+MAM_COI_genus_tax <- rbind(MAM_COI_GB_genus_taxa, MAM_COI_bold_genus_taxa)
+nrow(MAM_COI_genus_tax)
+# 24974
+
+## 3.5. Corrigir nomes das espécies:
+# 3.5.1. retirar cf.
+MAM_COI_genus_tax_spp <- MAM_COI_genus_tax$species 
+MAM_COI_genus_tax_cf. <- sub(" cf. "," ",MAM_COI_genus_tax_spp) 
+# comparar spp e cf.
+setdiff(MAM_COI_genus_tax_spp, MAM_COI_genus_tax_cf.) # 12
+setdiff(MAM_COI_genus_tax_cf., MAM_COI_genus_tax_spp) # 0
+# 3.5.2. retirar aff.
+MAM_COI_genus_tax_aff. <- sub(" aff. "," ",MAM_COI_genus_tax_cf.) 
+# comparar cf. e aff.
+setdiff(MAM_COI_genus_tax_cf., MAM_COI_genus_tax_aff.) # 0
+setdiff(MAM_COI_genus_tax_aff., MAM_COI_genus_tax_cf.) # 0
+# 3.5.3. retirar "subespécies"
+MAM_COI_genus_tax_subs <- data.frame(MAM_COI_genus_tax_aff.)
+library(stringr)
+MAM_COI_genus_tax_subs[c('genus','species','subspecies')] <- str_split_fixed(MAM_COI_genus_tax_subs$MAM_COI_genus_tax_aff.,' ',3)
+# 3.5.4. juntar gênero e espécie:
+library(tidyr)
+MAM_COI_genus_spp2 <- unite(MAM_COI_genus_tax_subs, col = "species", c("genus","species"), sep = " ")
+# comparar aff. e spp2$species
+setdiff(MAM_COI_genus_tax_aff., MAM_COI_genus_spp2$species) # 145
+setdiff(MAM_COI_genus_spp2$species, MAM_COI_genus_tax_aff.) # 6
+# comparar spp2$species MAM_COI_genus_tax$species
+setdiff(MAM_COI_genus_tax$species, MAM_COI_genus_spp2$species) # 157
+setdiff(MAM_COI_genus_spp2$species, MAM_COI_genus_tax$species) # 6
+# 3.5.5. adicionar nova coluna com nomes de espécies corrigidas
+MAM_COI_genus_tax <- cbind(MAM_COI_genus_tax,MAM_COI_genus_spp2$species)
+colnames(MAM_COI_genus_tax)
+# [1] "V1"                           
+# [2] "MAM_COI_genus_taxid"       
+# [3] "phylum"                       
+# [4] "class"                        
+# [5] "order"                        
+# [6] "family"                       
+# [7] "genus"                        
+# [8] "species"                      
+# [9] "MAM_COI_genus_spp2$species"
+# 3.5.6. remover coluna com nomes das espécies antes da correção
+MAM_COI_genus_tax <- subset(MAM_COI_genus_tax, select =-species)
+# 3.5.7. Mudar nome da nova coluna:
+colnames(MAM_COI_genus_tax)[8]<-"species"
+
+
+## 3.6. Enxugar banco - manter 1 sequência por espécie
+# 3.6.1. Ordenar tabelas de taxonomia por ACC:
+library(plyr)
+MAM_COI_genus_tax <- arrange(MAM_COI_genus_tax,V1)
+# 3.6.2. Manter 1 sequência por espécie:
+library(dplyr)
+MAM_COI_genus_1seq <- MAM_COI_genus_tax %>% group_by(species) %>% filter(row_number()<=1)
+nrow(MAM_COI_genus_1seq)
+# 997
+
+## 3.7. Salvar taxonomia no formato PIMBA
+# 3.7.1. MUDAR O FORMATO DA TAXONOMIA: TAXONOMIA SEPARADA POR ;
+library(tidyr)
+MAM_COI_genus_tax_PIMBA <- unite(MAM_COI_genus_1seq, col = "taxonomy", c("phylum", "class", "order", "family", "genus", "species"), sep = ";")
+# 3.7.2. Excluir coluna taxid:
+MAM_COI_genus_tax_PIMBA <- subset(MAM_COI_genus_tax_PIMBA, select =-MAM_COI_genus_taxid)
+
+## 3.8. Juntar espécies e gêneros e salvar taxonomia no formato PIMBA
+# 3.8.1. Juntar taxonomias de espécies e gêneros
+MAM_COI_all_PIMBA <- rbind (MAM_COI_spp_tax_PIMBA,MAM_COI_genus_tax_PIMBA)
+nrow(MAM_COI_all_PIMBA)
+# 2107
+# 3.8.2. Remover duplicadas, mantendo até 3 sequências por espécie
+MAM_COI_nd <- MAM_COI_all_PIMBA %>% group_by(taxonomy) %>% filter(row_number()<=3)
+nrow(MAM_COI_nd)
+# 1774
+# 3.8.3. Salvar txt com a taxonomia separada por ;
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+write.table(MAM_COI_nd, file = "MAM_COI_tax.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
+
+
+
+### F) 12S - espécies
+
+## 3.1. Abrir listas de ACC:
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+MAM_12S_spp_ACC <- read.table("MAM_12S_spp_ACC.txt") # 10430
+
+## 3.2. Baixar taxonomia do GENBANK:
+library(taxonomizr)
+# 3.2.1. Obter taxid a partir dos Accession numbers:
+setwd("~/Metabarcodes/Análises/Database/taxonomzr")
+MAM_12S_taxid <- accessionToTaxa(MAM_12S_spp_ACC$V1,"accessionTaxa.sql")
+# 3.2.2. Criar tabela com ACC e taxid:
+MAM_12S_table <- cbind(MAM_12S_spp_ACC, MAM_12S_taxid)
+nrow(MAM_12S_table)
+# 10430
+# 3.2.3. Obter taxonomia a partir dos taxids:
+MAM_12S_taxa <- getTaxonomy(MAM_12S_taxid, 'accessionTaxa.sql')
+# 3.2.4. Adicionar taxonomia à tabela:
+MAM_12S_table <- cbind(MAM_12S_table, MAM_12S_taxa) # 21541 seqs
+# 3.2.5. Remover ACC sem taxonomia:
+MAM_12S_na.omit <- na.omit(MAM_12S_table)
+nrow(MAM_12S_na.omit)
+# 10430
+
+## 3.3. Baixar taxonomia do BOLD:
+# 3.3.1. Alterar nome da coluna (de processid para ID):
+colnames(MAM_BRAZ_boldseqs_spp_12S)[1] = "ID"
+# 3.3.2. Baixar taxonomia:
+library(bold)
+MAM_BRAZ_boldtax_spp_12S <- bold_identify_taxonomy(MAM_BRAZ_boldseqs_spp_12S)
+
+## 3.4. Juntar taxonomia Genbank e BOLD:
+# 3.4.1. Criar tabela boldtax:
+MAM_12S_bold_taxa <- data.frame(MAM_BRAZ_boldtax_spp_12S$ID, MAM_BRAZ_boldtax_spp_12S$species_taxID, MAM_BRAZ_boldtax_spp_12S$phylum_name, MAM_BRAZ_boldtax_spp_12S$class_name, MAM_BRAZ_boldtax_spp_12S$order_name, MAM_BRAZ_boldtax_spp_12S$family_name, MAM_BRAZ_boldtax_spp_12S$genus_name, MAM_BRAZ_boldtax_spp_12S$species_name)
+colnames(MAM_12S_bold_taxa) <- c("V1", "MAM_12S_taxid", "phylum", "class", "order", "family", "genus", "species")
+# 3.4.2. Excluir coluna "superkingdom"
+MAM_12S_GB_taxa <- subset(MAM_12S_na.omit, select=-superkingdom)
+# 3.4.3. Juntar tabelas:
+MAM_12S_spp_tax <- rbind(MAM_12S_GB_taxa, MAM_12S_bold_taxa)
+nrow(MAM_12S_spp_tax)
+# 10442
+
+## 3.5. Corrigir nomes das espécies:
+# 3.5.1. retirar cf.
+MAM_12S_spp_tax_spp <- MAM_12S_spp_tax$species 
+MAM_12S_spp_tax_cf. <- sub(" cf. "," ",MAM_12S_spp_tax_spp) 
+# comparar spp e cf.
+setdiff(MAM_12S_spp_tax_spp, MAM_12S_spp_tax_cf.) # 0
+setdiff(MAM_12S_spp_tax_cf., MAM_12S_spp_tax_spp) # 0
+# 3.5.2. retirar aff.
+MAM_12S_spp_tax_aff. <- sub(" aff. "," ",MAM_12S_spp_tax_cf.) 
+# comparar cf. e aff.
+setdiff(MAM_12S_spp_tax_cf., MAM_12S_spp_tax_aff.) # 0
+setdiff(MAM_12S_spp_tax_aff., MAM_12S_spp_tax_cf.) # 0
+# 3.5.3. retirar "subespécies"
+MAM_12S_spp_tax_subs <- data.frame(MAM_12S_spp_tax_aff.)
+library(stringr)
+MAM_12S_spp_tax_subs[c('genus','species','subspecies')] <- str_split_fixed(MAM_12S_spp_tax_subs$MAM_12S_spp_tax_aff.,' ',3)
+# 3.5.4. juntar gênero e espécie:
+library(tidyr)
+MAM_12S_spp2 <- unite(MAM_12S_spp_tax_subs, col = "species", c("genus","species"), sep = " ")
+# comparar aff. e spp2$species
+setdiff(MAM_12S_spp_tax_aff., MAM_12S_spp2$species) # 0
+setdiff(MAM_12S_spp2$species, MAM_12S_spp_tax_aff.) # 0
+# comparar spp2$species MAM_12S_spp_tax$species
+setdiff(MAM_12S_spp_tax$species, MAM_12S_spp2$species) # 0
+setdiff(MAM_12S_spp2$species, MAM_12S_spp_tax$species) # 0
+# 3.5.5. adicionar nova coluna com nomes de espécies corrigidas
+MAM_12S_spp_tax <- cbind(MAM_12S_spp_tax,MAM_12S_spp2$species)
+colnames(MAM_12S_spp_tax)
+# [1] "V1"                     
+# [2] "MAM_12S_taxid"       
+# [3] "phylum"                 
+# [4] "class"                  
+# [5] "order"                  
+# [6] "family"                 
+# [7] "genus"                  
+# [8] "species"                
+# [9] "MAM_12S_spp2$species"
+# 3.5.6. remover coluna com nomes das espécies antes da correção
+MAM_12S_spp_tax <- subset(MAM_12S_spp_tax, select =-species)
+# 3.5.7. Mudar nome da nova coluna:
+colnames(MAM_12S_spp_tax)[8]<-"species"
+
+## 3.5. Enxugar banco - manter até 3 sequências por espécie
+# 3.5.1. Ordenar tabelas de taxonomia por ACC:
+library(plyr)
+MAM_12S_spp_tax <- arrange(MAM_12S_spp_tax,V1)
+# 3.5.2. Manter até 3 sequências por espécie:
+library(dplyr)
+MAM_12S_spp_tax_3seq <- MAM_12S_spp_tax %>% group_by(species) %>% filter(row_number()<=3)
+nrow(MAM_12S_spp_tax_3seq)
+# 660
+
+## 3.6. Salvar taxonomia no formato PIMBA
+# 3.6.1. MUDAR O FORMATO DA TAXONOMIA: TAXONOMIA SEPARADA POR ;
+library(tidyr)
+MAM_12S_spp_tax_PIMBA <- unite(MAM_12S_spp_tax_3seq, col = "taxonomy", c("phylum", "class", "order", "family", "genus", "species"), sep = ";")
+# 3.6.2. Excluir colunas taxid
+MAM_12S_spp_tax_PIMBA <- subset(MAM_12S_spp_tax_PIMBA, select =-MAM_12S_taxid)
+
+
+
+### G) 12S - gêneros
+
+## 3.1. Abrir listas de ACC:
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+MAM_12S_genus_ACC <- read.table("MAM_12S_genus_ACC.txt") # 11153
+
+## 3.2. Baixar taxonomia do GENBANK:
+library(taxonomizr)
+# 3.2.1. Obter taxid a partir dos Accession numbers:
+setwd("~/Metabarcodes/Análises/Database/taxonomzr")
+MAM_12S_genus_taxid <- accessionToTaxa(MAM_12S_genus_ACC$V1,"accessionTaxa.sql")
+# 3.2.2. Criar tabela com ACC e taxid:
+MAM_12S_genus_table <- cbind(MAM_12S_genus_ACC, MAM_12S_genus_taxid)
+nrow(MAM_12S_genus_table)
+# 11153
+# 3.2.3. Obter taxonomia a partir dos taxids:
+MAM_12S_genus_taxa <- getTaxonomy(MAM_12S_genus_taxid, 'accessionTaxa.sql')
+# 3.2.4. Adicionar taxonomia à tabela:
+MAM_12S_genus_table <- cbind(MAM_12S_genus_table, MAM_12S_genus_taxa) # 21541 seqs
+# 3.2.5. Remover ACC sem taxonomia:
+MAM_12S_genus_na.omit <- na.omit(MAM_12S_genus_table)
+nrow(MAM_12S_genus_na.omit)
+# 11153
+
+## 3.3. Baixar taxonomia do BOLD:
+# 3.3.1. Alterar nome da coluna (de processid para ID):
+colnames(MAM_BRAZ_boldseqs_genus_12S)[1] = "ID"
+# 3.3.2. Baixar taxonomia:
+library(bold)
+MAM_BRAZ_boldtax_genus_12S <- bold_identify_taxonomy(MAM_BRAZ_boldseqs_genus_12S)
+
+## 3.4. Juntar taxonomia Genbank e BOLD:
+# 3.4.1. Criar tabela boldtax:
+MAM_12S_genus_bold_taxa <- data.frame(MAM_BRAZ_boldtax_genus_12S$ID, MAM_BRAZ_boldtax_genus_12S$species_taxID, MAM_BRAZ_boldtax_genus_12S$phylum_name, MAM_BRAZ_boldtax_genus_12S$class_name, MAM_BRAZ_boldtax_genus_12S$order_name, MAM_BRAZ_boldtax_genus_12S$family_name, MAM_BRAZ_boldtax_genus_12S$genus_name, MAM_BRAZ_boldtax_genus_12S$species_name)
+colnames(MAM_12S_genus_bold_taxa) <- c("V1", "MAM_12S_genus_taxid", "phylum", "class", "order", "family", "genus", "species")
+# 3.4.2. Excluir coluna "superkingdom"
+MAM_12S_genus_GB_taxa <- subset(MAM_12S_genus_na.omit, select=-superkingdom)
+# 3.4.3. Juntar tabelas:
+MAM_12S_genus_tax <- rbind(MAM_12S_genus_GB_taxa, MAM_12S_genus_bold_taxa)
+nrow(MAM_12S_genus_tax)
+# 11198
+
+## 3.5. Corrigir nomes das espécies:
+# 3.5.1. retirar cf.
+MAM_12S_genus_spp <- MAM_12S_genus_tax$species 
+MAM_12S_genus_cf. <- sub(" cf. "," ",MAM_12S_genus_spp) 
+# comparar genus e cf.
+setdiff(MAM_12S_genus_spp, MAM_12S_genus_cf.) # 0
+setdiff(MAM_12S_genus_cf., MAM_12S_genus_spp) # 0
+# 3.5.2. retirar aff.
+MAM_12S_genus_aff. <- sub(" aff. "," ",MAM_12S_genus_cf.) 
+# comparar cf. e aff.
+setdiff(MAM_12S_genus_cf., MAM_12S_genus_aff.) # 0
+setdiff(MAM_12S_genus_aff., MAM_12S_genus_cf.) # 0
+# 3.5.3. retirar "subespécies"
+MAM_12S_genus_subs <- data.frame(MAM_12S_genus_aff.)
+library(stringr)
+MAM_12S_genus_subs[c('genus','species','subspecies')] <- str_split_fixed(MAM_12S_genus_aff.,' ',3)
+# 3.5.4. juntar gênero e espécie:
+library(tidyr)
+MAM_12S_genus_spp2 <- unite(MAM_12S_genus_subs, col = "species", c("genus","species"), sep = " ")
+# comparar aff. e spp2$species
+setdiff(MAM_12S_genus_aff., MAM_12S_genus_spp2$species) # 0
+setdiff(MAM_12S_genus_spp2$species, MAM_12S_genus_aff.) # 0
+# comparar spp2$species MAM_12S_genus_tax$species
+setdiff(MAM_12S_genus_tax$species, MAM_12S_genus_spp2$species) # 0
+setdiff(MAM_12S_genus_spp2$species, MAM_12S_genus_tax$species) # 0
+# 3.5.5. adicionar nova coluna com nomes de espécies corrigidas
+MAM_12S_genus_tax <- cbind(MAM_12S_genus_tax,MAM_12S_genus_spp2$species)
+colnames(MAM_12S_genus_tax)
+# [1] "V1"                     
+# [2] "MAM_12S_taxid"       
+# [3] "phylum"                 
+# [4] "class"                  
+# [5] "order"                  
+# [6] "family"                 
+# [7] "genus"                  
+# [8] "species"                
+# [9] "MAM_12S_genus2$species"
+# 3.5.6. remover coluna com nomes das espécies antes da correção
+MAM_12S_genus_tax <- subset(MAM_12S_genus_tax, select =-species)
+# 3.5.7. Mudar nome da nova coluna:
+colnames(MAM_12S_genus_tax)[8]<-"species"
+
+## 3.6. Enxugar banco - manter 1 sequência por espécie
+# 3.6.1. Ordenar tabelas de taxonomia por ACC:
+library(plyr)
+MAM_12S_genus_tax <- arrange(MAM_12S_genus_tax,V1)
+# 3.6.2. Manter 1 sequência por espécie:
+library(dplyr)
+MAM_12S_genus_tax_1seq <- MAM_12S_genus_tax %>% group_by(species) %>% filter(row_number()<=1)
+nrow(MAM_12S_genus_tax_1seq)
+# 506
+
+## 3.7. Salvar taxonomia no formato PIMBA
+# 3.7.1. MUDAR O FORMATO DA TAXONOMIA: TAXONOMIA SEPARADA POR ;
+library(tidyr)
+MAM_12S_genus_tax_PIMBA <- unite(MAM_12S_genus_tax_1seq, col = "taxonomy", c("phylum", "class", "order", "family", "genus", "species"), sep = ";")
+# 3.7.2. Excluir colunas taxid
+MAM_12S_genus_tax_PIMBA <- subset(MAM_12S_genus_tax_PIMBA, select =-MAM_12S_genus_taxid)
+
+## 3.8. Juntar espécies e gêneros e salvar taxonomia no formato PIMBA
+# 3.8.1. Juntar taxonomias de espécies e gêneros
+MAM_12S_all_PIMBA <- rbind (MAM_12S_spp_tax_PIMBA,MAM_12S_genus_tax_PIMBA)
+nrow(MAM_12S_all_PIMBA)
+# 1166
+# 3.8.2. Remover duplicadas, mantendo até 3 sequências por espécie
+MAM_12S_nd <- MAM_12S_all_PIMBA %>% group_by(taxonomy) %>% filter(row_number()<=3)
+nrow(MAM_12S_nd)
+# 1012
+# 3.8.3. Salvar txt com a taxonomia separada por ;
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+write.table(MAM_12S_nd, file = "MAM_12S_tax.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
+
+
+
+### H) 16S - espécies
+
+## 3.1. Abrir listas de ACC:
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+MAM_16S_spp_ACC <- read.table("MAM_16S_spp_ACC.txt") # 2842
+
+## 3.2. Baixar taxonomia do GENBANK:
+library(taxonomizr)
+# 3.2.1. Obter taxid a partir dos Accession numbers:
+setwd("~/Metabarcodes/Análises/Database/taxonomzr")
+MAM_16S_taxid <- accessionToTaxa(MAM_16S_spp_ACC$V1,"accessionTaxa.sql")
+# 3.2.2. Criar tabela com ACC e taxid:
+MAM_16S_table <- cbind(MAM_16S_spp_ACC, MAM_16S_taxid)
+nrow(MAM_16S_table)
+# 2842
+# 3.2.3. Obter taxonomia a partir dos taxids:
+MAM_16S_taxa <- getTaxonomy(MAM_16S_taxid, 'accessionTaxa.sql')
+# 3.2.4. Adicionar taxonomia à tabela:
+MAM_16S_table <- cbind(MAM_16S_table, MAM_16S_taxa) # 21541 seqs
+# 3.2.5. Remover ACC sem taxonomia:
+MAM_16S_na.omit <- na.omit(MAM_16S_table)
+nrow(MAM_16S_na.omit)
+# 2842
+
+## 3.3. Baixar taxonomia do BOLD:
+# 3.3.1. Alterar nome da coluna (de processid para ID):
+colnames(MAM_BRAZ_boldseqs_spp_16S)[1] = "ID"
+# 3.3.2. Baixar taxonomia:
+library(bold)
+MAM_BRAZ_boldtax_spp_16S <- bold_identify_taxonomy(MAM_BRAZ_boldseqs_spp_16S)
+
+## 3.4. Juntar taxonomia Genbank e BOLD:
+# 3.4.1. Criar tabela boldtax:
+MAM_16S_spp_bold_taxa <- data.frame(MAM_BRAZ_boldtax_spp_16S$ID, MAM_BRAZ_boldtax_spp_16S$species_taxID, MAM_BRAZ_boldtax_spp_16S$phylum_name, MAM_BRAZ_boldtax_spp_16S$class_name, MAM_BRAZ_boldtax_spp_16S$order_name, MAM_BRAZ_boldtax_spp_16S$family_name, MAM_BRAZ_boldtax_spp_16S$genus_name, MAM_BRAZ_boldtax_spp_16S$species_name)
+colnames(MAM_16S_spp_bold_taxa) <- c("V1", "MAM_16S_taxid", "phylum", "class", "order", "family", "genus", "species")
+# 3.4.2. Excluir coluna "superkingdom"
+MAM_16S_spp_GB_taxa <- subset(MAM_16S_na.omit, select=-superkingdom)
+# 3.4.3. Juntar tabelas:
+MAM_16S_spp_tax <- rbind(MAM_16S_spp_GB_taxa, MAM_16S_spp_bold_taxa)
+nrow(MAM_16S_spp_tax)
+# 2884
+
+## 3.5. Corrigir nomes das espécies:
+# 3.5.1. retirar cf.
+MAM_16S_spp_tax_spp <- MAM_16S_spp_tax$species 
+MAM_16S_spp_tax_cf. <- sub(" cf. "," ",MAM_16S_spp_tax_spp) 
+# comparar spp e cf.
+setdiff(MAM_16S_spp_tax_spp, MAM_16S_spp_tax_cf.) # 0
+setdiff(MAM_16S_spp_tax_cf., MAM_16S_spp_tax_spp) # 0
+# 3.5.2. retirar aff.
+MAM_16S_spp_tax_aff. <- sub(" aff. "," ",MAM_16S_spp_tax_cf.) 
+# comparar cf. e aff.
+setdiff(MAM_16S_spp_tax_cf., MAM_16S_spp_tax_aff.) # 0
+setdiff(MAM_16S_spp_tax_aff., MAM_16S_spp_tax_cf.) # 0
+# 3.5.3. retirar "subespécies"
+MAM_16S_spp_tax_subs <- data.frame(MAM_16S_spp_tax_aff.)
+library(stringr)
+MAM_16S_spp_tax_subs[c('genus','species','subspecies')] <- str_split_fixed(MAM_16S_spp_tax_subs$MAM_16S_spp_tax_aff.,' ',3)
+# 3.5.4. juntar gênero e espécie:
+library(tidyr)
+MAM_16S_spp2 <- unite(MAM_16S_spp_tax_subs, col = "species", c("genus","species"), sep = " ")
+# comparar aff. e spp2$species
+setdiff(MAM_16S_spp_tax_aff., MAM_16S_spp2$species) # 0
+setdiff(MAM_16S_spp2$species, MAM_16S_spp_tax_aff.) # 0
+# comparar spp2$species MAM_16S_spp_tax$species
+setdiff(MAM_16S_spp_tax$species, MAM_16S_spp2$species) # 0
+setdiff(MAM_16S_spp2$species, MAM_16S_spp_tax$species) # 0
+# 3.5.5. adicionar nova coluna com nomes de espécies corrigidas
+MAM_16S_spp_tax <- cbind(MAM_16S_spp_tax,MAM_16S_spp2$species)
+colnames(MAM_16S_spp_tax)
+# [1] "V1"                     
+# [2] "MAM_16S_taxid"       
+# [3] "phylum"                 
+# [4] "class"                  
+# [5] "order"                  
+# [6] "family"                 
+# [7] "genus"                  
+# [8] "species"                
+# [9] "MAM_16S_spp2$species"
+# 3.5.6. remover coluna com nomes das espécies antes da correção
+MAM_16S_spp_tax <- subset(MAM_16S_spp_tax, select =-species)
+# 3.5.7. Mudar nome da nova coluna:
+colnames(MAM_16S_spp_tax)[8]<-"species"
+
+## 3.5. Enxugar banco - manter até 3 sequências por espécie
+# 3.5.1. Ordenar tabelas de taxonomia por ACC:
+library(plyr)
+MAM_16S_spp_tax <- arrange(MAM_16S_spp_tax,V1)
+# 3.5.2. Manter até 3 sequências por espécie:
+library(dplyr)
+MAM_16S_spp_tax_3seq <- MAM_16S_spp_tax %>% group_by(species) %>% filter(row_number()<=3)
+nrow(MAM_16S_spp_tax_3seq)
+# 343
+
+## 3.6. Salvar taxonomia no formato PIMBA
+# 3.6.1. MUDAR O FORMATO DA TAXONOMIA: TAXONOMIA SEPARADA POR ;
+library(tidyr)
+MAM_16S_spp_tax_PIMBA <- unite(MAM_16S_spp_tax_3seq, col = "taxonomy", c("phylum", "class", "order", "family", "genus", "species"), sep = ";")
+# 3.6.2. Excluir colunas taxid
+MAM_16S_spp_tax_PIMBA <- subset(MAM_16S_spp_tax_PIMBA, select =-MAM_16S_taxid)
+
+
+
+### I) 16S - gêneros
+
+## 3.1. Abrir listas de ACC:
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+MAM_16S_genus_ACC <- read.table("MAM_16S_genus_ACC.txt") # 4033
+
+## 3.2. Baixar taxonomia do GENBANK:
+library(taxonomizr)
+# 3.2.1. Obter taxid a partir dos Accession numbers:
+setwd("~/Metabarcodes/Análises/Database/taxonomzr")
+MAM_16S_genus_taxid <- accessionToTaxa(MAM_16S_genus_ACC$V1,"accessionTaxa.sql")
+# 3.2.2. Criar tabela com ACC e taxid:
+MAM_16S_genus_table <- cbind(MAM_16S_genus_ACC, MAM_16S_genus_taxid)
+nrow(MAM_16S_genus_table)
+# 4033
+# 3.2.3. Obter taxonomia a partir dos taxids:
+MAM_16S_genus_taxa <- getTaxonomy(MAM_16S_genus_taxid, 'accessionTaxa.sql')
+# 3.2.4. Adicionar taxonomia à tabela:
+MAM_16S_genus_table <- cbind(MAM_16S_genus_table, MAM_16S_genus_taxa)
+# 3.2.5. Remover ACC sem taxonomia:
+MAM_16S_genus_na.omit <- na.omit(MAM_16S_genus_table)
+nrow(MAM_16S_genus_na.omit)
+# 4033
+
+## 3.3. Baixar taxonomia do BOLD:
+# 3.3.1. Alterar nome da coluna (de processid para ID):
+colnames(MAM_BRAZ_boldseqs_genus_16S)[1] = "ID"
+# 3.3.2. Baixar taxonomia:
+library(bold)
+MAM_BRAZ_boldtax_genus_16S <- bold_identify_taxonomy(MAM_BRAZ_boldseqs_genus_16S)
+
+## 3.4. Juntar taxonomia Genbank e BOLD:
+# 3.4.1. Criar tabela boldtax:
+MAM_16S_genus_bold_taxa <- data.frame(MAM_BRAZ_boldtax_genus_16S$ID, MAM_BRAZ_boldtax_genus_16S$species_taxID, MAM_BRAZ_boldtax_genus_16S$phylum_name, MAM_BRAZ_boldtax_genus_16S$class_name, MAM_BRAZ_boldtax_genus_16S$order_name, MAM_BRAZ_boldtax_genus_16S$family_name, MAM_BRAZ_boldtax_genus_16S$genus_name, MAM_BRAZ_boldtax_genus_16S$species_name)
+colnames(MAM_16S_genus_bold_taxa) <- c("V1", "MAM_16S_genus_taxid", "phylum", "class", "order", "family", "genus", "species")
+# 3.4.2. Excluir coluna "superkingdom"
+MAM_16S_genus_GB_taxa <- subset(MAM_16S_genus_na.omit, select=-superkingdom)
+# 3.4.3. Juntar tabelas:
+MAM_16S_genus_tax <- rbind(MAM_16S_genus_GB_taxa, MAM_16S_genus_bold_taxa)
+nrow(MAM_16S_genus_tax)
+# 4156
+
+## 3.5. Corrigir nomes das espécies:
+# 3.5.1. retirar cf.
+MAM_16S_genus_spp <- MAM_16S_genus_tax$species 
+MAM_16S_genus_cf. <- sub(" cf. "," ",MAM_16S_genus_spp) 
+# comparar genus e cf.
+setdiff(MAM_16S_genus_spp, MAM_16S_genus_cf.) # 0
+setdiff(MAM_16S_genus_cf., MAM_16S_genus_spp) # 0
+# 3.5.2. retirar aff.
+MAM_16S_genus_aff. <- sub(" aff. "," ",MAM_16S_genus_cf.) 
+# comparar cf. e aff.
+setdiff(MAM_16S_genus_cf., MAM_16S_genus_aff.) # 0
+setdiff(MAM_16S_genus_aff., MAM_16S_genus_cf.) # 0
+# 3.5.3. retirar "subespécies"
+MAM_16S_genus_subs <- data.frame(MAM_16S_genus_aff.)
+library(stringr)
+MAM_16S_genus_subs[c('genus','species','subspecies')] <- str_split_fixed(MAM_16S_genus_aff.,' ',3)
+# 3.5.4. juntar gênero e espécie:
+library(tidyr)
+MAM_16S_genus_spp2 <- unite(MAM_16S_genus_subs, col = "species", c("genus","species"), sep = " ")
+# comparar aff. e spp2$species
+setdiff(MAM_16S_genus_aff., MAM_16S_genus_spp2$species) # 10
+setdiff(MAM_16S_genus_spp2$species, MAM_16S_genus_aff.) # 4
+# comparar spp2$species MAM_16S_genus_tax$species
+setdiff(MAM_16S_genus_tax$species, MAM_16S_genus_spp2$species) # 10
+setdiff(MAM_16S_genus_spp2$species, MAM_16S_genus_tax$species) # 4
+# 3.5.5. adicionar nova coluna com nomes de espécies corrigidas
+MAM_16S_genus_tax <- cbind(MAM_16S_genus_tax,MAM_16S_genus_spp2$species)
+colnames(MAM_16S_genus_tax)
+# [1] "V1"                     
+# [2] "MAM_16S_genus_taxid"       
+# [3] "phylum"                 
+# [4] "class"                  
+# [5] "order"                  
+# [6] "family"                 
+# [7] "genus"                  
+# [8] "species"                
+# [9] "MAM_16S_genus2$species"
+# 3.5.6. remover coluna com nomes das espécies antes da correção
+MAM_16S_genus_tax <- subset(MAM_16S_genus_tax, select =-species)
+# 3.5.7. Mudar nome da nova coluna:
+colnames(MAM_16S_genus_tax)[8]<-"species"
+
+## 3.6. Enxugar banco - manter 1 sequência por espécie
+# 3.6.1. Ordenar tabelas de taxonomia por ACC:
+library(plyr)
+MAM_16S_genus_tax <- arrange(MAM_16S_genus_tax,V1)
+# 3.6.2. Manter 1 sequência por espécie:
+library(dplyr)
+MAM_16S_genus_tax_1seq <- MAM_16S_genus_tax %>% group_by(species) %>% filter(row_number()<=1)
+nrow(MAM_16S_genus_tax_1seq)
+# 327
+
+## 3.7. Salvar taxonomia no formato PIMBA
+# 3.7.1. MUDAR O FORMATO DA TAXONOMIA: TAXONOMIA SEPARADA POR ;
+library(tidyr)
+MAM_16S_genus_tax_PIMBA <- unite(MAM_16S_genus_tax_1seq, col = "taxonomy", c("phylum", "class", "order", "family", "genus", "species"), sep = ";")
+# 3.7.2. Excluir colunas taxid
+MAM_16S_genus_tax_PIMBA <- subset(MAM_16S_genus_tax_PIMBA, select =-MAM_16S_genus_taxid)
+
+## 3.8. Juntar espécies e gêneros e salvar taxonomia no formato PIMBA
+# 3.8.1. Juntar taxonomias de espécies e gêneros
+MAM_16S_all_PIMBA <- rbind (MAM_16S_spp_tax_PIMBA,MAM_16S_genus_tax_PIMBA)
+nrow(MAM_16S_all_PIMBA)
+# 670
+# 3.8.2. Remover duplicadas, mantendo até 3 sequências por espécie
+MAM_16S_nd <- MAM_16S_all_PIMBA %>% group_by(taxonomy) %>% filter(row_number()<=3)
+nrow(MAM_16S_nd)
+# 599
+# 3.8.3. Salvar txt com a taxonomia separada por ;
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+write.table(MAM_16S_nd, file = "MAM_16S_tax.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
+
+
+
+
+
+### 4. RE-DOWNLOAD DAS SEQUENCIAS SELECIONADAS (BANCO ENXUGADO) 
+
+## A) GENOME
+
+# 4.1. Dividir listas de ACC em grupos de 80 (máximo que dá pra baixar por vez):
+ALL_CLASS_genome_split <- split(ALL_CLASS_genome$V1, ceiling(seq_along(ALL_CLASS_genome$V1)/80))
+# 57 vezes
+
+# 4.2. Baixar sequências do GENBANK:
+library(traits)
+ALL_CLASS_seqs1 <- ncbi_byid (ALL_CLASS_genome_split[[1]])
+ALL_CLASS_seqs2 <- ncbi_byid (ALL_CLASS_genome_split[[2]])
+ALL_CLASS_seqs3 <- ncbi_byid (ALL_CLASS_genome_split[[3]])
+ALL_CLASS_seqs4 <- ncbi_byid (ALL_CLASS_genome_split[[4]])
+ALL_CLASS_seqs5 <- ncbi_byid (ALL_CLASS_genome_split[[5]])
+ALL_CLASS_seqs6 <- ncbi_byid (ALL_CLASS_genome_split[[6]])
+ALL_CLASS_seqs7 <- ncbi_byid (ALL_CLASS_genome_split[[7]])
+ALL_CLASS_seqs8 <- ncbi_byid (ALL_CLASS_genome_split[[8]])
+ALL_CLASS_seqs9 <- ncbi_byid (ALL_CLASS_genome_split[[9]])
+ALL_CLASS_seqs10 <- ncbi_byid (ALL_CLASS_genome_split[[10]])
+
+ALL_CLASS_seqs11 <- ncbi_byid (ALL_CLASS_genome_split[[11]])
+ALL_CLASS_seqs12 <- ncbi_byid (ALL_CLASS_genome_split[[12]])
+ALL_CLASS_seqs13 <- ncbi_byid (ALL_CLASS_genome_split[[13]])
+ALL_CLASS_seqs14 <- ncbi_byid (ALL_CLASS_genome_split[[14]])
+ALL_CLASS_seqs15 <- ncbi_byid (ALL_CLASS_genome_split[[15]])
+ALL_CLASS_seqs16 <- ncbi_byid (ALL_CLASS_genome_split[[16]])
+ALL_CLASS_seqs17 <- ncbi_byid (ALL_CLASS_genome_split[[17]])
+ALL_CLASS_seqs18 <- ncbi_byid (ALL_CLASS_genome_split[[18]])
+ALL_CLASS_seqs19 <- ncbi_byid (ALL_CLASS_genome_split[[19]])
+ALL_CLASS_seqs20 <- ncbi_byid (ALL_CLASS_genome_split[[20]])
+
+ALL_CLASS_seqs21 <- ncbi_byid (ALL_CLASS_genome_split[[21]])
+ALL_CLASS_seqs22 <- ncbi_byid (ALL_CLASS_genome_split[[22]])
+ALL_CLASS_seqs23 <- ncbi_byid (ALL_CLASS_genome_split[[23]])
+ALL_CLASS_seqs24 <- ncbi_byid (ALL_CLASS_genome_split[[24]])
+ALL_CLASS_seqs25 <- ncbi_byid (ALL_CLASS_genome_split[[25]])
+ALL_CLASS_seqs26 <- ncbi_byid (ALL_CLASS_genome_split[[26]])
+ALL_CLASS_seqs27 <- ncbi_byid (ALL_CLASS_genome_split[[27]])
+ALL_CLASS_seqs28 <- ncbi_byid (ALL_CLASS_genome_split[[28]])
+ALL_CLASS_seqs29 <- ncbi_byid (ALL_CLASS_genome_split[[29]])
+ALL_CLASS_seqs30 <- ncbi_byid (ALL_CLASS_genome_split[[30]])
+
+ALL_CLASS_seqs31 <- ncbi_byid (ALL_CLASS_genome_split[[31]])
+ALL_CLASS_seqs32 <- ncbi_byid (ALL_CLASS_genome_split[[32]])
+ALL_CLASS_seqs33 <- ncbi_byid (ALL_CLASS_genome_split[[33]])
+ALL_CLASS_seqs34 <- ncbi_byid (ALL_CLASS_genome_split[[34]])
+ALL_CLASS_seqs35 <- ncbi_byid (ALL_CLASS_genome_split[[35]])
+ALL_CLASS_seqs36 <- ncbi_byid (ALL_CLASS_genome_split[[36]])
+ALL_CLASS_seqs37 <- ncbi_byid (ALL_CLASS_genome_split[[37]])
+ALL_CLASS_seqs38 <- ncbi_byid (ALL_CLASS_genome_split[[38]])
+ALL_CLASS_seqs39 <- ncbi_byid (ALL_CLASS_genome_split[[39]])
+ALL_CLASS_seqs40 <- ncbi_byid (ALL_CLASS_genome_split[[40]])
+
+ALL_CLASS_seqs41 <- ncbi_byid (ALL_CLASS_genome_split[[41]])
+ALL_CLASS_seqs42 <- ncbi_byid (ALL_CLASS_genome_split[[42]])
+ALL_CLASS_seqs43 <- ncbi_byid (ALL_CLASS_genome_split[[43]])
+ALL_CLASS_seqs44 <- ncbi_byid (ALL_CLASS_genome_split[[44]])
+ALL_CLASS_seqs45 <- ncbi_byid (ALL_CLASS_genome_split[[45]])
+ALL_CLASS_seqs46 <- ncbi_byid (ALL_CLASS_genome_split[[46]])
+ALL_CLASS_seqs47 <- ncbi_byid (ALL_CLASS_genome_split[[47]])
+ALL_CLASS_seqs48 <- ncbi_byid (ALL_CLASS_genome_split[[48]])
+ALL_CLASS_seqs49 <- ncbi_byid (ALL_CLASS_genome_split[[49]])
+ALL_CLASS_seqs50 <- ncbi_byid (ALL_CLASS_genome_split[[50]])
+
+ALL_CLASS_seqs51 <- ncbi_byid (ALL_CLASS_genome_split[[51]])
+ALL_CLASS_seqs52 <- ncbi_byid (ALL_CLASS_genome_split[[52]])
+ALL_CLASS_seqs53 <- ncbi_byid (ALL_CLASS_genome_split[[53]])
+ALL_CLASS_seqs54 <- ncbi_byid (ALL_CLASS_genome_split[[54]])
+ALL_CLASS_seqs55 <- ncbi_byid (ALL_CLASS_genome_split[[55]])
+ALL_CLASS_seqs56 <- ncbi_byid (ALL_CLASS_genome_split[[56]])
+ALL_CLASS_seqs57 <- ncbi_byid (ALL_CLASS_genome_split[[57]])
+
+# 4.3. Juntar sequencias baixadas:
+ALL_CLASS_seqs_list <- list(
+ALL_CLASS_seqs1,
+ALL_CLASS_seqs2, 
+ALL_CLASS_seqs3, 
+ALL_CLASS_seqs4,
+ALL_CLASS_seqs5,
+ALL_CLASS_seqs6,
+ALL_CLASS_seqs7,
+ALL_CLASS_seqs8,
+ALL_CLASS_seqs9,
+ALL_CLASS_seqs10,
+ALL_CLASS_seqs11,
+ALL_CLASS_seqs12, 
+ALL_CLASS_seqs13, 
+ALL_CLASS_seqs14,
+ALL_CLASS_seqs15,
+ALL_CLASS_seqs16,
+ALL_CLASS_seqs17,
+ALL_CLASS_seqs18,
+ALL_CLASS_seqs19,
+ALL_CLASS_seqs20,
+ALL_CLASS_seqs21,
+ALL_CLASS_seqs22, 
+ALL_CLASS_seqs23, 
+ALL_CLASS_seqs24,
+ALL_CLASS_seqs25,
+ALL_CLASS_seqs26,
+ALL_CLASS_seqs27,
+ALL_CLASS_seqs28,
+ALL_CLASS_seqs29,
+ALL_CLASS_seqs30,
+ALL_CLASS_seqs31,
+ALL_CLASS_seqs32, 
+ALL_CLASS_seqs33, 
+ALL_CLASS_seqs34,
+ALL_CLASS_seqs35,
+ALL_CLASS_seqs36,
+ALL_CLASS_seqs37,
+ALL_CLASS_seqs38,
+ALL_CLASS_seqs39,
+ALL_CLASS_seqs40,
+ALL_CLASS_seqs41,
+ALL_CLASS_seqs42, 
+ALL_CLASS_seqs43, 
+ALL_CLASS_seqs44,
+ALL_CLASS_seqs45,
+ALL_CLASS_seqs46,
+ALL_CLASS_seqs47,
+ALL_CLASS_seqs48,
+ALL_CLASS_seqs49,
+ALL_CLASS_seqs50,
+ALL_CLASS_seqs51,
+ALL_CLASS_seqs52, 
+ALL_CLASS_seqs53, 
+ALL_CLASS_seqs54,
+ALL_CLASS_seqs55,
+ALL_CLASS_seqs56,
+ALL_CLASS_seqs57
+)
+
+ALL_CLASS_seqs <- Reduce(function(x, y) merge(x, y, all=TRUE), ALL_CLASS_seqs_list)
+nrow(ALL_CLASS_seqs)
+# 4412
+
+# 4.4. remover ACC sem sequências:
+ALL_CLASS_seqs_na.omit <- ALL_CLASS_seqs[!(is.na(ALL_CLASS_seqs$sequence)), ]
+nrow(ALL_CLASS_seqs_na.omit)
+# 4286
+
+# 4.5. Ordenar tabelas de sequencias por ACC:
+library(plyr)
+ALL_CLASS_seqs_na.omit <- arrange(ALL_CLASS_seqs_na.omit,acc_no)
+
+# 4.6. Remover seqs duplicadas:
+library(dplyr)
+ALL_CLASS_seqs_nd <- ALL_CLASS_seqs_na.omit %>% group_by(acc_no) %>% filter(row_number()<=1)
+nrow(ALL_CLASS_seqs_nd)
+# 4283
+
+# 4.7. Comparar ACC dos arquivos tax e ACC dos arquivos fasta:
+# ACC tax que não tem no fas:
+ALL_CLASS_sem_seqs <- setdiff(ALL_CLASS_genome$V1, ALL_CLASS_seqs_nd$acc_no) # 126
+# ACC fas que não tem no tax:
+ALL_CLASS_sem_tax <- setdiff(ALL_CLASS_seqs_nd$acc_no, ALL_CLASS_genome$V1) # empty
+
+# 4.8. Gerar e salvar arquivo fasta a partir da tabela de sequências:
+library(scifer)
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+df_to_fasta(ALL_CLASS_seqs_nd$acc_no, ALL_CLASS_seqs_nd$sequence, file_name = "ALL_CLASS_genome.fasta")
+
+
+
+## B) COI
+
+## 4.1. Abrir DB_2024.3.csv
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+DB_2024.3 <- read.table("DB_2024.3.csv", sep = ",", header = TRUE)
+nrow(DB_2024.3)
+# 7885
+colnames(DB_2024.3)
+# [1] "ACCESSION"  "FILO"      
+# [3] "CLASSE"     "ORDEM"     
+# [5] "FAMILIA"    "GENERO"    
+# [7] "BINOMIO"    "Gene"      
+# [9] "Seq.source" "Tax.source"
+#[11] "AMAZ"       "CERR"      
+#[13] "MATL"
+
+## 4.2. Separar COI
+DB_2024.3_COI <- subset(DB_2024.3, Gene =="COI")
+nrow(DB_2024.3_COI)
+# 1774
+
+## 4.3. GENBANK
+# 4.3.1. Separar GB-IDs:
+DB_2024.3_COI_GB <- subset(DB_2024.3_COI, Seq.source =="GB")
+nrow(DB_2024.3_COI_GB)
+# 845
+
+# 4.3.2. Dividir listas de ACC em grupos de 80 (máximo que dá pra baixar por vez):
+DB_2024.3_COI_GB_split <- split(DB_2024.3_COI_GB$ACCESSION, ceiling(seq_along(DB_2024.3_COI_GB$ACCESSION)/80))
+# 11 vezes
+
+# 4.3.3. Baixar sequências:
+library(traits)
+DB_2024.3_COI_GB_seqs1 <- ncbi_byid (DB_2024.3_COI_GB_split[[1]])
+DB_2024.3_COI_GB_seqs2 <- ncbi_byid (DB_2024.3_COI_GB_split[[2]])
+DB_2024.3_COI_GB_seqs3 <- ncbi_byid (DB_2024.3_COI_GB_split[[3]])
+DB_2024.3_COI_GB_seqs4 <- ncbi_byid (DB_2024.3_COI_GB_split[[4]])
+DB_2024.3_COI_GB_seqs5 <- ncbi_byid (DB_2024.3_COI_GB_split[[5]])
+DB_2024.3_COI_GB_seqs6 <- ncbi_byid (DB_2024.3_COI_GB_split[[6]])
+DB_2024.3_COI_GB_seqs7 <- ncbi_byid (DB_2024.3_COI_GB_split[[7]])
+DB_2024.3_COI_GB_seqs8 <- ncbi_byid (DB_2024.3_COI_GB_split[[8]])
+DB_2024.3_COI_GB_seqs9 <- ncbi_byid (DB_2024.3_COI_GB_split[[9]])
+DB_2024.3_COI_GB_seqs10 <- ncbi_byid (DB_2024.3_COI_GB_split[[10]])
+DB_2024.3_COI_GB_seqs11 <- ncbi_byid (DB_2024.3_COI_GB_split[[11]])
+
+# 4.3.4. Juntar sequencias baixadas:
+DB_2024.3_COI_GB_seqs_list <- list(
+DB_2024.3_COI_GB_seqs1,
+DB_2024.3_COI_GB_seqs2, 
+DB_2024.3_COI_GB_seqs3, 
+DB_2024.3_COI_GB_seqs4,
+DB_2024.3_COI_GB_seqs5,
+DB_2024.3_COI_GB_seqs6,
+DB_2024.3_COI_GB_seqs7,
+DB_2024.3_COI_GB_seqs8,
+DB_2024.3_COI_GB_seqs9,
+DB_2024.3_COI_GB_seqs10,
+DB_2024.3_COI_GB_seqs11
+)
+
+DB_2024.3_COI_GB_seqs <- Reduce(function(x, y) merge(x, y, all=TRUE), DB_2024.3_COI_GB_seqs_list)
+nrow(DB_2024.3_COI_GB_seqs)
+# 837
+
+# 4.3.5. remover ACC sem sequências:
+DB_2024.3_COI_GB_seqs_na.omit <- DB_2024.3_COI_GB_seqs[!(is.na(DB_2024.3_COI_GB_seqs$sequence)), ]
+nrow(DB_2024.3_COI_GB_seqs_na.omit)
+# 837
+
+# 4.3.6. Ordenar tabelas de sequencias por ACC:
+library(plyr)
+DB_2024.3_COI_GB_seqs_na.omit <- arrange(DB_2024.3_COI_GB_seqs_na.omit,acc_no)
+
+# 4.3.7. Remover seqs duplicadas:
+library(dplyr)
+DB_2024.3_COI_GB_seqs_nd <- DB_2024.3_COI_GB_seqs_na.omit %>% group_by(acc_no) %>% filter(row_number()<=1)
+nrow(DB_2024.3_COI_GB_seqs_nd)
+# 831
+
+# 4.4. Baixar sequências do BOLD
+
+# 4.4.1. Separar BOLD-IDs:
+DB_2024.3_COI_BOLD <- subset(DB_2024.3_COI, Seq.source =="BOLD")
+nrow(DB_2024.3_COI_BOLD)
+# 929
+
+# 4.7.4. Dividir lista de ACC (400 por vez)
+DB_2024.3_COI_BOLD_split <- split(DB_2024.3_COI_BOLD$ACCESSION, ceiling(seq_along(DB_2024.3_COI_BOLD$ACCESSION)/400))
+# 3 vezes
+
+# 4.7.5. Baixar sequências:
+library(bold)
+DB_2024.3_COI_BOLD_seqs1 <- bold_seq (id=DB_2024.3_COI_BOLD_split[[1]])
+DB_2024.3_COI_BOLD_seqs2 <- bold_seq (id=DB_2024.3_COI_BOLD_split[[2]])
+DB_2024.3_COI_BOLD_seqs3 <- bold_seq (id=DB_2024.3_COI_BOLD_split[[3]])
+
+# 4.7.6. Juntar sequencias baixadas:
+DB_2024.3_COI_BOLD_seqs_list <- list(
+DB_2024.3_COI_BOLD_seqs1,
+DB_2024.3_COI_BOLD_seqs2,
+DB_2024.3_COI_BOLD_seqs3
+)
+DB_2024.3_COI_BOLD_seqs <- Reduce(function(x, y) merge(x, y, all=TRUE), DB_2024.3_COI_BOLD_seqs_list)
+nrow(DB_2024.3_COI_BOLD_seqs)
+# 1074
+
+# 4.7.7. Separar seqs COI:
+DB_2024.3_COI_BOLD_seqs_COI5P <- subset(DB_2024.3_COI_BOLD_seqs, marker =="COI-5P")
+nrow(DB_2024.3_COI_BOLD_seqs_COI5P)
+# 910
+DB_2024.3_COI_BOLD_seqs_COI3P <- subset(DB_2024.3_COI_BOLD_seqs, marker =="COI-3P")
+nrow(DB_2024.3_COI_BOLD_seqs_COI3P)
+# 2
+DB_2024.3_COI_BOLD_seqs <- rbind (DB_2024.3_COI_BOLD_seqs_COI5P, DB_2024.3_COI_BOLD_seqs_COI3P)
+nrow(DB_2024.3_COI_BOLD_seqs)
+# 912
+
+## 4.8. Juntar sequências do GENBANK e do BOLD
+
+# 4.8.1. Criar tabela com GB-seqs:
+colnames(DB_2024.3_COI_GB_seqs_nd)
+# [1] "taxon"           
+# [2] "taxonomy"        
+# [3] "gene_desc"       
+# [4] "organelle"       
+# [5] "gi_no"           
+# [6] "acc_no"          
+# [7] "keyword"         
+# [8] "specimen_voucher"
+# [9] "lat_lon"         
+#[10] "country"         
+#[11] "paper_title"     
+#[12] "journal"         
+#[13] "first_author"    
+#[14] "uploaded_date"   
+#[15] "length"          
+#[16] "sequence"
+DB_2024.3_GB_COI_seqs <- data.frame(DB_2024.3_COI_GB_seqs_nd$acc_no, DB_2024.3_COI_GB_seqs_nd$sequence)
+colnames(DB_2024.3_GB_COI_seqs) <- c("ACCESSION","sequence")
+nrow(DB_2024.3_GB_COI_seqs)
+# 831
+
+# 4.8.2. Criar tabela com BOLD-seqs:
+colnames(DB_2024.3_COI_BOLD_seqs)
+#[1] "processid"      "identification"
+#[3] "marker"         "accession"     
+#[5] "sequence"
+DB_2024.3_BOLD_COI_seqs <- data.frame(DB_2024.3_COI_BOLD_seqs$processid, DB_2024.3_COI_BOLD_seqs$sequence)
+colnames(DB_2024.3_BOLD_COI_seqs) <- c("ACCESSION","sequence")
+nrow(DB_2024.3_BOLD_COI_seqs)
+# 912
+
+# 4.8.3. juntar tabelas
+DB_2024.3_COI_seqs <- rbind(DB_2024.3_GB_COI_seqs, DB_2024.3_BOLD_COI_seqs)
+nrow(DB_2024.3_COI_seqs)
+# 1743
+
+# 4.9. Comparar ACC dos arquivos tax e ACC dos arquivos fasta:
+# ACC tax que não tem no fas:
+MAM_COIsem_seqs <- setdiff(MAM_COI_nd$V1, DB_2024.3_COI_seqs$ACCESSION) # empty
+# ACC fas que não tem no tax:
+MAM_COIsem_tax <- setdiff(DB_2024.3_COI_seqs$ACCESSION, MAM_COI_nd$V1) # empty
+
+# 4.10. Gerar e salvar arquivo fasta a partir da tabela de sequências:
+library(scifer)
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+df_to_fasta(DB_2024.3_COI_seqs$ACCESSION, DB_2024.3_COI_seqs$sequence, file_name = "MAM_COI.fasta")
+
+
+## C) 12S
+
+## 4.2. Separar 12S
+DB_2024.3_12S <- subset(DB_2024.3, Gene =="RNA12S")
+nrow(DB_2024.3_12S)
+# 1012
+
+## 4.3. GENBANK
+# 4.3.1. Separar GB-IDs:
+DB_2024.3_12S_GB <- subset(DB_2024.3_12S, Seq.source =="GB")
+nrow(DB_2024.3_12S_GB)
+# 1010
+
+# 4.3.2. Dividir listas de ACC em grupos de 80 (máximo que dá pra baixar por vez):
+DB_2024.3_12S_GB_split <- split(DB_2024.3_12S_GB$ACCESSION, ceiling(seq_along(DB_2024.3_12S_GB$ACCESSION)/80))
+# 13 vezes
+
+# 4.3.3. Baixar sequências:
+library(traits)
+DB_2024.3_12S_GB_seqs1 <- ncbi_byid (DB_2024.3_12S_GB_split[[1]])
+DB_2024.3_12S_GB_seqs2 <- ncbi_byid (DB_2024.3_12S_GB_split[[2]])
+DB_2024.3_12S_GB_seqs3 <- ncbi_byid (DB_2024.3_12S_GB_split[[3]])
+DB_2024.3_12S_GB_seqs4 <- ncbi_byid (DB_2024.3_12S_GB_split[[4]])
+DB_2024.3_12S_GB_seqs5 <- ncbi_byid (DB_2024.3_12S_GB_split[[5]])
+DB_2024.3_12S_GB_seqs6 <- ncbi_byid (DB_2024.3_12S_GB_split[[6]])
+DB_2024.3_12S_GB_seqs7 <- ncbi_byid (DB_2024.3_12S_GB_split[[7]])
+DB_2024.3_12S_GB_seqs8 <- ncbi_byid (DB_2024.3_12S_GB_split[[8]])
+DB_2024.3_12S_GB_seqs9 <- ncbi_byid (DB_2024.3_12S_GB_split[[9]])
+DB_2024.3_12S_GB_seqs10 <- ncbi_byid (DB_2024.3_12S_GB_split[[10]])
+DB_2024.3_12S_GB_seqs11 <- ncbi_byid (DB_2024.3_12S_GB_split[[11]])
+DB_2024.3_12S_GB_seqs12 <- ncbi_byid (DB_2024.3_12S_GB_split[[12]])
+DB_2024.3_12S_GB_seqs13 <- ncbi_byid (DB_2024.3_12S_GB_split[[13]])
+
+# 4.3.4. Juntar sequencias baixadas:
+DB_2024.3_12S_GB_seqs_list <- list(
+DB_2024.3_12S_GB_seqs1,
+DB_2024.3_12S_GB_seqs2, 
+DB_2024.3_12S_GB_seqs3, 
+DB_2024.3_12S_GB_seqs4,
+DB_2024.3_12S_GB_seqs5,
+DB_2024.3_12S_GB_seqs6,
+DB_2024.3_12S_GB_seqs7,
+DB_2024.3_12S_GB_seqs8,
+DB_2024.3_12S_GB_seqs9,
+DB_2024.3_12S_GB_seqs10,
+DB_2024.3_12S_GB_seqs11,
+DB_2024.3_12S_GB_seqs12,
+DB_2024.3_12S_GB_seqs13
+)
+
+DB_2024.3_12S_GB_seqs <- Reduce(function(x, y) merge(x, y, all=TRUE), DB_2024.3_12S_GB_seqs_list)
+nrow(DB_2024.3_12S_GB_seqs)
+# 859
+
+# 4.3.5. remover ACC sem sequências:
+DB_2024.3_12S_GB_seqs_na.omit <- DB_2024.3_12S_GB_seqs[!(is.na(DB_2024.3_12S_GB_seqs$sequence)), ]
+nrow(DB_2024.3_12S_GB_seqs_na.omit)
+# 859
+
+# 4.3.6. Ordenar tabelas de sequencias por ACC:
+library(plyr)
+DB_2024.3_12S_GB_seqs_na.omit <- arrange(DB_2024.3_12S_GB_seqs_na.omit,acc_no)
+
+# 4.3.7. Remover seqs duplicadas:
+library(dplyr)
+DB_2024.3_12S_GB_seqs_nd <- DB_2024.3_12S_GB_seqs_na.omit %>% group_by(acc_no) %>% filter(row_number()<=1)
+nrow(DB_2024.3_12S_GB_seqs_nd)
+# 851
+
+
+# 4.4. Baixar sequências do BOLD
+
+# 4.4.1. Separar BOLD-IDs:
+DB_2024.3_12S_BOLD <- subset(DB_2024.3_12S, Seq.source =="BOLD")
+nrow(DB_2024.3_12S_BOLD)
+# 2
+
+# 4.7.5. Baixar sequências:
+library(bold)
+DB_2024.3_12S_BOLD_seqs <- bold_seq (id=DB_2024.3_12S_BOLD$ACCESSION)
+nrow(DB_2024.3_12S_BOLD_seqs)
+# 7
+
+# 4.7.7. Separar seqs 12S:
+DB_2024.3_12S_BOLD_seqs <- subset(DB_2024.3_12S_BOLD_seqs, marker =="12S")
+nrow(DB_2024.3_12S_BOLD_seqs)
+# 2
+
+
+## 4.8. Juntar sequências do GENBANK e do BOLD
+
+# 4.8.1. Criar tabela com GB-seqs:
+colnames(DB_2024.3_12S_GB_seqs_nd)
+# [1] "taxon"           
+# [2] "taxonomy"        
+# [3] "gene_desc"       
+# [4] "organelle"       
+# [5] "gi_no"           
+# [6] "acc_no"          
+# [7] "keyword"         
+# [8] "specimen_voucher"
+# [9] "lat_lon"         
+#[10] "country"         
+#[11] "paper_title"     
+#[12] "journal"         
+#[13] "first_author"    
+#[14] "uploaded_date"   
+#[15] "length"          
+#[16] "sequence"
+DB_2024.3_GB_12S_seqs <- data.frame(DB_2024.3_12S_GB_seqs_nd$acc_no, DB_2024.3_12S_GB_seqs_nd$sequence)
+colnames(DB_2024.3_GB_12S_seqs) <- c("ACCESSION","sequence")
+nrow(DB_2024.3_GB_12S_seqs)
+# 851
+
+# 4.8.2. Criar tabela com BOLD-seqs:
+colnames(DB_2024.3_12S_BOLD_seqs)
+#[1] "processid"      "identification"
+#[3] "marker"         "accession"     
+#[5] "sequence"
+DB_2024.3_BOLD_12S_seqs <- data.frame(DB_2024.3_12S_BOLD_seqs$processid, DB_2024.3_12S_BOLD_seqs$sequence)
+colnames(DB_2024.3_BOLD_12S_seqs) <- c("ACCESSION","sequence")
+nrow(DB_2024.3_BOLD_12S_seqs)
+# 2
+
+# 4.8.3. juntar tabelas
+DB_2024.3_12S_seqs <- rbind(DB_2024.3_GB_12S_seqs, DB_2024.3_BOLD_12S_seqs)
+nrow(DB_2024.3_12S_seqs)
+# 853
+
+
+## 4.9. Comparar ACC dos arquivos tax e ACC dos arquivos fasta:
+# ACC tax que não tem no fas:
+MAM_12Ssem_seqs <- setdiff(MAM_12S_nd$V1, DB_2024.3_12S_seqs$ACCESSION) # empty
+# ACC fas que não tem no tax:
+MAM_12Ssem_tax <- setdiff(DB_2024.3_12S_seqs$ACCESSION, MAM_12S_nd$V1) # empty
+
+# 4.10. Gerar e salvar arquivo fasta a partir da tabela de sequências:
+library(scifer)
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+df_to_fasta(DB_2024.3_12S_seqs$ACCESSION, DB_2024.3_12S_seqs$sequence, file_name = "MAM_12S.fasta")
+
+
+
+## D) 16S
+
+## 4.2. Separar 16S
+DB_2024.3_16S <- subset(DB_2024.3, Gene =="RNA16S")
+nrow(DB_2024.3_16S)
+# 599
+
+## 4.3. GENBANK
+# 4.3.1. Separar GB-IDs:
+DB_2024.3_16S_GB <- subset(DB_2024.3_16S, Seq.source =="GB")
+nrow(DB_2024.3_16S_GB)
+# 594
+
+# 4.3.2. Dividir listas de ACC em grupos de 80 (máximo que dá pra baixar por vez):
+DB_2024.3_16S_GB_split <- split(DB_2024.3_16S_GB$ACCESSION, ceiling(seq_along(DB_2024.3_16S_GB$ACCESSION)/80))
+# 8 vezes
+
+# 4.3.3. Baixar sequências:
+library(traits)
+DB_2024.3_16S_GB_seqs1 <- ncbi_byid (DB_2024.3_16S_GB_split[[1]])
+DB_2024.3_16S_GB_seqs2 <- ncbi_byid (DB_2024.3_16S_GB_split[[2]])
+DB_2024.3_16S_GB_seqs3 <- ncbi_byid (DB_2024.3_16S_GB_split[[3]])
+DB_2024.3_16S_GB_seqs4 <- ncbi_byid (DB_2024.3_16S_GB_split[[4]])
+DB_2024.3_16S_GB_seqs5 <- ncbi_byid (DB_2024.3_16S_GB_split[[5]])
+DB_2024.3_16S_GB_seqs6 <- ncbi_byid (DB_2024.3_16S_GB_split[[6]])
+DB_2024.3_16S_GB_seqs7 <- ncbi_byid (DB_2024.3_16S_GB_split[[7]])
+DB_2024.3_16S_GB_seqs8 <- ncbi_byid (DB_2024.3_16S_GB_split[[8]])
+
+# 4.3.4. Juntar sequencias baixadas:
+DB_2024.3_16S_GB_seqs_list <- list(
+DB_2024.3_16S_GB_seqs1,
+DB_2024.3_16S_GB_seqs2, 
+DB_2024.3_16S_GB_seqs3, 
+DB_2024.3_16S_GB_seqs4,
+DB_2024.3_16S_GB_seqs5,
+DB_2024.3_16S_GB_seqs6,
+DB_2024.3_16S_GB_seqs7,
+DB_2024.3_16S_GB_seqs8
+)
+
+DB_2024.3_16S_GB_seqs <- Reduce(function(x, y) merge(x, y, all=TRUE), DB_2024.3_16S_GB_seqs_list)
+nrow(DB_2024.3_16S_GB_seqs)
+# 494
+
+# 4.3.5. remover ACC sem sequências:
+DB_2024.3_16S_GB_seqs_na.omit <- DB_2024.3_16S_GB_seqs[!(is.na(DB_2024.3_16S_GB_seqs$sequence)), ]
+nrow(DB_2024.3_16S_GB_seqs_na.omit)
+# 494
+
+# 4.3.6. Ordenar tabelas de sequencias por ACC:
+library(plyr)
+DB_2024.3_16S_GB_seqs_na.omit <- arrange(DB_2024.3_16S_GB_seqs_na.omit,acc_no)
+
+# 4.3.7. Remover seqs duplicadas:
+library(dplyr)
+DB_2024.3_16S_GB_seqs_nd <- DB_2024.3_16S_GB_seqs_na.omit %>% group_by(acc_no) %>% filter(row_number()<=1)
+nrow(DB_2024.3_16S_GB_seqs_nd)
+# 491
+
+
+# 4.4. Baixar sequências do BOLD
+
+# 4.4.1. Separar BOLD-IDs:
+DB_2024.3_16S_BOLD <- subset(DB_2024.3_16S, Seq.source =="BOLD")
+nrow(DB_2024.3_16S_BOLD)
+# 5
+
+# 4.7.5. Baixar sequências:
+library(bold)
+DB_2024.3_16S_BOLD_seqs <- bold_seq (id=DB_2024.3_16S_BOLD$ACCESSION)
+nrow(DB_2024.3_16S_BOLD_seqs)
+# 10
+
+# 4.7.7. Separar seqs 16S:
+DB_2024.3_16S_BOLD_seqs <- subset(DB_2024.3_16S_BOLD_seqs, marker =="16S")
+nrow(DB_2024.3_16S_BOLD_seqs)
+# 5
+
+
+## 4.8. Juntar sequências do GENBANK e do BOLD
+
+# 4.8.1. Criar tabela com GB-seqs:
+colnames(DB_2024.3_16S_GB_seqs_nd)
+# [1] "taxon"           
+# [2] "taxonomy"        
+# [3] "gene_desc"       
+# [4] "organelle"       
+# [5] "gi_no"           
+# [6] "acc_no"          
+# [7] "keyword"         
+# [8] "specimen_voucher"
+# [9] "lat_lon"         
+#[10] "country"         
+#[11] "paper_title"     
+#[12] "journal"         
+#[13] "first_author"    
+#[14] "uploaded_date"   
+#[15] "length"          
+#[16] "sequence"
+DB_2024.3_GB_16S_seqs <- data.frame(DB_2024.3_16S_GB_seqs_nd$acc_no, DB_2024.3_16S_GB_seqs_nd$sequence)
+colnames(DB_2024.3_GB_16S_seqs) <- c("ACCESSION","sequence")
+nrow(DB_2024.3_GB_16S_seqs)
+# 491
+
+# 4.8.2. Criar tabela com BOLD-seqs:
+colnames(DB_2024.3_16S_BOLD_seqs)
+#[1] "processid"      "identification"
+#[3] "marker"         "accession"     
+#[5] "sequence"
+DB_2024.3_BOLD_16S_seqs <- data.frame(DB_2024.3_16S_BOLD_seqs$processid, DB_2024.3_16S_BOLD_seqs$sequence)
+colnames(DB_2024.3_BOLD_16S_seqs) <- c("ACCESSION","sequence")
+nrow(DB_2024.3_BOLD_16S_seqs)
+# 5
+
+# 4.8.3. juntar tabelas
+DB_2024.3_16S_seqs <- rbind(DB_2024.3_GB_16S_seqs, DB_2024.3_BOLD_16S_seqs)
+nrow(DB_2024.3_16S_seqs)
+# 496
+
+
+## 4.9. Comparar ACC dos arquivos tax e ACC dos arquivos fasta:
+# ACC tax que não tem no fas:
+MAM_16Ssem_seqs <- setdiff(MAM_16S_nd$V1, DB_2024.3_16S_seqs$ACCESSION) # empty
+# ACC fas que não tem no tax:
+MAM_16Ssem_tax <- setdiff(DB_2024.3_16S_seqs$ACCESSION, MAM_16S_nd$V1) # empty
+
+# 4.10. Gerar e salvar arquivo fasta a partir da tabela de sequências:
+library(scifer)
+setwd("~/Metabarcodes/Análises/Database/Downloaded_seqs/27-05-24")
+df_to_fasta(DB_2024.3_16S_seqs$ACCESSION, DB_2024.3_16S_seqs$sequence, file_name = "MAM_16S.fasta")
+
+
+
+
+
+##### 5. CORTAR GENOMAS E JUNTAR COM OS GENES INDIVIDUAIS
+
+## 5.1. Cortar genomas (usando Mega-X):
+# A) COI: 
+# ALL_CLASS_genome.fasta > cortar de 5.000 a 9.500 pb > ALL_CLASS_genome_5000-9500.fasta
+# B) 12S: 
+# ALL_CLASS_genome.fasta > cortar de 0 a 2.000 pb > ALL_CLASS_genome_0-2000.fasta
+# C) 16S: 
+# ALL_CLASS_genome.fasta > cortar de 1.550 a 3.600 pb > ALL_CLASS_genome_1550-3600.fasta
+
+
+## 5.2. juntar fastas (gene + genoma cortado)
+cd DB2024.3
+# A) COI + genoma_5000-9500
+cat MAM_COI.fasta ALL_CLASS_genome_5000-9500.fasta | seqkit rmdup > ALL_CLASS_COIgenome.fasta
+# B) 12S + genoma_0-2000
+cat MAM_12S.fasta ALL_CLASS_genome_0-2000.fasta | seqkit rmdup > ALL_CLASS_12Sgenome.fasta
+# C) 16S + genoma_1550-3600
+cat MAM_16S.fasta ALL_CLASS_genome_1550-3600.fasta | seqkit rmdup > ALL_CLASS_16Sgenome.fasta
+
+## 5.5. juntar arquivos PIMBA-tax
+cd DB2024.3
+# A) COI + genoma
+cat MAM_COI_tax.txt ALL_CLASS_genome_tax.txt | sort | uniq > ALL_CLASS_COIgenome_tax.txt
+# B) 12S + genoma
+cat MAM_12S_tax.txt ALL_CLASS_genome_tax.txt | sort | uniq  > ALL_CLASS_12Sgenome_tax.txt
+# C) 16S + genoma
+cat MAM_16S_tax.txt ALL_CLASS_genome_tax.txt | sort | uniq  > ALL_CLASS_16Sgenome_tax.txt
+# D) all (genoma inteiro + COI + 12S + 16S)
+cat genome/ALL_CLASS_genome_tax.txt genome/MAM_12S_tax.txt genome/MAM_16S_tax.txt genome/MAM_COI_tax.txt | sort | uniq > BRAZ/all/ALL_CLASS_all_tax.txt
+
+
+
+
+
+### 6. CRIAR BANCO DE DADOS PARA PIMBA (ARQUIVOS FASTA E TAX)
+
+## 6.1. Corrigir arquivos tax:
+# 6.1.1. Tirar aspas dos arquivos tax:
+cd DB2024.3
+sed -i 's/"//g' *tax.txt 
+# 6.1.2. Adicionar Reino Metazoa aos arquivos tax:
+sed -i 's/Chordata/Metazoa;Chordata/g' *tax.txt
+sed -i 's/Arthropoda/Metazoa;Arthropoda/g' *tax.txt
+
+## 6.2. Corrigir arquivos fasta:
+# 6.2.1. retirar "-" das sequências dos arquivos fasta:
+cd DB2024.3
+sed -i 's/--//g' *.fasta
+sed -i 's/--//g' *.fasta
+sed -i 's/--//g' *.fasta
+sed -i 's/-[A-Z]//g' *.fasta
+sed -i 's/[A-Z]-//g' *.fasta
+sed -i 's/^-//g' *.fasta
+
+## 6.3. Separar marcadores:
+cd DB2024.3
+mkdir BRAZ
+# 6.3.1. COI:
+mkdir BRAZ/COI
+mv *COI* BRAZ/COI
+# 6.3.2. 12S:
+mkdir BRAZ/12S
+mv *12S* BRAZ/12S
+# 6.3.3. 16S:
+mkdir BRAZ/16S
+mv *16S* BRAZ/16S
+
+## 6.4. Separar sequências por bioma:
+
+# A) Amazônia
+cd DB2024.3/
+mkdir AMAZ
+mkdir AMAZ/COI
+mkdir AMAZ/12S
+mkdir AMAZ/16S
+# 6.4.1. Separar ACC da Amazônia
+awk -F, '$11 >= 1 {print $1}' DB_2024.3.csv | sort | uniq > AMAZ_ID
+# 6.4.2. Selecionar sequências da Amazônia
+seqtk subseq BRAZ/COI/ALL_CLASS_COIgenome.fasta AMAZ_ID | seqkit rmdup > AMAZ/COI/MAM_AMAZ_COIgenome.fasta 
+seqtk subseq BRAZ/12S/ALL_CLASS_12Sgenome.fasta AMAZ_ID | seqkit rmdup > AMAZ/12S/MAM_AMAZ_12Sgenome.fasta 
+seqtk subseq BRAZ/16S/ALL_CLASS_16Sgenome.fasta AMAZ_ID | seqkit rmdup > AMAZ/16S/MAM_AMAZ_16Sgenome.fasta 
+
+# B) Cerrado
+cd DB2024.3/
+mkdir CERR
+mkdir CERR/COI
+mkdir CERR/12S
+mkdir CERR/16S
+# 6.4.1. Separar ACC do Cerrado
+awk -F, '$12 >= 1 {print $1}' DB_2024.3.csv | sort | uniq > CERR_ID
+# 6.4.2. Selecionar sequências do Cerrado
+seqtk subseq BRAZ/COI/ALL_CLASS_COIgenome.fasta CERR_ID | seqkit rmdup > CERR/COI/MAM_CERR_COIgenome.fasta 
+seqtk subseq BRAZ/12S/ALL_CLASS_12Sgenome.fasta CERR_ID | seqkit rmdup > CERR/12S/MAM_CERR_12Sgenome.fasta 
+seqtk subseq BRAZ/16S/ALL_CLASS_16Sgenome.fasta CERR_ID | seqkit rmdup > CERR/16S/MAM_CERR_16Sgenome.fasta 
+
+# C) Mata Atlântica
+cd DB2024.3/
+mkdir MATL
+mkdir MATL/COI
+mkdir MATL/12S
+mkdir MATL/16S
+# 6.4.1. Separar ACC da Mata Atlântica
+awk -F, '$13 >= 1 {print $1}' DB_2024.3.csv | sort | uniq > MATL_ID
+# 6.4.2. Selecionar sequências da Mata Atlântica
+seqtk subseq BRAZ/COI/ALL_CLASS_COIgenome.fasta MATL_ID | seqkit rmdup > MATL/COI/MAM_MATL_COIgenome.fasta 
+seqtk subseq BRAZ/12S/ALL_CLASS_12Sgenome.fasta MATL_ID | seqkit rmdup > MATL/12S/MAM_MATL_12Sgenome.fasta 
+seqtk subseq BRAZ/16S/ALL_CLASS_16Sgenome.fasta MATL_ID | seqkit rmdup > MATL/16S/MAM_MATL_16Sgenome.fasta 
+
+# D) Brazil - all
+cd DB2024.3/
+mkdir BRAZ/all
+cat genome/ALL_CLASS_genome.fasta genome/MAM_12S.fasta genome/MAM_16S.fasta genome/MAM_COI.fasta | seqkit rmdup > BRAZ/all/ALL_CLASS_all.fasta
+
+
+
+## 6.5. Criar bancos de dados (db) para blast local com makeblastdb:
+
+# 6.5.1. BRAZ
+cd DB2024.3/BRAZ
+makeblastdb -in COI/ALL_CLASS_COIgenome.fasta -dbtype nucl -parse_seqids -title ALL_CLASS_COI
+makeblastdb -in 12S/ALL_CLASS_12Sgenome.fasta -dbtype nucl -parse_seqids -title ALL_CLASS_12S
+makeblastdb -in 16S/ALL_CLASS_16Sgenome.fasta -dbtype nucl -parse_seqids -title ALL_CLASS_16S
+# 6.5.2. AMAZ
+cd DB2024.3/AMAZ
+makeblastdb -in COI/MAM_AMAZ_COIgenome.fasta -dbtype nucl -parse_seqids -title MAM_AMAZ_COI
+makeblastdb -in 12S/MAM_AMAZ_12Sgenome.fasta -dbtype nucl -parse_seqids -title MAM_AMAZ_12S
+makeblastdb -in 16S/MAM_AMAZ_16Sgenome.fasta -dbtype nucl -parse_seqids -title MAM_AMAZ_16S
+# 6.5.3. CERR
+cd DB2024.3/CERR
+makeblastdb -in COI/MAM_CERR_COIgenome.fasta -dbtype nucl -parse_seqids -title MAM_CERR_COI
+makeblastdb -in 12S/MAM_CERR_12Sgenome.fasta -dbtype nucl -parse_seqids -title MAM_CERR_12S
+makeblastdb -in 16S/MAM_CERR_16Sgenome.fasta -dbtype nucl -parse_seqids -title MAM_CERR_16S
+# 6.5.4. MATL
+cd DB2024.3/MATL
+makeblastdb -in COI/MAM_MATL_COIgenome.fasta -dbtype nucl -parse_seqids -title MAM_MATL_COI
+makeblastdb -in 12S/MAM_MATL_12Sgenome.fasta -dbtype nucl -parse_seqids -title MAM_MATL_12S
+makeblastdb -in 16S/MAM_MATL_16Sgenome.fasta -dbtype nucl -parse_seqids -title MAM_MATL_16S
+
+# 6.5.5. BRAZ - ALL_CLASS - all genes
+cd DB2024.3/BRAZ/all
+makeblastdb -in ALL_CLASS_all.fasta -dbtype nucl -parse_seqids -title ALL_CLASS_all
+
+
+## 6.6. Definir permissão para ler, escrever/gravar e executar:
+chmod 755 DB2024.3/**/**/*
+
+
+
+
+#### 7. IDENTIFICAR SEQUENCIAS COM O PIMBA
+
+## 7.3. Preparar dados com pimba_prepare:
+# 7.3.1. Baixar pimba_prepare.sh:
+wget https://raw.githubusercontent.com/reinator/pimba/main/pimba_prepare.sh
+# 7.3.2. Autorizar execução do script:
+chmod +x pimba_prepare.sh
+# 7.3.3. rodar pimba_prepare:
+#./pimba_prepare.sh illumina <rawdata_dir> <output_reads> <num_threads> <adapters.txt> <min_length> <min_phred>
+# os arquivos pimba_prepare.sh e adaptersNN.txt devem estar na pasta onde será rodado o script!
+screen
+cd PIMBA
+./pimba_prepare.sh illumina /home/barbara/FASTQ/iDNA_BR prepared_iDNA_BR_050624 100 adaptersNN.txt 90 20
+
+
+
+## 7.4. Rodar dados no PIMBA com pimba_run.sh:
+#./pimba_run.sh -i <input_reads> -o <output_dir> -w <approach> -s <otu_similarity> -a <assign_similarity> -c <coverage> -l <otu_length> -h <hits_per_subject> -g <marker_gene> -t <num_threads> -e <E-value> -d <databases.txt> -x <run_lulu>
+
+# 7.4.1. BRAZ
+# A) COI
+# <marker_gene> = ALL_CLASS_COI -s <otu_similarity> = 0.8 -a <assign_similarity> = 0.7 -c <coverage> = 0.7 -h <hits_per_subject> = 1 
+screen
+cd PIMBA
+./pimba_run.sh -i prepared_iDNA_BR_050624.fasta -o PIMBA_iDNA_BR_ALL_CLASS_COI_050624 -w otu -s 0.8 -a 0.7 -c 0.7 -l 0 -h 1 -g /home/barbara/DB2024.3/BRAZ/COI/ -t 100 -e 0.00001 -d databases.txt
+
+# B) 12S
+# <marker_gene> = ALL_CLASS_12S -s <otu_similarity> = 0.8 -a <assign_similarity> = 0.7 -c <coverage> = 0.7 -h <hits_per_subject> = 1 
+screen
+cd PIMBA
+./pimba_run.sh -i prepared_iDNA_BR_050624.fasta -o PIMBA_iDNA_BR_ALL_CLASS_12S_050624 -w otu -s 0.8 -a 0.7 -c 0.7 -l 0 -h 1 -g /home/barbara/DB2024.3/BRAZ/12S/ -t 100 -e 0.00001 -d databases.txt
+
+# B) 16S
+# <marker_gene> = ALL_CLASS_16S -s <otu_similarity> = 0.8 -a <assign_similarity> = 0.7 -c <coverage> = 0.7 -h <hits_per_subject> = 1 
+screen
+cd PIMBA
+./pimba_run.sh -i prepared_iDNA_BR_050624.fasta -o PIMBA_iDNA_BR_ALL_CLASS_16S_050624 -w otu -s 0.8 -a 0.7 -c 0.7 -l 0 -h 1 -g /home/barbara/DB2024.3/BRAZ/16S/ -t 100 -e 0.00001 -d databases.txt
+
+
+
+
+### blastn das sequencias sanger: ConPos-SANGER.fasta
+
+# comprimento das sequencias sanger:
+seqkit fx2tab -l -n -H SANGER/ConPos-SANGER.fasta | cat > SANGER/ConPos-SANGER_length.txt
+
+# 1. blastn -query <FASTA_file>=ConPos-SANGER.fasta -db <database_file>=ALL_CLASS_all.fasta
+blastn -query /home/barbara/SANGER/ConPos-SANGER.fasta -db /home/barbara/DB2024.3/BRAZ/all/ALL_CLASS_all.fasta -outfmt "6 qseqid sseqid pident" | sort -t $'\t' -k1,1 -k3,3r | awk '!a[$1]++' | cat > /home/barbara/SANGER/ConPos-SANGER_match_list.txt
+# limpar sseqids:
+sed 's/gb|//g' SANGER/ConPos-SANGER_match_list.txt | sed 's/emb|//g' | sed 's/dbj|//g' | sed 's/|//g' | cat > SANGER/ConPos-SANGER_match_list2.txt
+
+# 2. blastn -query <FASTA_file>=ConPos-SANGER.fasta -db nt -remote (online)
+blastn -query /home/barbara/SANGER/ConPos-SANGER.fasta -db nt -remote -outfmt "6 qseqid sseqid pident" | sort -t $'\t' -k1,1 -k3,3r | awk '!a[$1]++' | cat > /home/barbara/SANGER/ConPos-SANGER_match_list_remote.txt
+# limpar sseqids:
+sed 's/gi|[0-9]\+|//g' SANGER/ConPos-SANGER_match_list_remote.txt |  sed 's/gb|//g' | sed 's/ref|//g' | sed 's/|//g' | cat > SANGER/ConPos-SANGER_match_list_remote2.txt
+
+
+
+## adicionar taxonomia aos resultados do blastn:
+
+#  abrir resultados do blastn (txt) no R:
+setwd("~/Metabarcodes/Análises/Controles positivos/SANGER/FASTA") 
+#Blastn_output <- read.table("ConPos-SANGER_match_list2.txt", sep = "\t")
+Blastn_output <- read.table("ConPos-SANGER_match_list_remote2.txt", sep = "\t")
+colnames(Blastn_output)<-c("qseqid", "sseqid", "pident")
+nrow(Blastn_output)
+#[1] 27
+
+# obter taxids:
+library(taxonomizr)
+setwd("~/Metabarcodes/Análises/Database/taxonomzr")
+taxid <- accessionToTaxa(Blastn_output$sseqid,"accessionTaxa.sql")
+
+# obter taxonomia do gb:
+taxonomy <- getTaxonomy(taxid, 'accessionTaxa.sql')
+taxid_taxonomy <- data.frame(taxid, taxonomy)
+
+# juntar taxonomia com ;
+library(tidyr)
+Blastn_output_taxonomy_gb <- cbind(Blastn_output, unite(taxid_taxonomy, col = "taxonomy", c("phylum", "class", "order", "family", "genus", "species"), sep = ";"))
+
+
+# obter taxonomia do BOLD:
+# alterar nome da coluna (de sseqid para ID):
+colnames(Blastn_output)[2] = "ID"
+# baixar taxonomia:
+library(bold)
+Blastn_output_taxonomy_bold <- bold_identify_taxonomy(Blastn_output)
+colnames(Blastn_output_taxonomy_bold)
+# [1] "qseqid"          "ID"             
+# [3] "pident"          "phylum_taxID"   
+# [5] "phylum_name"     "class_taxID"    
+# [7] "class_name"      "order_taxID"    
+# [9] "order_name"      "family_taxID"   
+#[11] "family_name"     "subfamily_taxID"
+#[13] "subfamily_name"  "genus_taxID"    
+#[15] "genus_name"      "species_taxID"  
+#[17] "species_name"
+
+# juntar taxonomia com ;
+library(tidyr)
+Blastn_output_taxonomy_bold2 <- unite(Blastn_output_taxonomy_bold, col = "taxonomy", c("phylum_name", "class_name", "order_name", "family_name", "genus_name", "species_name"), sep = ";")
+
+## Juntar taxonomia Genbank e BOLD:
+
+# Criar tabelas:
+Blastn_output_taxonomy_bold3 <- data.frame(Blastn_output_taxonomy_bold2$qseqid, Blastn_output_taxonomy_bold2$ID, Blastn_output_taxonomy_bold2$pident, Blastn_output_taxonomy_bold2$taxonomy)
+colnames(Blastn_output_taxonomy_bold3)<-c("qseqid", "sseqid", "pident", "taxonomy")
+Blastn_output_taxonomy_bold3 <- Blastn_output_taxonomy_bold3[!Blastn_output_taxonomy_bold3$taxonomy == "NA;NA;NA;NA;NA;NA",]
+
+Blastn_output_taxonomy_gb2 <- data.frame(Blastn_output_taxonomy_gb$qseqid, Blastn_output_taxonomy_gb$sseqid, Blastn_output_taxonomy_gb$pident, Blastn_output_taxonomy_gb$taxonomy)
+colnames(Blastn_output_taxonomy_gb2)<-c("qseqid", "sseqid", "pident", "taxonomy")
+Blastn_output_taxonomy_gb2 <- Blastn_output_taxonomy_gb2[!Blastn_output_taxonomy_gb2$taxonomy == "NA;NA;NA;NA;NA;NA",]
+
+# Juntar tabelas:
+Blastn_output_taxonomy <- rbind(Blastn_output_taxonomy_bold3, Blastn_output_taxonomy_gb2)
+
+# salvar resultados:
+setwd("~/Metabarcodes/Análises/Controles positivos/SANGER/FASTA") 
+#write.csv(Blastn_output_taxonomy, quote = FALSE, "ConPos-SANGER_match_list_taxonomized.csv")
+write.csv(Blastn_output_taxonomy_gb2, quote = FALSE, "ConPos-SANGER_match_list_remote_taxonomized.csv")
+
+
+
+
+
+
+
+
+
+
+
+
+
+##### 8. CALCULAR PROBABILIDADES DAS IDENTIFICAÇÕES TAXONÔMICAS COM PROTAX
+
+### 8.1. Converter bancos de dados PIMBA para formato PROTAX
+
+## 8.1.1. copiar arquivos fasta e tax
+cp DB2024.3/BRAZ/**/*fasta PROTAX/
+cp DB2024.3/BRAZ/**/*tax.txt PROTAX/
+
+## 8.1.2. converter arquivos tax PIMBA em PROTAX
+cd PROTAX/
+# substituir ";" por ","
+sed -i 's/;/,/g' *.txt
+# substituir "tab" por ","
+sed -i 's/\t/,/g' *.txt
+# substituir " " por "_"
+sed -i 's/ /_/g' *.txt
+
+# 8.1.3. Juntar arquivos tax:
+cat *tax.txt | sort | uniq > ALL_CLASS_tax.txt
+
+# 8.1.4. Consertar nomes de espécies faltantes:
+# substituir "NA_" por "NA_sp."
+sed -i 's/NA_/NA_sp./g' ALL_CLASS_tax.txt
+
+# 8.1.5. Remover coluna com ACC do arquivo tax e excluir linhas repetidas:
+cut -d ',' -f 1 --complement ALL_CLASS_tax.txt | sort | uniq > ALL_CLASS_tax_uniq.txt
+
+# 8.1.5. Separar nomes de gêneros e espécies:
+# substituir "_" por "," 
+sed -i 's/_/,/g' ALL_CLASS_tax_uniq.txt
+# Remover coluna repetida de gênero
+cut -d ',' -f 7 --complement ALL_CLASS_tax_uniq.txt > Metazoa.final_protax_taxonomy.txt
+# substituir "," por "tab" 
+sed -i 's/,/\t/g' Metazoa.final_protax_taxonomy.txt
+
+
+## 8.1.7. converter arquivos fasta PIMBA em PROTAX (no R)
+
+# 8.1.7.1. Abrir arquivo tax no R:
+setwd("~/Metabarcodes/Análises/Database/DB 2024.3")
+ALL_CLASS_tax <- read.table("ALL_CLASS_tax.txt", sep=",")
+nrow(ALL_CLASS_tax)
+# 7483
+
+# 8.1.7.2. Mudar nomes das colunas do arquivo tax:
+colnames(ALL_CLASS_tax)<-c("ID","kingdom","phylum","class","order","family","genus","species") 
+
+# 8.1.7.3. Abrir arquivos fasta-PIMBA no R:
+library(deepredeff)
+setwd("~/Metabarcodes/Análises/Database/DB 2024.3")
+ALL_CLASS_COIgenome_PIMBA <- fasta_to_df("ALL_CLASS_COIgenome.fasta")
+nrow(ALL_CLASS_COIgenome_PIMBA)
+# 6026
+ALL_CLASS_12Sgenome_PIMBA <- fasta_to_df("ALL_CLASS_12Sgenome.fasta")
+nrow(ALL_CLASS_12Sgenome_PIMBA)
+# 5136
+ALL_CLASS_16Sgenome_PIMBA <- fasta_to_df("ALL_CLASS_16Sgenome.fasta")
+nrow(ALL_CLASS_16Sgenome_PIMBA)
+# 4779
+ALL_CLASS_genome_PIMBA <- fasta_to_df("ALL_CLASS_genome.fasta")
+nrow(ALL_CLASS_genome_PIMBA)
+# 4779
+MAM_BRAZ_COI_PIMBA <- fasta_to_df("MAM_COI.fasta")
+nrow(MAM_BRAZ_COI_PIMBA)
+# 1743
+MAM_BRAZ_12S_PIMBA <- fasta_to_df("MAM_12S.fasta")
+nrow(MAM_BRAZ_12S_PIMBA)
+# 853
+MAM_BRAZ_16S_PIMBA <- fasta_to_df("MAM_16S.fasta")
+nrow(MAM_BRAZ_16S_PIMBA)
+# 496
+
+# 8.1.7.4. Juntar marcadores (genoma + COI + 12S + 16S):
+ALL_CLASS_all_list <- list(
+ALL_CLASS_genome_PIMBA,
+MAM_BRAZ_COI_PIMBA, 
+MAM_BRAZ_12S_PIMBA, 
+MAM_BRAZ_16S_PIMBA
+)
+
+ALL_CLASS_all_PIMBA <- Reduce(function(x, y) merge(x, y, all=TRUE), ALL_CLASS_all_list)
+nrow(ALL_CLASS_all_PIMBA)
+# 7359
+
+# 8.1.7.5. Mudar nomes das primeiras colunas dos arquivos fasta:
+colnames(ALL_CLASS_COIgenome_PIMBA)[1] ="ID"
+colnames(ALL_CLASS_12Sgenome_PIMBA)[1] ="ID"
+colnames(ALL_CLASS_16Sgenome_PIMBA)[1] ="ID"
+colnames(ALL_CLASS_all_PIMBA)[1] ="ID"
+
+# 8.1.7.6. Juntar nome das espécies às tabelas de sequencias:
+ALL_CLASS_COIgenome_PIMBA_seqtax <- merge(ALL_CLASS_COIgenome_PIMBA,ALL_CLASS_tax,by="ID")
+nrow(ALL_CLASS_COIgenome_PIMBA_seqtax)
+# 6026
+ALL_CLASS_12Sgenome_PIMBA_seqtax <- merge(ALL_CLASS_12Sgenome_PIMBA,ALL_CLASS_tax,by="ID")
+nrow(ALL_CLASS_12Sgenome_PIMBA_seqtax)
+# 5136
+ALL_CLASS_16Sgenome_PIMBA_seqtax <- merge(ALL_CLASS_16Sgenome_PIMBA,ALL_CLASS_tax,by="ID")
+nrow(ALL_CLASS_16Sgenome_PIMBA_seqtax)
+# 4779
+ALL_CLASS_all_PIMBA_seqtax <- merge(ALL_CLASS_all_PIMBA,ALL_CLASS_tax,by="ID")
+nrow(ALL_CLASS_all_PIMBA_seqtax)
+# 7359
+
+# 8.1.7.6. Juntar nomes das espécies ao ID com _:
+library(tidyr)
+ALL_CLASS_COIgenome_PROTAX_seq <- unite(ALL_CLASS_COIgenome_PIMBA_seqtax, col = "header", c("species","ID"), sep = "_")
+ALL_CLASS_12Sgenome_PROTAX_seq <- unite(ALL_CLASS_12Sgenome_PIMBA_seqtax, col = "header", c("species","ID"), sep = "_")
+ALL_CLASS_16Sgenome_PROTAX_seq <- unite(ALL_CLASS_16Sgenome_PIMBA_seqtax, col = "header", c("species","ID"), sep = "_")
+ALL_CLASS_all_PROTAX_seq <- unite(ALL_CLASS_all_PIMBA_seqtax, col = "header", c("species","ID"), sep = "_")
+
+# 8.1.7.7. Gerar e salvar arquivos fastas a partir das tabelas de sequências:
+library(scifer)
+setwd("~/Metabarcodes/Análises/Database/DB 2024.3")
+df_to_fasta(ALL_CLASS_COIgenome_PROTAX_seq$header, ALL_CLASS_COIgenome_PROTAX_seq$sequence, file_name = "ALL_CLASS_COIgenome_PROTAX_seq.fasta")
+df_to_fasta(ALL_CLASS_12Sgenome_PROTAX_seq$header, ALL_CLASS_12Sgenome_PROTAX_seq$sequence, file_name = "ALL_CLASS_12Sgenome_PROTAX_seq.fasta")
+df_to_fasta(ALL_CLASS_16Sgenome_PROTAX_seq$header, ALL_CLASS_16Sgenome_PROTAX_seq$sequence, file_name = "ALL_CLASS_16Sgenome_PROTAX_seq.fasta")
+df_to_fasta(ALL_CLASS_all_PROTAX_seq$header, ALL_CLASS_all_PROTAX_seq$sequence, file_name = "ALL_CLASS_all_PROTAX_seq.fasta")
+
+# 8.1.7.8. Renomear arquivos fasta
+cd PROTAX
+mv ALL_CLASS_COIgenome_PROTAX_seq.fasta Metazoa.final_database.COI.fa
+mv ALL_CLASS_12Sgenome_PROTAX_seq.fasta Metazoa.final_database.12S.fa
+mv ALL_CLASS_16Sgenome_PROTAX_seq.fasta Metazoa.final_database.16S.fa
+mv ALL_CLASS_all_PROTAX_seq.fasta Metazoa.final_database.all.fa
+
+
+
+
+
+
+### 8.2. Preparar arquivos PROTAX
+
+# 8.2.1. alterar permissões:
+chmod +x PROTAX/*
+chmod +x PROTAX/protaxscripts/*
+
+# 8.2.2. retirar "-" das sequências do arquivo fasta:
+cd PROTAX/
+sed -i 's/--//g' Metazoa.final_database.*.fa
+sed -i 's/--//g' Metazoa.final_database.*.fa
+sed -i 's/--//g' Metazoa.final_database.*.fa
+sed -i 's/-[A-Z]//g' Metazoa.final_database.*.fa
+sed -i 's/[A-Z]-//g' Metazoa.final_database.*.fa
+sed -i 's/^-//g' Metazoa.final_database.*.fa
+
+# 8.2.3. criar subpastas:
+cd PROTAX
+mkdir COI
+mv Metazoa.final_database.COI.fa COI/
+cp Metazoa.final_protax_taxonomy.txt COI/
+mkdir 12S
+mv Metazoa.final_database.12S.fa 12S/
+cp Metazoa.final_protax_taxonomy.txt 12S/
+mkdir 16S
+mv Metazoa.final_database.16S.fa 16S/
+cp Metazoa.final_protax_taxonomy.txt 16S/
+mkdir all
+mv Metazoa.final_database.all.fa all/
+cp Metazoa.final_protax_taxonomy.txt all/
+
+
+
+
+
+
+
+
+
+### 8.3. Treinar PROTAX
+
+## A) COI
+
+# 8.3.1. Rodar train_protax
+screen
+cd PROTAX/COI
+~/PROTAX/train_protax.sh Metazoa.final_protax_taxonomy.txt ~/PROTAX
+
+#End of protax_training.R
+
+#End of train_protax.sh
+
+#This took a total of 728.85 minutes (12.15 hours).
+
+#Please select an mcmc iteration for each of the four levels for each marker (labelled ./model_COI/mcmc1a-d, ./model_COI/mcmc2a-d etc) 
+#based on the training plots (labelled ./model_COI/training_plot_COI_level1a_MCMC.pdf etc).
+# Chains should be well-mixed and acceptance ratio as close to 0.44 as possible. 
+#Relabel the selected model as ./model_COI/mcmc1 ./model_COI/mcmc2 etc.
+
+#Next step: Check model training with check_protax_training.sh
+#Then analyse real data. Either:
+#  - Process raw data with read_preprocessing.sh (experimental design must follow that described in the paper) and classify the output with protax_classify.sh
+#  - Classify OTUs with protax_classify_otus.sh
+
+#Have a nice day :-)
+
+# 8.3.3. abrir pdfs e escolher melhor iteração para cada nível
+# escolhidos: nivel 1 = a, nivel 2 = d, nivel 3 = b, nivel 4 = d
+
+# 8.3.4. renomear iterações escolhidas
+mv PROTAX/COI/model_COI/mcmc1a PROTAX/COI/model_COI/mcmc1 
+mv PROTAX/COI/model_COI/mcmc2d PROTAX/COI/model_COI/mcmc2 
+mv PROTAX/COI/model_COI/mcmc3b PROTAX/COI/model_COI/mcmc3 
+mv PROTAX/COI/model_COI/mcmc4d PROTAX/COI/model_COI/mcmc4 
+
+# 8.3.5. Check model training with check_protax_training.sh
+cd PROTAX/COI
+~/PROTAX/check_protax_training.sh model_COI Metazoa COI ~/PROTAX
+
+#End of training_plots.R
+
+#...training_plots.R finished
+
+#Model check took 0.05 hours
+
+#Plots can be found in model_COI/checktrain/unweighted_Metazoa_COI_biasaccuracy.pdf
+
+#Next step: analyse real data. Either:
+#  - Process raw data with read_preprocessing.sh (experimental design must follow that described in the manuscript)
+# and classify the output with protax_classify.sh or weighted_protax_classify.sh as appropriate
+#  - Classify OTUs with protax_classify_otus.sh or weighted_protax_classify_otus.sh as appropriate
+
+#Have a nice day :-)
+
+
+
+## B) 12S
+
+# 8.3.1. Rodar train_protax
+screen
+cd PROTAX/12S
+~/PROTAX/train_protax.sh Metazoa.final_protax_taxonomy.txt ~/PROTAX
+
+#End of protax_training.R
+
+#End of train_protax.sh
+
+#This took a total of 326.12 minutes (5.44 hours).
+
+#Please select an mcmc iteration for each of the four levels for each marker (labelled ./model_12S/mcmc1a-d, ./model_12S/mcmc2a-d etc) based on the training plots (labelled ./model_12S/training_plot_12S_level1a_MCMC.pdf etc). Chains should be well-mixed and acceptance ratio as close to 0.44 as possible. Relabel the selected model as ./model_12S/mcmc1 ./model_12S/mcmc2 etc.
+
+#Next step: Check model training with check_protax_training.sh
+#Then analyse real data. Either:
+#  - Process raw data with read_preprocessing.sh (experimental design must follow that described in the paper) and classify the output with protax_classify.sh
+#  - Classify OTUs with protax_classify_otus.sh
+
+#Have a nice day :-)
+
+# 8.3.3. abrir pdfs e escolher melhor iteração para cada nível
+# escolhidos: nivel 1 = b, nivel 2 = c, nivel 3 = c, nivel 4 = d
+
+# 8.3.4. renomear iterações escolhidas
+mv PROTAX/12S/model_12S/mcmc1b PROTAX/12S/model_12S/mcmc1 
+mv PROTAX/12S/model_12S/mcmc2c PROTAX/12S/model_12S/mcmc2 
+mv PROTAX/12S/model_12S/mcmc3c PROTAX/12S/model_12S/mcmc3 
+mv PROTAX/12S/model_12S/mcmc4d PROTAX/12S/model_12S/mcmc4 
+
+# 8.3.5. Check model training with check_protax_training.sh
+cd PROTAX/12S
+~/PROTAX/check_protax_training.sh model_12S Metazoa 12S ~/PROTAX
+
+#End of training_plots.R
+
+#...training_plots.R finished
+
+#Model check took 0.03 hours
+
+#Plots can be found in model_12S/checktrain/unweighted_Metazoa_12S_biasaccuracy.pdf
+
+#Next step: analyse real data. Either:
+#  - Process raw data with read_preprocessing.sh (experimental design must follow that described in the manuscript) and classify the output with protax_classify.sh or weighted_protax_classify.sh as appropriate
+#  - Classify OTUs with protax_classify_otus.sh or weighted_protax_classify_otus.sh as appropriate
+
+#Have a nice day :-)
+
+
+## C) 16S
+
+# 8.3.1. Rodar train_protax
+screen
+cd PROTAX/16S
+~/PROTAX/train_protax.sh Metazoa.final_protax_taxonomy.txt ~/PROTAX
+
+#End of protax_training.R
+
+#End of train_protax.sh
+
+#This took a total of 322.87 minutes (5.38 hours).
+
+#Please select an mcmc iteration for each of the four levels for each marker (labelled ./model_16S/mcmc1a-d, ./model_16S/mcmc2a-d etc) based on the training plots (labelled ./model_16S/training_plot_16S_level1a_MCMC.pdf etc). Chains should be well-mixed and acceptance ratio as close to 0.44 as possible. Relabel the selected model as ./model_16S/mcmc1 ./model_16S/mcmc2 etc.
+
+#Next step: Check model training with check_protax_training.sh
+#Then analyse real data. Either:
+#  - Process raw data with read_preprocessing.sh (experimental design must follow that described in the paper) and classify the output with protax_classify.sh
+#  - Classify OTUs with protax_classify_otus.sh
+
+#Have a nice day :-)
+
+# 8.3.3. abrir pdfs e escolher melhor iteração para cada nível
+# escolhidos: nivel 1 = a, nivel 2 = b, nivel 3 = b, nivel 4 = c
+
+# 8.3.4. renomear iterações escolhidas
+mv PROTAX/16S/model_16S/mcmc1a PROTAX/16S/model_16S/mcmc1 
+mv PROTAX/16S/model_16S/mcmc2b PROTAX/16S/model_16S/mcmc2 
+mv PROTAX/16S/model_16S/mcmc3b PROTAX/16S/model_16S/mcmc3 
+mv PROTAX/16S/model_16S/mcmc4c PROTAX/16S/model_16S/mcmc4 
+
+# 8.3.5. Check model training with check_protax_training.sh
+cd PROTAX/16S
+~/PROTAX/check_protax_training.sh model_16S Metazoa 16S ~/PROTAX
+
+#End of training_plots.R
+
+#...training_plots.R finished
+
+#Model check took 0.03 hours
+
+#Plots can be found in model_16S/checktrain/unweighted_Metazoa_16S_biasaccuracy.pdf
+
+#Next step: analyse real data. Either:
+#  - Process raw data with read_preprocessing.sh (experimental design must follow that described in the manuscript) and classify the output with protax_classify.sh or weighted_protax_classify.sh as appropriate
+#  - Classify OTUs with protax_classify_otus.sh or weighted_protax_classify_otus.sh as appropriate
+
+#Have a nice day :-)
+
+
+
+## D) all
+
+# 8.3.1. Rodar train_protax
+screen
+cd PROTAX/all
+~/PROTAX/train_protax.sh Metazoa.final_protax_taxonomy.txt ~/PROTAX
+
+#End of protax_training.R
+
+#End of train_protax.sh
+
+#This took a total of 19762.57 minutes (329.38 hours). # 13d17h23min
+
+#Please select an mcmc iteration for each of the four levels for each marker (labelled ./model_all/mcmc1a-d, ./model_all/mcmc2a-d etc) based on the training plots (labelled ./model_all/training_plot_all_level1a_MCMC.pdf etc). Chains should be well-mixed and acceptance ratio as close to 0.44 as possible. Relabel the selected model as ./model_all/mcmc1 ./model_all/mcmc2 etc.
+
+#Next step: Check model training with check_protax_training.sh
+#Then analyse real data. Either:
+#  - Process raw data with read_preprocessing.sh (experimental design must follow that described in the paper) and classify the output with protax_classify.sh
+#  - Classify OTUs with protax_classify_otus.sh
+
+#Have a nice day :-)
+
+
+
+# 8.3.3. abrir pdfs e escolher melhor iteração para cada nível
+# escolhidos: nivel 1 = d, nivel 2 = b, nivel 3 = a, nivel 4 = c
+
+# 8.3.4. renomear iterações escolhidas
+mv PROTAX/all/model_all/mcmc1d PROTAX/all/model_all/mcmc1 
+mv PROTAX/all/model_all/mcmc2b PROTAX/all/model_all/mcmc2 
+mv PROTAX/all/model_all/mcmc3a PROTAX/all/model_all/mcmc3 
+mv PROTAX/all/model_all/mcmc4c PROTAX/all/model_all/mcmc4 
+
+# 8.3.5. Check model training with check_protax_training.sh
+screen
+cd PROTAX/all
+~/PROTAX/check_protax_training.sh model_all Metazoa all ~/PROTAX
+
+#End of training_plots.R
+
+#...training_plots.R finished
+
+#Model check took 0.06 hours
+
+#Plots can be found in model_all/checktrain/unweighted_Metazoa_all_biasaccuracy.pdf
+
+#Next step: analyse real data. Either:
+#  - Process raw data with read_preprocessing.sh (experimental design must follow that described in the manuscript) and classify the output with protax_classify.sh or weighted_protax_classify.sh as appropriate
+#  - Classify OTUs with protax_classify_otus.sh or weighted_protax_classify_otus.sh as appropriate
+
+#Have a nice day :-)
+
+
+
+
+
+
+
+
+### 8.2. Classificar sequências (OTUs) com PROTAX
+# bash protax_classify_otus.sh <path to otus fasta> <locus name> <path to protax models from train.protax> <path that contains protaxscrits directory> <name for output directory>
+
+## A) COI
+
+# 8.2.1. rodar protax_classify_otus com COI OTUs:
+screen
+cd PROTAX/COI
+~/PROTAX/protax_classify_otus.sh ~/PIMBA/PIMBA_iDNA_BR_ALL_CLASS_COI_050624/prepared_iDNA_BR_050624_otus.fasta COI ~/PROTAX/COI ~/PROTAX protax_output
+
+
+#protax_classify_otus.sh complete.
+#This took a total of 1.12 minutes.
+
+#Results are in ./protax_output_COI
+#Classification for each OTU at each taxonomic level (species, genus, family, order) in files prepared_iDNA_BR_050624_otus.fasta.level_probs
+#Headers are:
+#        queryID taxID   log(probability)        level   taxon
+#Additionally, the best matching hit (for assigned species/genus where available) found with LAST is appended to prepared_iDNA_BR_050624_otus.fasta.species_probs in prepared_iDNA_BR_050624_otus.fasta.species_probs_sim
+#Headers are:
+#        queryID taxID   log(probability)        level   taxon   bestHit_similarity      bestHit
+
+#Have a nice day :-)
+
+# 8.2.2. rodar protax_classify_otus com all OTUs:
+screen
+cd PROTAX/COI
+~/PROTAX/protax_classify_otus.sh ~/PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus.fasta COI ~/PROTAX/COI ~/PROTAX protax_output_all
+
+#protax_classify_otus.sh complete.
+#This took a total of 1.10 minutes.
+
+#Results are in ./protax_output_all_COI
+#Classification for each OTU at each taxonomic level (species, genus, family, order) in files prepared_iDNA_BR_050624_otus.fasta.level_probs
+#Headers are:
+#        queryID taxID   log(probability)        level   taxon
+#Additionally, the best matching hit (for assigned species/genus where available) found with LAST is appended to prepared_iDNA_BR_050624_otus.fasta.species_probs in prepared_iDNA_BR_050624_otus.fasta.species_probs_sim
+#Headers are:
+#        queryID taxID   log(probability)        level   taxon   bestHit_similarity      bestHit
+
+#Have a nice day :-)
+
+
+
+
+## B) 12S
+
+# 8.2.1. rodar protax_classify_otus com 12S OTUs:
+screen
+cd PROTAX/12S
+~/PROTAX/protax_classify_otus.sh ~/PIMBA/PIMBA_iDNA_BR_ALL_CLASS_12S_050624/prepared_iDNA_BR_050624_otus.fasta 12S ~/PROTAX/12S ~/PROTAX protax_output
+
+#protax_classify_otus.sh complete.
+#This took a total of 0.68 minutes.
+
+#Results are in ./protax_output_12S
+#Classification for each OTU at each taxonomic level (species, genus, family, order) in files prepared_iDNA_BR_050624_otus.fasta.level_probs
+#Headers are:
+#        queryID taxID   log(probability)        level   taxon
+#Additionally, the best matching hit (for assigned species/genus where available) found with LAST is appended to prepared_iDNA_BR_050624_otus.fasta.species_probs in prepared_iDNA_BR_050624_otus.fasta.species_probs_sim
+#Headers are:
+#        queryID taxID   log(probability)        level   taxon   bestHit_similarity      bestHit
+
+#Have a nice day :-)
+
+
+# 8.2.2. rodar protax_classify_otus com all OTUs:
+screen
+cd PROTAX/12S
+~/PROTAX/protax_classify_otus.sh ~/PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus.fasta 12S ~/PROTAX/12S ~/PROTAX protax_output_all
+
+#protax_classify_otus.sh complete.
+#This took a total of 0.68 minutes.
+
+#Results are in ./protax_output_all_12S
+#Classification for each OTU at each taxonomic level (species, genus, family, order) in files prepared_iDNA_BR_050624_otus.fasta.level_probs
+#Headers are:
+#        queryID taxID   log(probability)        level   taxon
+#Additionally, the best matching hit (for assigned species/genus where available) found with LAST is appended to prepared_iDNA_BR_050624_otus.fasta.species_probs in prepared_iDNA_BR_050624_otus.fasta.species_probs_sim
+#Headers are:
+#        queryID taxID   log(probability)        level   taxon   bestHit_similarity      bestHit
+
+#Have a nice day :-)
+
+
+## C) 16S
+
+# 8.2. rodar protax_classify_otus:
+screen
+cd PROTAX/16S
+~/PROTAX/protax_classify_otus.sh ~/PIMBA/PIMBA_iDNA_BR_ALL_CLASS_16S_050624/prepared_iDNA_BR_050624_otus.fasta 16S ~/PROTAX/16S ~/PROTAX protax_output
+
+#protax_classify_otus.sh complete.
+#This took a total of 0.48 minutes.
+
+#Results are in ./protax_output_16S
+#Classification for each OTU at each taxonomic level (species, genus, family, order) in files prepared_iDNA_BR_050624_otus.fasta.level_probs
+#Headers are:
+#        queryID taxID   log(probability)        level   taxon
+#Additionally, the best matching hit (for assigned species/genus where available) found with LAST is appended to prepared_iDNA_BR_050624_otus.fasta.species_probs in prepared_iDNA_BR_050624_otus.fasta.species_probs_sim
+#Headers are:
+#        queryID taxID   log(probability)        level   taxon   bestHit_similarity      bestHit
+
+#Have a nice day :-)
+
+
+# 8.2.2. rodar protax_classify_otus com all OTUs:
+screen
+cd PROTAX/16S
+~/PROTAX/protax_classify_otus.sh ~/PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus.fasta 16S ~/PROTAX/16S ~/PROTAX protax_output_all
+
+#protax_classify_otus.sh complete.
+#This took a total of 0.48 minutes.
+
+#Results are in ./protax_output_all_16S
+#Classification for each OTU at each taxonomic level (species, genus, family, order) in files prepared_iDNA_BR_050624_otus.fasta.level_probs
+#Headers are:
+#        queryID taxID   log(probability)        level   taxon
+#Additionally, the best matching hit (for assigned species/genus where available) found with LAST is appended to prepared_iDNA_BR_050624_otus.fasta.species_probs in prepared_iDNA_BR_050624_otus.fasta.species_probs_sim
+#Headers are:
+#        queryID taxID   log(probability)        level   taxon   bestHit_similarity      bestHit
+
+#Have a nice day :-)
+
+
+
+## D) all
+
+# 8.2. rodar protax_classify_otus com all OTUs:
+screen
+cd PROTAX/all
+~/PROTAX/protax_classify_otus.sh ~/PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus.fasta all ~/PROTAX/all ~/PROTAX protax_output
+
+#stopped at: Adding taxonomy...
+
+
+
+
+
+
+
+##### 9. JUNTAR E PLANILHAR OS RESULTADOS DO PIMBA E PROTAX
+
+
+
+# 9.1. COI
+
+# A) OTUs separadas por marcador
+cd PROTAX/COI/protax_output_COI/
+
+# 9.1.1. juntar PROTAX outputs (probs e bestsim)
+# order_probs + family_probs
+join -t $'\t' -o 0,1.5,1.3,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.order_probs prepared_iDNA_BR_050624_otus.fasta.family_probs > prepared_iDNA_BR_050624_otus.fasta.orfam_probs
+# order_family_probs + genus_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfam_probs prepared_iDNA_BR_050624_otus.fasta.genus_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs
+# order_family_genus_probs + species_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,1.6,1.7,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs prepared_iDNA_BR_050624_otus.fasta.species_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs
+# order_family_genus_species_probs + bestsim
+join -t $'\t' -a 1 -a 2 -o 0,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.2,2.3 <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs) <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.bestsim) > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim
+
+9.1.2. juntar PIMBA e PROTAX outputs, e adicionar nome do marcador:
+cd
+join -t $'\t' -j 1 -o 0,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,1.10,1.11,2.2,2.3 <(sort -k 1 PROTAX/COI/protax_output_COI/prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim) <(sort -k 1 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_COI_050624/output/prepared_iDNA_BR_050624_otus_tax_assignments.txt) | awk -F '\t' '{print "COI-OTU", "COI", $0}' OFS='\t' > Metabarcodes_results/iDNA_BR_ALL_CLASS_COI_050624_PIMBA_PROTAX_output.txt
+
+
+
+# B) OTUs iguais para todos os marcadores
+cd PROTAX/COI/protax_output_all_COI/
+
+# 9.1.3. juntar PROTAX outputs (probs e bestsim)
+# order_probs + family_probs
+join -t $'\t' -o 0,1.5,1.3,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.order_probs prepared_iDNA_BR_050624_otus.fasta.family_probs > prepared_iDNA_BR_050624_otus.fasta.orfam_probs
+# order_family_probs + genus_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfam_probs prepared_iDNA_BR_050624_otus.fasta.genus_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs
+# order_family_genus_probs + species_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,1.6,1.7,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs prepared_iDNA_BR_050624_otus.fasta.species_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs
+# order_family_genus_species_probs + bestsim
+join -t $'\t' -a 1 -a 2 -o 0,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.2,2.3 <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs) <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.bestsim) > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim
+
+# 9.1.4. adicionar nome do marcador:
+# não juntar com o PIMBA, pq os resultados de COI separados estão com OTUIds diferentes! e os resultados de PIMBA-all não necessariamente serão iguais ao PIMBA-COI - melhor juntar no final
+cd
+awk -F '\t' '{print "all-OTU", "COI",  $0}' OFS='\t' PROTAX/COI/protax_output_all_COI/prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_COI_050624_PROTAX_output.txt
+
+
+
+# 9.2. 12S
+
+# A) OTUs separadas por marcador
+cd PROTAX/12S/protax_output_12S/
+
+# 9.2.1. juntar PROTAX outputs (probs e bestsim)
+# order_probs + family_probs
+join -t $'\t' -o 0,1.5,1.3,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.order_probs prepared_iDNA_BR_050624_otus.fasta.family_probs > prepared_iDNA_BR_050624_otus.fasta.orfam_probs
+# order_family_probs + genus_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfam_probs prepared_iDNA_BR_050624_otus.fasta.genus_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs
+# order_family_genus_probs + species_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,1.6,1.7,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs prepared_iDNA_BR_050624_otus.fasta.species_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs
+# order_family_genus_species_probs + bestsim
+join -t $'\t' -a 1 -a 2 -o 0,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.2,2.3 <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs) <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.bestsim) > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim
+
+9.2.2. juntar PIMBA e PROTAX outputs
+cd
+join -t $'\t' -j 1 -o 0,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,1.10,1.11,2.2,2.3 <(sort -k 1 PROTAX/12S/protax_output_12S/prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim) <(sort -k 1 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_12S_050624/output/prepared_iDNA_BR_050624_otus_tax_assignments.txt) | awk -F '\t' '{print "12S-OTU", "12S", $0}' OFS='\t' > Metabarcodes_results/iDNA_BR_ALL_CLASS_12S_050624_PIMBA_PROTAX_output.txt
+
+
+# B) OTUs iguais para todos os marcadores
+cd PROTAX/12S/protax_output_all_12S/
+
+# 9.2.3. juntar PROTAX outputs (probs e bestsim)
+# order_probs + family_probs
+join -t $'\t' -o 0,1.5,1.3,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.order_probs prepared_iDNA_BR_050624_otus.fasta.family_probs > prepared_iDNA_BR_050624_otus.fasta.orfam_probs
+# order_family_probs + genus_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfam_probs prepared_iDNA_BR_050624_otus.fasta.genus_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs
+# order_family_genus_probs + species_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,1.6,1.7,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs prepared_iDNA_BR_050624_otus.fasta.species_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs
+# order_family_genus_species_probs + bestsim
+join -t $'\t' -a 1 -a 2 -o 0,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.2,2.3 <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs) <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.bestsim) > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim
+
+# 9.2.4. adicionar nome do marcador:
+# não juntar com o PIMBA, pq os resultados de COI separados estão com OTUIds diferentes! e os resultados de PIMBA-all não necessariamente serão iguais ao PIMBA-12S - melhor juntar no final
+cd
+awk -F '\t' '{print "all-OTU", "12S",  $0}' OFS='\t' PROTAX/12S/protax_output_all_12S/prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_12S_050624_PROTAX_output.txt
+
+
+
+# 9.3. 16S
+
+# A) OTUs separadas por marcador
+cd PROTAX/16S/protax_output_16S/
+
+# 9.3.1. juntar PROTAX outputs (probs e bestsim)
+# order_probs + family_probs
+join -t $'\t' -o 0,1.5,1.3,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.order_probs prepared_iDNA_BR_050624_otus.fasta.family_probs > prepared_iDNA_BR_050624_otus.fasta.orfam_probs
+# order_family_probs + genus_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfam_probs prepared_iDNA_BR_050624_otus.fasta.genus_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs
+# order_family_genus_probs + species_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,1.6,1.7,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs prepared_iDNA_BR_050624_otus.fasta.species_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs
+# order_family_genus_species_probs + bestsim
+join -t $'\t' -a 1 -a 2 -o 0,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.2,2.3 <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs) <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.bestsim) > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim
+
+9.3.2. juntar PIMBA e PROTAX outputs
+cd
+join -t $'\t' -j 1 -o 0,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,1.10,1.11,2.2,2.3 <(sort -k 1 PROTAX/16S/protax_output_16S/prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim) <(sort -k 1 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_16S_050624/output/prepared_iDNA_BR_050624_otus_tax_assignments.txt) | awk -F '\t' '{print "16S-OTU", "16S",  $0}' OFS='\t' > Metabarcodes_results/iDNA_BR_ALL_CLASS_16S_050624_PIMBA_PROTAX_output.txt
+
+
+# B) OTUs iguais para todos os marcadores
+cd PROTAX/16S/protax_output_all_16S/
+
+# 9.3.3. juntar PROTAX outputs (probs e bestsim)
+# order_probs + family_probs
+join -t $'\t' -o 0,1.5,1.3,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.order_probs prepared_iDNA_BR_050624_otus.fasta.family_probs > prepared_iDNA_BR_050624_otus.fasta.orfam_probs
+# order_family_probs + genus_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfam_probs prepared_iDNA_BR_050624_otus.fasta.genus_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs
+# order_family_genus_probs + species_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,1.6,1.7,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs prepared_iDNA_BR_050624_otus.fasta.species_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs
+# order_family_genus_species_probs + bestsim
+join -t $'\t' -a 1 -a 2 -o 0,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.2,2.3 <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs) <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.bestsim) > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim
+
+# 9.3.4. adicionar nome do marcador:
+# não juntar com o PIMBA, pq os resultados de COI separados estão com OTUIds diferentes! e os resultados de PIMBA-all não necessariamente serão iguais ao PIMBA-16S - melhor juntar no final
+cd
+awk -F '\t' '{print "all-OTU", "16S", $0}' OFS='\t' PROTAX/16S/protax_output_all_16S/prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_16S_050624_PROTAX_output.txt
+
+
+
+# 9.4. all
+
+# B) OTUs iguais para todos os marcadores
+cd PROTAX/all/protax_output_all_160724/
+
+# 9.4.1. juntar PROTAX outputs (probs e bestsim)
+# order_probs + family_probs
+join -t $'\t' -o 0,1.5,1.3,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.order_probs prepared_iDNA_BR_050624_otus.fasta.family_probs > prepared_iDNA_BR_050624_otus.fasta.orfam_probs
+# order_family_probs + genus_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfam_probs prepared_iDNA_BR_050624_otus.fasta.genus_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs
+# order_family_genus_probs + species_probs
+join -t $'\t' -o 0,1.2,1.3,1.4,1.5,1.6,1.7,2.5,2.3 prepared_iDNA_BR_050624_otus.fasta.orfamgen_probs prepared_iDNA_BR_050624_otus.fasta.species_probs > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs
+# order_family_genus_species_probs + bestsim
+join -t $'\t' -a 1 -a 2 -o 0,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.2,2.3 <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs) <(sort -k 1 prepared_iDNA_BR_050624_otus.fasta.bestsim) > prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim
+
+9.4.2. juntar PIMBA e PROTAX outputs, e adicionar nome do marcador:
+cd
+join -t $'\t' -j 1 -o 0,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,1.10,1.11,2.2,2.3 <(sort -k 1 PROTAX/all/protax_output_all_160724/prepared_iDNA_BR_050624_otus.fasta.orfamgenspp_probs_bestsim) <(sort -k 1 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/output/prepared_iDNA_BR_050624_otus_tax_assignments.txt) | awk -F '\t' '{print "all-OTU", "all", $0}' OFS='\t' > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_050624_PIMBA_PROTAX_output.txt
+
+
+
+
+## 9.5. Acrescentar nome das amostras e comprimento das OTUs:
+
+# os nomes das amostras estão na tabela de OTUs do output do PIMBA!
+# o comprimento das OTUs pode ser obtido do arquivo fasta do outputo do PIMBA
+
+
+# 9.5.1. modificar tabela de OTUs no outpt do PIMBA (de múltiplas colunas para linhas):
+# COI
+mlr --tsv put -q 'for (k,v in mapexcept($*,"OTUId")) {emit1 {"OTUId": $OTUId, "sample": k, "nreads": v}}' PIMBA/PIMBA_iDNA_BR_ALL_CLASS_COI_050624/prepared_iDNA_BR_050624_otu_table.txt > PIMBA/PIMBA_iDNA_BR_ALL_CLASS_COI_050624/prepared_iDNA_BR_050624_otu_table2.txt
+# 12S
+mlr --tsv put -q 'for (k,v in mapexcept($*,"OTUId")) {emit1 {"OTUId": $OTUId, "sample": k, "nreads": v}}' PIMBA/PIMBA_iDNA_BR_ALL_CLASS_12S_050624/prepared_iDNA_BR_050624_otu_table.txt > PIMBA/PIMBA_iDNA_BR_ALL_CLASS_12S_050624/prepared_iDNA_BR_050624_otu_table2.txt
+# 16S
+mlr --tsv put -q 'for (k,v in mapexcept($*,"OTUId")) {emit1 {"OTUId": $OTUId, "sample": k, "nreads": v}}' PIMBA/PIMBA_iDNA_BR_ALL_CLASS_16S_050624/prepared_iDNA_BR_050624_otu_table.txt > PIMBA/PIMBA_iDNA_BR_ALL_CLASS_16S_050624/prepared_iDNA_BR_050624_otu_table2.txt
+# all
+mlr --tsv put -q 'for (k,v in mapexcept($*,"OTUId")) {emit1 {"OTUId": $OTUId, "sample": k, "nreads": v}}' PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otu_table.txt > PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otu_table2.txt
+
+
+# 9.5.2. CRIAR TABELA COM OTUID + COMPRIMENTO DA OTU:
+# COI
+seqkit fx2tab -l -n -H PIMBA/PIMBA_iDNA_BR_ALL_CLASS_COI_050624/prepared_iDNA_BR_050624_otus.fasta | sed -e 's/#name/OTUId/g' > PIMBA/PIMBA_iDNA_BR_ALL_CLASS_COI_050624/prepared_iDNA_BR_050624_otus_lenght.txt
+# 12S
+seqkit fx2tab -l -n -H PIMBA/PIMBA_iDNA_BR_ALL_CLASS_12S_050624/prepared_iDNA_BR_050624_otus.fasta | sed -e 's/#name/OTUId/g' > PIMBA/PIMBA_iDNA_BR_ALL_CLASS_12S_050624/prepared_iDNA_BR_050624_otus_lenght.txt
+# 16S
+seqkit fx2tab -l -n -H PIMBA/PIMBA_iDNA_BR_ALL_CLASS_16S_050624/prepared_iDNA_BR_050624_otus.fasta | sed -e 's/#name/OTUId/g' > PIMBA/PIMBA_iDNA_BR_ALL_CLASS_16S_050624/prepared_iDNA_BR_050624_otus_lenght.txt
+# all
+seqkit fx2tab -l -n -H PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus.fasta | sed -e 's/#name/OTUId/g' > PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus_lenght.txt
+
+
+# 9.5.3. ADICIONAR COMPRIMENTO DAS OTUs À TABELA DE OTUs:
+# COI
+join -t $'\t' -j 1 -o 1.2,0,1.3,2.2 <(sort -k 1 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_COI_050624/prepared_iDNA_BR_050624_otu_table2.txt) <(sort -k 1 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_COI_050624/prepared_iDNA_BR_050624_otus_lenght.txt) > PIMBA/PIMBA_iDNA_BR_ALL_CLASS_COI_050624/prepared_iDNA_BR_050624_otu_table2_lenght.txt
+# 12S
+join -t $'\t' -j 1 -o 1.2,0,1.3,2.2 <(sort -k 1 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_12S_050624/prepared_iDNA_BR_050624_otu_table2.txt) <(sort -k 1 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_12S_050624/prepared_iDNA_BR_050624_otus_lenght.txt) > PIMBA/PIMBA_iDNA_BR_ALL_CLASS_12S_050624/prepared_iDNA_BR_050624_otu_table2_lenght.txt
+# 16S
+join -t $'\t' -j 1 -o 1.2,0,1.3,2.2 <(sort -k 1 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_16S_050624/prepared_iDNA_BR_050624_otu_table2.txt) <(sort -k 1 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_16S_050624/prepared_iDNA_BR_050624_otus_lenght.txt) > PIMBA/PIMBA_iDNA_BR_ALL_CLASS_16S_050624/prepared_iDNA_BR_050624_otu_table2_lenght.txt
+# all
+join -t $'\t' -j 1 -o 1.2,0,1.3,2.2 <(sort -k 1 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otu_table2.txt) <(sort -k 1 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus_lenght.txt) > PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otu_table2_lenght.txt
+
+
+
+# 9.5.4. OTUs separadas por marcador - juntar nomes das amostras e comprimentos das OTUs aos resultados de PIMBA e PROTAX:
+# COI
+join -t $'\t' -1 2 -2 3 -o 1.1,2.1,0,1.3,1.4,2.2,2.4,2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15 <(sort -k 2 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_COI_050624/prepared_iDNA_BR_050624_otu_table2_lenght.txt) <(sort -k 3 Metabarcodes_results/iDNA_BR_ALL_CLASS_COI_050624_PIMBA_PROTAX_output.txt) > Metabarcodes_results/iDNA_BR_ALL_CLASS_COI_050624_PIMBA_PROTAX_output_per-sample.txt
+# 12S
+join -t $'\t' -1 2 -2 3 -o 1.1,2.1,0,1.3,1.4,2.2,2.4,2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15 <(sort -k 2 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_12S_050624/prepared_iDNA_BR_050624_otu_table2_lenght.txt) <(sort -k 3 Metabarcodes_results/iDNA_BR_ALL_CLASS_12S_050624_PIMBA_PROTAX_output.txt) > Metabarcodes_results/iDNA_BR_ALL_CLASS_12S_050624_PIMBA_PROTAX_output_per-sample.txt
+# 16S
+join -t $'\t' -1 2 -2 3 -o 1.1,2.1,0,1.3,1.4,2.2,2.4,2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15 <(sort -k 2 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_16S_050624/prepared_iDNA_BR_050624_otu_table2_lenght.txt) <(sort -k 3 Metabarcodes_results/iDNA_BR_ALL_CLASS_16S_050624_PIMBA_PROTAX_output.txt) > Metabarcodes_results/iDNA_BR_ALL_CLASS_16S_050624_PIMBA_PROTAX_output_per-sample.txt
+# all
+join -t $'\t' -1 2 -2 3 -o 1.1,2.1,0,1.3,1.4,2.2,2.4,2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15 <(sort -k 2 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otu_table2_lenght.txt) <(sort -k 3 Metabarcodes_results/iDNA_BR_ALL_CLASS_all_050624_PIMBA_PROTAX_output.txt) > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_050624_PIMBA_PROTAX_output_per-sample.txt
+
+
+# 9.5.3. OTUs iguais para todos os marcadores - juntar nomes das amostras e comprimentos das OTUs aos resultados de PROTAX:
+# COI
+join -t $'\t' -1 2 -2 3 -o 1.1,2.1,0,1.3,1.4,2.2,2.4,2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13 <(sort -k 2 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otu_table2_lenght.txt) <(sort -k 3 Metabarcodes_results/iDNA_BR_ALL_CLASS_all_COI_050624_PROTAX_output.txt) > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_COI_050624_PROTAX_output_per-sample.txt
+# 12S
+join -t $'\t' -1 2 -2 3 -o 1.1,2.1,0,1.3,1.4,2.2,2.4,2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13 <(sort -k 2 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otu_table2_lenght.txt) <(sort -k 3 Metabarcodes_results/iDNA_BR_ALL_CLASS_all_12S_050624_PROTAX_output.txt) > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_12S_050624_PROTAX_output_per-sample.txt
+# 16S
+join -t $'\t' -1 2 -2 3 -o 1.1,2.1,0,1.3,1.4,2.2,2.4,2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13 <(sort -k 2 PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otu_table2_lenght.txt) <(sort -k 3 Metabarcodes_results/iDNA_BR_ALL_CLASS_all_16S_050624_PROTAX_output.txt) > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_16S_050624_PROTAX_output_per-sample.txt
+
+
+# 9.5.4. reduzir tabelas - excluir OTUs sem reads em cada amostra:
+# COI
+awk 'BEGIN{OFS="\t"} $4 !~ "0"' Metabarcodes_results/iDNA_BR_ALL_CLASS_COI_050624_PIMBA_PROTAX_output_per-sample.txt  | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_COI_050624_PIMBA_PROTAX_output_per-sample_min1read.txt
+# all_COI
+awk 'BEGIN{OFS="\t"} $4 !~ "0"' Metabarcodes_results/iDNA_BR_ALL_CLASS_all_COI_050624_PROTAX_output_per-sample.txt  | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_COI_050624_PROTAX_output_per-sample_min1read.txt
+# 12S
+awk 'BEGIN{OFS="\t"} $4 !~ "0"' Metabarcodes_results/iDNA_BR_ALL_CLASS_12S_050624_PIMBA_PROTAX_output_per-sample.txt  | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_12S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt
+# all_12S
+awk 'BEGIN{OFS="\t"} $4 !~ "0"' Metabarcodes_results/iDNA_BR_ALL_CLASS_all_12S_050624_PROTAX_output_per-sample.txt  | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_12S_050624_PROTAX_output_per-sample_min1read.txt
+# 16S
+awk 'BEGIN{OFS="\t"} $4 !~ "0"' Metabarcodes_results/iDNA_BR_ALL_CLASS_16S_050624_PIMBA_PROTAX_output_per-sample.txt  | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_16S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt
+# all_16S
+awk 'BEGIN{OFS="\t"} $4 !~ "0"' Metabarcodes_results/iDNA_BR_ALL_CLASS_all_16S_050624_PROTAX_output_per-sample.txt  | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_16S_050624_PROTAX_output_per-sample_min1read.txt
+# all
+awk 'BEGIN{OFS="\t"} $4 !~ "0"' Metabarcodes_results/iDNA_BR_ALL_CLASS_all_050624_PIMBA_PROTAX_output_per-sample.txt  | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_050624_PIMBA_PROTAX_output_per-sample_min1read.txt
+
+
+
+## 9.6. juntar resultados PIMBA+PROTAX de todos os marcadores:
+
+# 9.6.1. Juntar resultados com OTUs separadas + OTUs iguais:
+# COI
+cat Metabarcodes_results/iDNA_BR_ALL_CLASS_COI_050624_PIMBA_PROTAX_output_per-sample_min1read.txt Metabarcodes_results/iDNA_BR_ALL_CLASS_all_COI_050624_PROTAX_output_per-sample_min1read.txt  | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_COI_050624_PIMBA_PROTAX_output_per-sample_min1read.txt
+# 12S
+cat Metabarcodes_results/iDNA_BR_ALL_CLASS_12S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt Metabarcodes_results/iDNA_BR_ALL_CLASS_all_12S_050624_PROTAX_output_per-sample_min1read.txt  | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_12S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt
+# 16S
+cat Metabarcodes_results/iDNA_BR_ALL_CLASS_16S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt Metabarcodes_results/iDNA_BR_ALL_CLASS_all_16S_050624_PROTAX_output_per-sample_min1read.txt  | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_16S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt
+
+# 9.6.2. Juntar resultados COI+12S+16S+all
+cat Metabarcodes_results/iDNA_BR_ALL_CLASS_all_COI_050624_PIMBA_PROTAX_output_per-sample_min1read.txt Metabarcodes_results/iDNA_BR_ALL_CLASS_all_12S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt Metabarcodes_results/iDNA_BR_ALL_CLASS_all_16S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt Metabarcodes_results/iDNA_BR_ALL_CLASS_all_050624_PIMBA_PROTAX_output_per-sample_min1read.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt
+
+
+
+## 9.7. REDUZIR TABELA
+
+# 9.7.1. ASSIGNED/UNASSIGNED OTUs:
+# 9.7.1.1. Assigned OTUs:
+awk 'BEGIN{OFS="\t"} $17 !~ "Unassigned" && $9 !~ "Unassigned" ' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read_Assigned.txt 
+# 9.7.1.2. Unassigned OTUs:
+awk 'BEGIN{OFS="\t"} $17 == "Unassigned" || $9 == "Unassigned" ' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read_Unassigned.txt
+
+
+# 9.7.2. OTUs com 2 reads por amostra:
+# 9.7.2.1. Todas OTUs com mais de 2 reads:
+awk 'BEGIN{OFS="\t"} $4>=2' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min2reads.txt
+# 9.7.1.2. Assigned OTUs com mais de 2 reads:
+awk 'BEGIN{OFS="\t"} $4>=2' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read_Assigned.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min2reads_Assigned.txt
+# 9.7.2.3. Assigned OTUs com menos de 2 reads:
+awk 'BEGIN{OFS="\t"} $4<2' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read_Assigned.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_max1read_Assigned.txt
+# 9.7.1.4. Unassigned OTUs com mais de 2 reads:
+awk 'BEGIN{OFS="\t"} $4>=2' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read_Unassigned.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min2reads_Unassigned.txt
+
+
+# 9.7.3. OTUs com 5 reads por amostra:
+# 9.7.3.1. Todas OTUs com mais de 5 reads:
+awk 'BEGIN{OFS="\t"} $4>=5' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min5reads.txt
+# 9.7.3.2. Assigned OTUs com mais de 5 reads:
+awk 'BEGIN{OFS="\t"} $4>=5' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read_Assigned.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min5reads_Assigned.txt
+# 9.7.3.3. Assigned OTUs com menos de 5 reads:
+awk 'BEGIN{OFS="\t"} $4<5' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read_Assigned.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_max4reads_Assigned.txt
+# 9.7.3.4. Unassigned OTUs com mais de 5 reads:
+awk 'BEGIN{OFS="\t"} $4>=5' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read_Unassigned.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min5reads_Unassigned.txt
+
+
+# 9.7.4. OTUs com 10 reads por amostra:
+# 9.7.4.1. Todas OTUs com mais de 10 reads:
+awk 'BEGIN{OFS="\t"} $4>=10' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads.txt
+# 9.7.4.2. Assigned OTUs com mais de 10 reads:
+awk 'BEGIN{OFS="\t"} $4>=10' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read_Assigned.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Assigned.txt
+# 9.7.4.3. Assigned OTUs com menos de 10 reads:
+awk 'BEGIN{OFS="\t"} $4<10' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read_Assigned.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_max9reads_Assigned.txt
+# 9.7.4.4. Unassigned OTUs com mais de 10 reads:
+awk 'BEGIN{OFS="\t"} $4>=10' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min1read_Unassigned.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Unassigned.txt
+
+
+# 9.7.5. OTUs não identificadas por nenhum marcador (OTUId-source=$2=="all-OTU", marker=$6=="all"):
+# o que importa são as unassigned OTUs das all-OTU, pq não foram identificadas em nenhum marcador. as demais unassigned OTUs podem simplesmente ser OTUs de outros marcadores, e por isso não foram identificadas no marcador observado.
+awk 'BEGIN{OFS="\t"} $2=="all-OTU" && $6=="all" ' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Unassigned.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Unassigned_all.txt
+
+
+# 9.7.6. OTUs muito curtas:
+# 9.7.6.1. DEFINIR QUAL COMPRIMENTO É MUITO CURTO POR MARCADOR:
+# COI < 176 bp | 12S < 146 bp | 16S < 80 bp | all < 146 bp
+
+# 9.7.6.2. Unassigned OTUs longas com mais de 10 reads (marker=$6, length=$5):
+awk 'BEGIN{OFS="\t"} $6=="COI" && $5>=176 || $6=="12S" && $5>=146 || $6=="16S" && $5>=80 || $6=="all" && $5>=146 ' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Unassigned.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Unassigned_long.txt
+
+# 9.7.6.3. Unassigned OTUs muito curtas com mais de 10 reads (marker=$6, length=$5):
+awk 'BEGIN{OFS="\t"} $6=="COI" && $5<176 || $6=="12S" && $5<146 || $6=="16S" && $5<80 || $6=="all" && $5<146 ' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Unassigned.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Unassigned_short.txt
+
+# 9.7.6.4. Unassigned OTUs longas com mais de 10 reads, não identificadas por nenhum marcador (length=$5):
+awk 'BEGIN{OFS="\t"} $5>=146 ' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Unassigned_all.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Unassigned_all_long.txt
+
+# 9.7.6.3. Unassigned OTUs muito curtas com mais de 10 reads, não identificadas por nenhum marcador (length=$5):
+awk 'BEGIN{OFS="\t"} $5<146 ' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Unassigned_all.txt | sort -k1,1 -k6,6 -k4,4 -k9,9 -k2,2 > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Unassigned_all_short.txt
+
+
+
+
+## 9.8. SEPARAR OTUS NÃO IDENTIFICADAS POR NENHUM MARCADOR:
+
+## 9.8.1. Extrair IDs das Unassigned OTUs (OTUId=$3)
+awk 'BEGIN{OFS="\t"} {print $3}' Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_per-sample_min10reads_Unassigned_all.txt | sort | uniq > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_050624_PIMBA_PROTAX_output_min10reads_Unassigned_OTUIds.txt
+
+## 9.8.3. Filtrar arquivo otus.fasta
+seqtk subseq PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus.fasta Metabarcodes_results/iDNA_BR_ALL_CLASS_all_050624_PIMBA_PROTAX_output_min10reads_Unassigned_OTUIds.txt | seqkit rmdup > Metabarcodes_results/iDNA_BR_ALL_CLASS_all_050624_PIMBA_PROTAX_output_min10reads_Unassigned_OTU.fasta 
+seqtk subseq PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus.fasta Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs2.txt | seqkit rmdup > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs2.fasta 
+seqtk subseq PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus.fasta Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs3.txt | seqkit rmdup > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs3.fasta 
+
+# unrooted OTUs
+seqtk subseq PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus.fasta Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_unrooted_OTUs.txt | seqkit rmdup > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_unrooted_OTUs.fasta 
+seqtk subseq PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus.fasta Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_unrooted_OTUs2.txt | seqkit rmdup > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_unrooted_OTUs2.fasta 
+seqtk subseq PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus.fasta Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs2.txt | seqkit rmdup > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs2.fasta 
+seqtk subseq PIMBA/PIMBA_iDNA_BR_ALL_CLASS_all_050624/prepared_iDNA_BR_050624_otus.fasta Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs3.txt | seqkit rmdup > Metabarcodes_results/iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs3.fasta 
+
+
+
+
+### 10. BLAST ONLINE DAS OTUS NÃO IDENTIFICADAS POR NENHUM MARCADOR:
+
+## 10.1. Rodar blast online com fasta das OTUs não identificadas
+## 10.2. Baixar arquivo csv com resultados do blast, manter somente um hit por amostra
+
+### ATENÇÃO! NENHUMA DAS OTUS DO ARQUIVO iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_unrooted_OTUs2.fasta NÃO FORAM IDENTIFICADAS NO BLAST ONLINE!!!
+
+
+## 10.3. Adicionar taxonomia aos resultados do blast online no R:
+#  10.3.1. Abrir resultados do blast (csv) no R:
+setwd("~/Metabarcodes/Análises/iDNA Brasil/BLASTn")
+Blastn_output <- read.csv("iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs_BLASTn-HitTable.csv")
+Blastn_output <- read.csv("iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs2_BLASTn-HitTable.csv")
+Blastn_output <- read.csv("iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs3_BLASTn-HitTable.csv")
+
+colnames(Blastn_output)
+# [1] "query.acc.ver"    "subject.acc.ver" 
+# [3] "X..identity"      "alignment.length"
+# [5] "mismatches"       "gap.opens"       
+# [7] "q..start"         "q..end"          
+# [9] "s..start"         "s..end"          
+#[11] "evalue"           "bit.score"
+nrow(Blastn_output)
+#[1] 8335
+#[1] 371
+#[1] 130
+
+# 10.3.2. obter taxids:
+library(taxonomizr)
+setwd("~/Metabarcodes/Análises/Database/taxonomzr")
+taxid <- accessionToTaxa(Blastn_output$subject.acc.ver,"accessionTaxa.sql")
+
+# 10.3.3. obter taxonomia:
+taxonomy <- getTaxonomy(taxid, 'accessionTaxa.sql')
+taxid_taxonomy <- data.frame(taxid, taxonomy)
+
+# 10.3.4. juntar taxonomia com ;
+library(tidyr)
+Blastn_output_taxonomy <- cbind(Blastn_output, unite(taxid_taxonomy, col = "taxonomy", c("phylum", "class", "order", "family", "genus", "species"), sep = ";"))
+nrow(Blastn_output_taxonomy)
+#[1] 8335
+#[1] 371
+#[1] 130
+
+# 10.3.5. salvar resultados:
+setwd("~/Metabarcodes/Análises/iDNA Brasil/BLASTn")
+write.csv(Blastn_output_taxonomy, quote = FALSE, "iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs_BLASTn-HitTable_taxonomized.csv")
+write.csv(Blastn_output_taxonomy, quote = FALSE, "iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs2_BLASTn-HitTable_taxonomized.csv")
+write.csv(Blastn_output_taxonomy, quote = FALSE, "iDNA_BR_ALL_CLASS_all-COI-12S-16S_050624_PIMBA_PROTAX_output_Unassigned_OTUs3_BLASTn-HitTable_taxonomized.csv")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

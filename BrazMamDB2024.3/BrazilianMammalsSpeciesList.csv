@@ -1,0 +1,863 @@
+ORDER,FAMILY,GENUS,SPECIES,NAME SOURCE,SYNONIM - GENUS,SYNONIM - SPECIES,SYNONIM SOURCE,Brazil,IUCN 2024-1,LOCOMOTION,AMAZ,MATL,CERR,CAAT,PANT,PAMP,MARI
+Artiodactyla,Balaenidae,Eubalaena,Eubalaena australis,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Balaenopteridae,Balaenoptera,Balaenoptera acutorostrata,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Balaenopteridae,Balaenoptera,Balaenoptera bonaerensis,Abreu et al. 2023,NA,NA,NA,native,NT,Aq,no,no,no,no,no,no,no
+Artiodactyla,Balaenopteridae,Balaenoptera,Balaenoptera borealis,Abreu et al. 2023,NA,NA,NA,native,EN,Aq,no,no,no,no,no,no,no
+Artiodactyla,Balaenopteridae,Balaenoptera,Balaenoptera edeni,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Balaenopteridae,Balaenoptera,Balaenoptera musculus,Abreu et al. 2023,NA,NA,NA,native,EN,Aq,no,no,no,no,no,no,no
+Artiodactyla,Balaenopteridae,Balaenoptera,Balaenoptera omurai,Abreu et al. 2023,Balaenoptera,Balaenoptera edeni,Wilson & Reeder,native,DD,Aq,no,no,no,no,no,no,yes
+Artiodactyla,Balaenopteridae,Balaenoptera,Balaenoptera physalus,Abreu et al. 2023,Balaena,Balaena physalus,Wilson & Reeder,native,VU,Aq,no,no,no,no,no,no,no
+Artiodactyla,Balaenopteridae,Megaptera,Megaptera novaeangliae,Abreu et al. 2023,Balaena,Balaena novaeangliae,IUCN,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Cervidae,Blastocerus,Blastocerus dichotomus,Abreu et al. 2023,Cervus,Cervus dichotomus,IUCN,native,VU,Te,yes,yes,yes,no,yes,no,no
+Artiodactyla,Cervidae,Mazama,Mazama americana,Abreu et al. 2023,Moschus,Moschus americanus,IUCN,native,DD,Te,yes,yes,yes,no,no,no,no
+Artiodactyla,Cervidae,Mazama,Mazama jucunda,Abreu et al. 2023,Mazama,Mazama americana,Wilson & Reeder,native,DD,Te,no,yes,no,yes,yes,no,no
+Artiodactyla,Cervidae,Mazama,Mazama nana,Abreu et al. 2023,Mazama,Mazama americana,Wilson & Reeder,native,VU,Te,no,yes,no,yes,yes,yes,yes
+Artiodactyla,Cervidae,Mazama,Mazama rufa,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,yes,yes,yes,yes,no,no
+Artiodactyla,Cervidae,Odocoileus,Odocoileus virginianus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Artiodactyla,Cervidae,Ozotoceros,Ozotoceros bezoarticus,Abreu et al. 2023,Cervus,Cervus bezoarticus,IUCN,native,NT,Te,yes,yes,yes,yes,yes,yes,yes
+Artiodactyla,Cervidae,Passalites,Passalites nemorivagus,Abreu et al. 2023,Mazama,Mazama nemorivaga,Wilson & Reeder,native,LC,Te,yes,yes,yes,no,no,no,no
+Artiodactyla,Cervidae,Subulo,Subulo gouazoubira,Abreu et al. 2023,Mazama,Mazama gouazoubira,Wilson & Reeder,native,LC,Te,yes,yes,yes,yes,yes,yes,no
+Artiodactyla,Delphinidae,Cephalorhynchus,Cephalorhynchus commersonii,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Delphinus,Delphinus delphis,Abreu et al. 2023,Delphinus,Delphinus bairdii,IUCN,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Feresa,Feresa attenuata,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Globicephala,Globicephala macrorhynchus,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Globicephala,Globicephala melas,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Grampus,Grampus griseus,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Lagenodelphis,Lagenodelphis hosei,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Lagenorhynchus,Lagenorhynchus australis,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Lissodelphis,Lissodelphis peronii,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Orcinus,Orcinus orca,Abreu et al. 2023,Orcinus,Orcinus glacialis,IUCN,native,DD,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Peponocephala,Peponocephala electra,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Pseudorca,Pseudorca crassidens,Abreu et al. 2023,NA,NA,NA,native,NT,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Sotalia,Sotalia fluviatilis,Abreu et al. 2023,Steno,Steno tucuxi,IUCN,native,EN,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Sotalia,Sotalia guianensis,Abreu et al. 2023,NA,NA,NA,native,NT,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Stenella,Stenella attenuata,Abreu et al. 2023,Stenella,Stenella graffmani,IUCN,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Stenella,Stenella clymene,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Stenella,Stenella coeruleoalba,Abreu et al. 2023,Stenella,Stenella styx,IUCN,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Stenella,Stenella frontalis,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Stenella,Stenella longirostris,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Steno,Steno bredanensis,Abreu et al. 2023,Steno,Steno rostratus,IUCN,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Tursiops,Tursiops gephyreus,Abreu et al. 2023,NA,NA,NA,native,?,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Tursiops,Tursiops truncatus,Abreu et al. 2023,Tursiops,Tursiops gephyreus,SBMZ,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Delphinidae,Tursiops,Tursiops truncatus,Abreu et al. 2023,Tursiops,Tursiops nuuanu,IUCN,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Iniidae,Inia,Inia araguaiaensis,Abreu et al. 2023,NA,NA,NA,native,?,Aq,no,no,no,no,no,no,no
+Artiodactyla,Iniidae,Inia,Inia boliviensis,Abreu et al. 2023,Inia,Inia geoffrensis,Wilson & Reeder,native,EN,Aq,no,no,no,no,no,no,yes
+Artiodactyla,Iniidae,Inia,Inia geoffrensis,Abreu et al. 2023,Inia,Inia boliviensis,SBMZ,native,EN,Aq,yes,no,no,no,no,no,no
+Artiodactyla,Kogiidae,Kogia,Kogia breviceps,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Kogiidae,Kogia,Kogia sima,Abreu et al. 2023,Physeter,Physeter simus,IUCN,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Phocoenidae,Phocoena,Phocoena dioptrica,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Phocoenidae,Phocoena,Phocoena spinipinnis,Abreu et al. 2023,NA,NA,NA,native,NT,Aq,no,no,no,no,no,no,no
+Artiodactyla,Physeteridae,Physeter,Physeter macrocephalus,Abreu et al. 2023,Physeter,Physeter catodon,IUCN,native,VU,Aq,no,no,no,no,no,no,no
+Artiodactyla,Pontoporiidae,Pontoporia,Pontoporia blainvillei,Abreu et al. 2023,NA,NA,NA,native,VU,Aq,no,no,no,no,no,no,no
+Artiodactyla,Tayassuidae,Dicotyles,Dicotyles tajacu,Abreu et al. 2023,Pecari,Pecari tajacu,Wilson & Reeder,native,LC,Te,yes,yes,yes,yes,yes,yes,no
+Artiodactyla,Tayassuidae,Tayassu,Tayassu pecari,Abreu et al. 2023,NA,NA,NA,native,VU,Te,yes,yes,yes,yes,yes,yes,yes
+Artiodactyla,Ziphiidae,Berardius,Berardius arnuxii,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Ziphiidae,Hyperoodon,Hyperoodon planifrons,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Ziphiidae,Mesoplodon,Mesoplodon densirostris,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Ziphiidae,Mesoplodon,Mesoplodon europaeus,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Ziphiidae,Mesoplodon,Mesoplodon grayi,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Ziphiidae,Mesoplodon,Mesoplodon hectori,Abreu et al. 2023,NA,NA,NA,native,DD,Aq,no,no,no,no,no,no,no
+Artiodactyla,Ziphiidae,Mesoplodon,Mesoplodon layardii,Abreu et al. 2023,Mesoplodon,Mesoplodon thomsoni,IUCN,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Ziphiidae,Mesoplodon,Mesoplodon mirus,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,no
+Artiodactyla,Ziphiidae,Ziphius,Ziphius cavirostris,Abreu et al. 2023,Hyperoodon,Hyperoodon capensis,IUCN,native,LC,Aq,no,no,no,no,no,no,no
+Carnivora,Canidae,Atelocynus,Atelocynus microtis,Abreu et al. 2023,NA,NA,NA,native,NT,Te,yes,no,no,no,no,no,no
+Carnivora,Canidae,Cerdocyon,Cerdocyon thous,Abreu et al. 2023,Dusicyon,Dusicyon thous,Wilson & Reeder,native,LC,Te,yes,yes,yes,yes,yes,yes,yes
+Carnivora,Canidae,Chrysocyon,Chrysocyon brachyurus,Abreu et al. 2023,NA,NA,NA,native,NT,Te,yes,yes,yes,yes,yes,yes,yes
+Carnivora,Canidae,Lycalopex,Lycalopex gymnocercus,Abreu et al. 2023,Pseudalopex,Pseudalopex gymnocercus,Wilson & Reeder,native,LC,Te,no,yes,no,yes,yes,yes,yes
+Carnivora,Canidae,Lycalopex,Lycalopex vetulus,Abreu et al. 2023,NA,NA,NA,native,NT,Te,no,no,yes,no,no,no,no
+Carnivora,Canidae,Speothos,Speothos venaticus,Abreu et al. 2023,NA,NA,NA,native,NT,Te,yes,yes,yes,no,yes,no,no
+Carnivora,Felidae,Herpailurus,Herpailurus yagouaroundi,Abreu et al. 2023,Puma,Puma yagouaroundi,Wilson & Reeder,native,LC,Te,yes,yes,yes,yes,yes,yes,no
+Carnivora,Felidae,Leopardus,Leopardus braccatus,Abreu et al. 2023,Leopardus,Leopardus munoai,SBMZ,native,?,Te,no,no,yes,yes,yes,yes,yes
+Carnivora,Felidae,Leopardus,Leopardus emiliae,Abreu et al. 2023,Leopardus,Leopardus tigrinus,Wilson & Reeder,native,VU,Te,yes,yes,yes,yes,yes,yes,no
+Carnivora,Felidae,Leopardus,Leopardus geoffroyi,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,no,yes,yes,yes,yes
+Carnivora,Felidae,Leopardus,Leopardus guttulus,Abreu et al. 2023,Leopardus,Leopardus tigrinus,Wilson & Reeder,native,VU,Sc,no,yes,no,yes,yes,yes,no
+Carnivora,Felidae,Leopardus,Leopardus munoai,Abreu et al. 2023,Leopardus,Leopardus braccatus,Wilson & Reeder,native,?,Te,no,no,no,no,yes,yes,no
+Carnivora,Felidae,Leopardus,Leopardus pardalis,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,yes,yes,yes,yes,yes,yes
+Carnivora,Felidae,Leopardus,Leopardus tigrinus,Abreu et al. 2023,Leopardus,Leopardus guttulus,SBMZ,native,VU,Sc,yes,yes,yes,yes,yes,yes,yes
+Carnivora,Felidae,Leopardus,Leopardus wiedii,Abreu et al. 2023,NA,NA,NA,native,NT,Sc,yes,yes,yes,yes,yes,yes,yes
+Carnivora,Felidae,Panthera,Panthera onca,Abreu et al. 2023,Felis,Felis onca,IUCN,native,NT,Te,yes,yes,yes,yes,yes,yes,yes
+Carnivora,Felidae,Puma,Puma concolor,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,yes,yes,yes,yes,yes,yes
+Carnivora,Mephitidae,Conepatus,Conepatus chinga,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,yes,yes,yes,yes,yes
+Carnivora,Mephitidae,Conepatus,Conepatus semistriatus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,yes,yes,yes,no,no,no
+Carnivora,Mustelidae,Eira,Eira barbara,Abreu et al. 2023,Mustela,Mustela barbara,IUCN,native,LC,Te,yes,yes,yes,yes,yes,yes,no
+Carnivora,Mustelidae,Galictis,Galictis cuja,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,yes,yes,yes,yes,yes
+Carnivora,Mustelidae,Galictis,Galictis vittata,Abreu et al. 2023,Viverra,Viverra vittata,Wilson & Reeder,native,LC,Te,yes,yes,yes,yes,yes,no,no
+Carnivora,Mustelidae,Lontra,Lontra longicaudis,Abreu et al. 2023,NA,NA,NA,native,NT,SA,yes,yes,yes,yes,yes,yes,yes
+Carnivora,Mustelidae,Mustela,Mustela africana,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Carnivora,Mustelidae,Pteronura,Pteronura brasiliensis,Abreu et al. 2023,Pteronura,Pteronura sambachii,IUCN,native,EN,SA,yes,yes,yes,no,yes,no,no
+Carnivora,Otariidae,Arctocephalus,Arctocephalus australis,Abreu et al. 2023,Arctophoca,Arctophoca australis,IUCN,native,LC,Aq,no,no,no,no,no,no,yes
+Carnivora,Otariidae,Arctocephalus,Arctocephalus gazella,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,yes
+Carnivora,Otariidae,Arctocephalus,Arctocephalus tropicalis,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,yes
+Carnivora,Otariidae,Otaria,Otaria flavescens,Abreu et al. 2023,Otaria,Otaria byronia,IUCN,native,LC,Aq,no,no,no,no,no,no,yes
+Carnivora,Phocidae,Hydrurga,Hydrurga leptonyx,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,yes
+Carnivora,Phocidae,Leptonychotes,Leptonychotes weddellii,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,yes
+Carnivora,Phocidae,Lobodon,Lobodon carcinophaga,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,yes
+Carnivora,Phocidae,Mirounga,Mirounga leonina,Abreu et al. 2023,NA,NA,NA,native,LC,Aq,no,no,no,no,no,no,yes
+Carnivora,Procyonidae,Bassaricyon,Bassaricyon alleni,Abreu et al. 2023,Bassaricyon,Bassaricyon beddardi,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Carnivora,Procyonidae,Nasua,Nasua nasua,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,yes,yes,yes,yes,yes,yes
+Carnivora,Procyonidae,Potos,Potos flavus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,yes,yes,no,no,no,no
+Carnivora,Procyonidae,Procyon,Procyon cancrivorus,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Emballonuridae,Centronycteris,Centronycteris maximiliani,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,no,no,no,no,no
+Chiroptera,Emballonuridae,Cormura,Cormura brevirostris,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Emballonuridae,Cyttarops,Cyttarops alecto,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,yes,no,no,no,no
+Chiroptera,Emballonuridae,Diclidurus,Diclidurus albus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Emballonuridae,Diclidurus,Diclidurus ingens,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,no,no,no,no,no,no
+Chiroptera,Emballonuridae,Diclidurus,Diclidurus isabella,Abreu et al. 2023,Diclidurus,Diclidurus isabellus,IUCN,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Emballonuridae,Diclidurus,Diclidurus scutatus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,no,no,no,no,no
+Chiroptera,Emballonuridae,Peropteryx,Peropteryx kappleri,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Emballonuridae,Peropteryx,Peropteryx leucoptera,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Emballonuridae,Peropteryx,Peropteryx macrotis,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Emballonuridae,Peropteryx,Peropteryx pallidoptera,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,no,no,no,no,no,no
+Chiroptera,Emballonuridae,Peropteryx,Peropteryx trinitatis,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,yes,no,yes,no,no,no
+Chiroptera,Emballonuridae,Rhynchonycteris,Rhynchonycteris naso,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Emballonuridae,Saccopteryx,Saccopteryx bilineata,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Emballonuridae,Saccopteryx,Saccopteryx canescens,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Emballonuridae,Saccopteryx,Saccopteryx gymnura,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,no,no,no,no,no,no
+Chiroptera,Emballonuridae,Saccopteryx,Saccopteryx leptura,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Furipteridae,Furipterus,Furipterus horrens,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Molossidae,Cynomops,Cynomops abrasus,Abreu et al. 2023,Molossops,Molossops abrasus,Wilson & Reeder,native,DD,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Molossidae,Cynomops,Cynomops greenhalli,Abreu et al. 2023,Molossops,Molossops greenhalli,IUCN,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Molossidae,Cynomops,Cynomops mastivus,Abreu et al. 2023,Cynomops,Cynomops abrasus,NCBI,native,DD,Vo,yes,no,no,yes,yes,no,no
+Chiroptera,Molossidae,Cynomops,Cynomops milleri,Abreu et al. 2023,Cynomops,Cynomops paranus,Wilson & Reeder,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Molossidae,Cynomops,Cynomops planirostris,Abreu et al. 2023,Molossops,Molossops planirostris,IUCN,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Molossidae,Eumops,Eumops auripendulus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Molossidae,Eumops,Eumops bonariensis,Abreu et al. 2023,Promops,Promops bonairensis,IUCN,native,LC,Vo,yes,yes,yes,no,no,yes,no
+Chiroptera,Molossidae,Eumops,Eumops chimaera,Abreu et al. 2023,NA,NA,NA,native,?,Vo,no,yes,no,no,no,no,no
+Chiroptera,Molossidae,Eumops,Eumops dabbenei,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,yes,no,yes,no,no
+Chiroptera,Molossidae,Eumops,Eumops delticus,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Molossidae,Eumops,Eumops glaucinus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Molossidae,Eumops,Eumops hansae,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Molossidae,Eumops,Eumops maurus,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Molossidae,Eumops,Eumops patagonicus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,no,yes,yes,yes,yes,yes,yes
+Chiroptera,Molossidae,Eumops,Eumops perotis,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Molossidae,Eumops,Eumops trumbulli,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Molossidae,Molossops,Molossops neglectus,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,yes,no,no,no,no,no
+Chiroptera,Molossidae,Molossops,Molossops temminckii,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,yes,no
+Chiroptera,Molossidae,Molossus,Molossus aztecus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Molossidae,Molossus,Molossus coibensis,Abreu et al. 2023,Molossus,Molossus barnesi,IUCN,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Molossidae,Molossus,Molossus currentium,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,yes,no,no
+Chiroptera,Molossidae,Molossus,Molossus fluminensis,Abreu et al. 2023,NA,NA,NA,native,?,Vo,no,yes,no,no,no,yes,no
+Chiroptera,Molossidae,Molossus,Molossus molossus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Molossidae,Molossus,Molossus pretiosus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,no,no,yes,yes,yes,no,no
+Chiroptera,Molossidae,Molossus,Molossus rufus,Abreu et al. 2023,Molossus,Molossus ater,IUCN,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Molossidae,Molossus,Molossus rufus,Abreu et al. 2023,Molossus,Molossus fluminensis,SBMZ,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Molossidae,Neoplatymops,Neoplatymops mattogrossensis,Abreu et al. 2023,NA,NA,NA,native,?,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Molossidae,Nyctinomops,Nyctinomops aurispinosus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,no,yes,yes,yes,no,no,no
+Chiroptera,Molossidae,Nyctinomops,Nyctinomops laticaudatus,Abreu et al. 2023,Tadarida,Tadarida espiritosantensis,IUCN,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Molossidae,Nyctinomops,Nyctinomops macrotis,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Molossidae,Promops,Promops centralis,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Molossidae,Promops,Promops nasutus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Molossidae,Tadarida,Tadarida brasiliensis,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Mormoopidae,Pteronotus,Pteronotus alitonus,Abreu et al. 2023,NA,NA,NA,native,?,Vo,yes,no,no,no,no,no,no
+Chiroptera,Mormoopidae,Pteronotus,Pteronotus gymnonotus,Abreu et al. 2023,Pteronotus,Pteronotus suapurensis,IUCN,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Mormoopidae,Pteronotus,Pteronotus personatus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Mormoopidae,Pteronotus,Pteronotus rubiginosus,Abreu et al. 2023,Pteronotus,Pteronotus parnellii,Wilson & Reeder,native,LC,Vo,yes,no,yes,yes,yes,no,no
+Chiroptera,Natalidae,Natalus,Natalus macrourus,Abreu et al. 2023,Natalus,Natalus espiritosantensis,Wilson & Reeder,native,NT,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Noctilionidae,Noctilio,Noctilio albiventris,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Noctilionidae,Noctilio,Noctilio leporinus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Phyllostomidae,Ametrida,Ametrida centurio,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Anoura,Anoura caudifer,Abreu et al. 2023,Anoura,Anoura caudifera,IUCN,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Anoura,Anoura geoffroyi,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Artibeus,Artibeus amplus,Abreu et al. 2023,NA,NA,NA,native,LC,,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Artibeus,Artibeus anderseni,Abreu et al. 2023,Dermanura,Dermanura anderseni,IUCN,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Artibeus,Artibeus bogotensis,Abreu et al. 2023,Artibeus,Artibeus glaucus,Wilson & Reeder,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Artibeus,Artibeus bogotensis,Abreu et al. 2023,Dermanura,Dermanura bogotensis,NCBI,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Artibeus,Artibeus cinereus,Abreu et al. 2023,Dermanura,Dermanura cinerea,IUCN,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Artibeus,Artibeus cinereus,Abreu et al. 2023,Lasiurus,Lasiurus cinereus,Wilson & Reeder,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Artibeus,Artibeus concolor,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Artibeus,Artibeus fimbriatus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,no,yes,yes,yes,yes,yes,yes
+Chiroptera,Phyllostomidae,Artibeus,Artibeus gnoma,Abreu et al. 2023,Artibeus,Artibeus gnomus,Wilson & Reeder,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Artibeus,Artibeus lituratus,Abreu et al. 2023,Artibeus,Artibeus intermedius,IUCN,native,LC,Vo,yes,yes,yes,yes,yes,yes,no
+Chiroptera,Phyllostomidae,Artibeus,Artibeus obscurus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Artibeus,Artibeus planirostris,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Carollia,Carollia benkeithi,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Carollia,Carollia brevicauda,Abreu et al. 2023,Carollia,Carollia colombiana,IUCN,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Carollia,Carollia perspicillata,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Phyllostomidae,Chiroderma,Chiroderma doriae,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,no,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Chiroderma,Chiroderma trinitatum,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Chiroderma,Chiroderma villosum,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Choeroniscus,Choeroniscus godmani,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Choeroniscus,Choeroniscus minor,Abreu et al. 2023,Choeroniscus,Choeroniscus intermedius,IUCN,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Chrotopterus,Chrotopterus auritus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Phyllostomidae,Desmodus,Desmodus rotundus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Phyllostomidae,Diaemus,Diaemus youngii,Abreu et al. 2023,Diaemus,Diaemus youngi,Wilson & Reeder,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Diphylla,Diphylla ecaudata,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Dryadonycteris,Dryadonycteris capixaba,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,no,yes,no,yes,no,no,no
+Chiroptera,Phyllostomidae,Gardnerycteris,Gardnerycteris crenulata,Abreu et al. 2023,Gardnerycteris,Gardnerycteris crenulatum,NCBI,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Glossophaga,Glossophaga bakeri,Abreu et al. 2023,Glossophaga,Glossophaga commissarisi,Wilson & Reeder,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Glossophaga,Glossophaga longirostris,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Glossophaga,Glossophaga soricina,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Phyllostomidae,Glyphonycteris,Glyphonycteris behnii,Abreu et al. 2023,Micronycteris,Micronycteris behnii,IUCN,native,DD,Vo,yes,no,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Glyphonycteris,Glyphonycteris daviesi,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,no,no,no,no,no
+Chiroptera,Phyllostomidae,Glyphonycteris,Glyphonycteris sylvestris,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Hsunycteris,Hsunycteris pattoni,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Hsunycteris,Hsunycteris thomasi,Abreu et al. 2023,Lonchophylla,Lonchophylla thomasi,Wilson & Reeder,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Lampronycteris,Lampronycteris brachyotis,Abreu et al. 2023,Micronycteris,Micronycteris brachyotis,IUCN,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Lichonycteris,Lichonycteris obscura,Abreu et al. 2023,Lichonycteris,Lichonycteris degener,Wilson & Reeder,native,LC,Vo,yes,yes,no,no,no,no,no
+Chiroptera,Phyllostomidae,Lionycteris,Lionycteris spurrelli,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Lonchophylla,Lonchophylla bokermanni,Abreu et al. 2023,NA,NA,NA,native,EN,Vo,no,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Lonchophylla,Lonchophylla dekeyseri,Abreu et al. 2023,NA,NA,NA,native,EN,Vo,no,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Lonchophylla,Lonchophylla inexpectata,Abreu et al. 2023,NA,NA,NA,native,?,Vo,no,yes,no,yes,no,no,no
+Chiroptera,Phyllostomidae,Lonchophylla,Lonchophylla mordax,Abreu et al. 2023,NA,NA,NA,native,NT,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Phyllostomidae,Lonchophylla,Lonchophylla peracchii,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,no,yes,no,no,no,no,no
+Chiroptera,Phyllostomidae,Lonchorhina,Lonchorhina aurita,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Lonchorhina,Lonchorhina inusitata,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Lophostoma,Lophostoma brasiliense,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Lophostoma,Lophostoma carrikeri,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Lophostoma,Lophostoma schulzi,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Lophostoma,Lophostoma silvicola,Abreu et al. 2023,Lophostoma,Lophostoma silvicolum,Wilson & Reeder,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Macrophyllum,Macrophyllum macrophyllum,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Mesophylla,Mesophylla macconnelli,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Micronycteris,Micronycteris hirsuta,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,no,yes,no,no,no
+Chiroptera,Phyllostomidae,Micronycteris,Micronycteris megalotis,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Micronycteris,Micronycteris microtis,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,no,no,no,no,no
+Chiroptera,Phyllostomidae,Micronycteris,Micronycteris minuta,Abreu et al. 2023,Micronycteris,Micronycteris homezi,IUCN,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Micronycteris,Micronycteris sanborni,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,no,no,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Micronycteris,Micronycteris schmidtorum,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Mimon,Mimon bennettii,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Neonycteris,Neonycteris pusilla,Abreu et al. 2023,Micronycteris,Micronycteris pusilla,IUCN,native,DD,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Phylloderma,Phylloderma stenops,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Phyllostomus,Phyllostomus discolor,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Phyllostomus,Phyllostomus elongatus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Phyllostomus,Phyllostomus hastatus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Phyllostomus,Phyllostomus latifolius,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Platyrrhinus,Platyrrhinus angustirostris,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Platyrrhinus,Platyrrhinus aurarius,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Platyrrhinus,Platyrrhinus brachycephalus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,yes,no,yes,no,no
+Chiroptera,Phyllostomidae,Platyrrhinus,Platyrrhinus fusciventris,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Platyrrhinus,Platyrrhinus guianensis,Abreu et al. 2023,NA,NA,NA,native,?,,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Platyrrhinus,Platyrrhinus incarum,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,yes,no,no
+Chiroptera,Phyllostomidae,Platyrrhinus,Platyrrhinus infuscus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Platyrrhinus,Platyrrhinus lineatus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Platyrrhinus,Platyrrhinus recifinus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,no,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Pygoderma,Pygoderma bilabiatum,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,no,yes,yes,yes,no,yes,no
+Chiroptera,Phyllostomidae,Rhinophylla,Rhinophylla fischerae,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Rhinophylla,Rhinophylla pumilio,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Scleronycteris,Scleronycteris ega,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Sphaeronycteris,Sphaeronycteris toxophyllum,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Sturnira,Sturnira giannae,Abreu et al. 2023,NA,NA,NA,native,?,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Sturnira,Sturnira lilium,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Phyllostomidae,Sturnira,Sturnira magna,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Sturnira,Sturnira tildae,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Tonatia,Tonatia bidens,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Tonatia,Tonatia maresi,Abreu et al. 2023,Tonatia,Tonatia saurophila,Wilson & Reeder,native,LC,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Phyllostomidae,Trachops,Trachops cirrhosus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Trinycteris,Trinycteris nicefori,Abreu et al. 2023,Micronycteris,Micronycteris nicefori,IUCN,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Uroderma,Uroderma bilobatum,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Uroderma,Uroderma magnirostrum,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Vampyressa,Vampyressa pusilla,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Vampyressa,Vampyressa thyone,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Vampyriscus,Vampyriscus bidens,Abreu et al. 2023,Vampyressa,Vampyressa bidens,IUCN,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Vampyriscus,Vampyriscus brocki,Abreu et al. 2023,Vampyressa,Vampyressa brocki,IUCN,native,LC,Vo,yes,no,no,no,no,no,no
+Chiroptera,Phyllostomidae,Vampyrodes,Vampyrodes caraccioli,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,yes,no,no
+Chiroptera,Phyllostomidae,Vampyrum,Vampyrum spectrum,Abreu et al. 2023,NA,NA,NA,native,NT,Vo,yes,no,yes,yes,yes,no,no
+Chiroptera,Phyllostomidae,Xeronycteris,Xeronycteris vieirai,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,no,no,yes,yes,no,no,no
+Chiroptera,Thyropteridae,Thyroptera,Thyroptera devivoi,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,no,yes,no,no,no,no
+Chiroptera,Thyropteridae,Thyroptera,Thyroptera discifera,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Thyropteridae,Thyroptera,Thyroptera lavali,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,no,no,no,no,no,no
+Chiroptera,Thyropteridae,Thyroptera,Thyroptera tricolor,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Chiroptera,Thyropteridae,Thyroptera,Thyroptera wynneae,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,no,yes,no,no,no,no,no
+Chiroptera,Vespertilionidae,Histiotus,Histiotus alienus,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,no,yes,no,no,no,no,no
+Chiroptera,Vespertilionidae,Histiotus,Histiotus diaphanopterus,Abreu et al. 2023,NA,NA,NA,native,?,Vo,no,no,yes,yes,no,no,no
+Chiroptera,Vespertilionidae,Histiotus,Histiotus laephotis,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,no,yes,no,no,no,no,no
+Chiroptera,Vespertilionidae,Histiotus,Histiotus montanus,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,no,yes,yes,yes,yes,yes,yes
+Chiroptera,Vespertilionidae,Histiotus,Histiotus velatus,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Vespertilionidae,Lasiurus,Lasiurus blossevillii,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,no,yes,no
+Chiroptera,Vespertilionidae,Lasiurus,Lasiurus castaneus,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,no,no,no,no,no,no
+Chiroptera,Vespertilionidae,Lasiurus,Lasiurus ebenus,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,no,yes,no,no,no,no,no
+Chiroptera,Vespertilionidae,Lasiurus,Lasiurus ega,Abreu et al. 2023,Dasypterus,Dasypterus ega,NCBI,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Vespertilionidae,Lasiurus,Lasiurus egregius,Abreu et al. 2023,Aeorestes,Aeorestes egregius,NCBI,native,DD,Vo,yes,yes,yes,yes,no,yes,no
+Chiroptera,Vespertilionidae,Lasiurus,Lasiurus villosissimus,Abreu et al. 2023,NA,NA,NA,native,?,Vo,yes,yes,yes,yes,yes,yes,no
+Chiroptera,Vespertilionidae,Myotis,Myotis albescens,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,no
+Chiroptera,Vespertilionidae,Myotis,Myotis izecksohni,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,no,yes,no,no,no,no,no
+Chiroptera,Vespertilionidae,Myotis,Myotis lavali,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,no,yes,yes,yes,yes,no,no
+Chiroptera,Vespertilionidae,Myotis,Myotis levis,Abreu et al. 2023,Myotis,Myotis dinellii,Wilson & Reeder,native,LC,Vo,no,yes,no,yes,yes,yes,yes
+Chiroptera,Vespertilionidae,Myotis,Myotis nigricans,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,yes,yes,yes,yes
+Chiroptera,Vespertilionidae,Myotis,Myotis pampa,Abreu et al. 2023,NA,NA,NA,native,?,,no,no,no,no,no,yes,no
+Chiroptera,Vespertilionidae,Myotis,Myotis riparius,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,yes,no,no
+Chiroptera,Vespertilionidae,Myotis,Myotis ruber,Abreu et al. 2023,NA,NA,NA,native,NT,Vo,no,yes,yes,yes,no,yes,no
+Chiroptera,Vespertilionidae,Myotis,Myotis simus,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,yes,yes,no,yes,no,no
+Chiroptera,Vespertilionidae,Neoeptesicus,Neoeptesicus brasiliensis,Abreu et al. 2023,Eptesicus,Eptesicus brasiliensis,Wilson & Reeder,native,LC,Vo,yes,yes,yes,yes,yes,yes,no
+Chiroptera,Vespertilionidae,Neoeptesicus,Neoeptesicus chiriquinus,Abreu et al. 2023,Eptesicus,Eptesicus chiriquinus,Wilson & Reeder,native,LC,Vo,yes,yes,no,no,no,no,no
+Chiroptera,Vespertilionidae,Neoeptesicus,Neoeptesicus diminutus,Abreu et al. 2023,Eptesicus,Eptesicus diminutus,Wilson & Reeder,native,LC,Vo,no,yes,yes,yes,yes,yes,no
+Chiroptera,Vespertilionidae,Neoeptesicus,Neoeptesicus furinalis,Abreu et al. 2023,Eptesicus,Eptesicus furinalis,Wilson & Reeder,native,LC,Vo,yes,yes,yes,yes,yes,no,no
+Chiroptera,Vespertilionidae,Neoeptesicus,Neoeptesicus taddeii,Abreu et al. 2023,Eptesicus,Eptesicus taddeii,Wilson & Reeder,native,DD,Vo,no,yes,no,no,no,no,no
+Chiroptera,Vespertilionidae,Rhogeessa,Rhogeessa hussoni,Abreu et al. 2023,NA,NA,NA,native,DD,Vo,yes,yes,yes,yes,no,no,no
+Chiroptera,Vespertilionidae,Rhogeessa,Rhogeessa io,Abreu et al. 2023,NA,NA,NA,native,LC,Vo,yes,yes,yes,no,no,no,no
+Cingulata,Chlamyphoridae,Cabassous,Cabassous squamicaudis,Abreu et al. 2023,Cabassous,Cabassous unicinctus,Wilson & Reeder,native,LC,SF,no,no,yes,yes,yes,no,no
+Cingulata,Chlamyphoridae,Cabassous,Cabassous tatouay,Abreu et al. 2023,NA,NA,NA,native,LC,SF,no,yes,yes,yes,yes,yes,yes
+Cingulata,Chlamyphoridae,Cabassous,Cabassous unicinctus,Abreu et al. 2023,NA,NA,NA,native,LC,SF,yes,yes,yes,no,no,no,no
+Cingulata,Chlamyphoridae,Euphractus,Euphractus sexcinctus,Abreu et al. 2023,NA,NA,NA,native,LC,SF,yes,yes,yes,yes,yes,yes,yes
+Cingulata,Chlamyphoridae,Priodontes,Priodontes maximus,Abreu et al. 2023,Priodontes,Priodontes giganteus,IUCN,native,VU,SF,yes,yes,yes,no,yes,no,no
+Cingulata,Chlamyphoridae,Tolypeutes,Tolypeutes matacus,Abreu et al. 2023,NA,NA,NA,native,NT,SF,no,no,yes,no,yes,no,no
+Cingulata,Chlamyphoridae,Tolypeutes,Tolypeutes tricinctus,Abreu et al. 2023,NA,NA,NA,native,VU,SF,no,no,yes,yes,no,no,no
+Cingulata,Dasypodidae,Dasypus,Dasypus beniensis,Abreu et al. 2023,Dasypus,Dasypus kappleri,Wilson & Reeder,native,LC,SF,yes,no,no,no,no,no,no
+Cingulata,Dasypodidae,Dasypus,Dasypus kappleri,Abreu et al. 2023,Dasypus,Dasypus pastasae,SBMZ,native,LC,SF,yes,no,no,no,no,no,no
+Cingulata,Dasypodidae,Dasypus,Dasypus novemcinctus,Abreu et al. 2023,NA,NA,NA,native,LC,SF,yes,yes,yes,yes,yes,yes,yes
+Cingulata,Dasypodidae,Dasypus,Dasypus pastasae,Abreu et al. 2023,Dasypus,Dasypus kappleri,Wilson & Reeder,native,LC,SF,yes,no,no,no,no,no,no
+Cingulata,Dasypodidae,Dasypus,Dasypus septemcinctus,Abreu et al. 2023,NA,NA,NA,native,LC,SF,yes,yes,yes,yes,yes,yes,yes
+Didelphimorphia,Didelphidae,Caluromys,Caluromys lanatus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,yes,yes,no,yes,no,no
+Didelphimorphia,Didelphidae,Caluromys,Caluromys philander,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,yes,yes,no,yes,no,no
+Didelphimorphia,Didelphidae,Caluromysiops,Caluromysiops irrupta,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Chironectes,Chironectes minimus,Abreu et al. 2023,NA,NA,NA,native,LC,SA,yes,yes,yes,yes,yes,yes,yes
+Didelphimorphia,Didelphidae,Cryptonanus,Cryptonanus agricolai,Abreu et al. 2023,Gracilinanus,Gracilinanus agricolai,Wilson & Reeder,native,DD,Ar,no,yes,yes,yes,no,no,no
+Didelphimorphia,Didelphidae,Cryptonanus,Cryptonanus chacoensis,Abreu et al. 2023,Gracilinanus,Gracilinanus chacoensis,IUCN,native,LC,Ar,no,no,yes,no,yes,yes,no
+Didelphimorphia,Didelphidae,Cryptonanus,Cryptonanus guahybae,Abreu et al. 2023,NA,NA,NA,native,DD,Ar,no,yes,no,no,no,yes,no
+Didelphimorphia,Didelphidae,Cryptonanus,Cryptonanus unduaviensis,Abreu et al. 2023,Gracilinanus,Gracilinanus agilis,Wilson & Reeder,native,DD,Ar,no,no,yes,yes,yes,no,no
+Didelphimorphia,Didelphidae,Didelphis,Didelphis albiventris,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,no,yes,yes,yes,yes,yes,yes
+Didelphimorphia,Didelphidae,Didelphis,Didelphis aurita,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,no,yes,no,no,no,no,no
+Didelphimorphia,Didelphidae,Didelphis,Didelphis imperfecta,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Didelphis,Didelphis marsupialis,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Glironia,Glironia venusta,Abreu et al. 2023,Marmosa,Marmosa aceramarcae,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Gracilinanus,Gracilinanus agilis,Abreu et al. 2023,Cryptonanus,Cryptonanus unduaviensis,SBMZ,native,LC,Ar,no,yes,yes,yes,yes,no,no
+Didelphimorphia,Didelphidae,Gracilinanus,Gracilinanus emiliae,Abreu et al. 2023,Gracilinanus,Gracilinanus longicaudus,IUCN,native,DD,Ar,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Gracilinanus,Gracilinanus microtarsus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,yes,no,no,no,no,no
+Didelphimorphia,Didelphidae,Gracilinanus,Gracilinanus peruanus,Abreu et al. 2023,NA,NA,NA,native,?,Ar,yes,no,yes,no,no,no,no
+Didelphimorphia,Didelphidae,Hyladelphys,Hyladelphys kalinowskii,Abreu et al. 2023,Gracilinanus,Gracilinanus kalinowskii,Wilson & Reeder,native,LC,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Lutreolina,Lutreolina crassicaudata,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,yes,yes,yes,yes,yes
+Didelphimorphia,Didelphidae,Marmosa,Marmosa constantiae,Abreu et al. 2023,Micoureus,Micoureus constantiae,Wilson & Reeder,native,LC,Sc,yes,no,yes,no,yes,no,no
+Didelphimorphia,Didelphidae,Marmosa,Marmosa demerarae,Abreu et al. 2023,Micoureus,Micoureus demerarae,Wilson & Reeder,native,LC,Sc,yes,yes,yes,yes,no,no,no
+Didelphimorphia,Didelphidae,Marmosa,Marmosa lepida,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Marmosa,Marmosa macrotarsus,Abreu et al. 2023,Marmosa,Marmosa murina,Wilson & Reeder,native,LC,Sc,yes,no,no,no,yes,no,no
+Didelphimorphia,Didelphidae,Marmosa,Marmosa murina,Abreu et al. 2023,Marmosa,Marmosa macrotarsus,SBMZ,native,LC,Sc,yes,yes,yes,yes,no,no,no
+Didelphimorphia,Didelphidae,Marmosa,Marmosa paraguayana,Abreu et al. 2023,Micoureus,Micoureus paraguayanus,Wilson & Reeder,native,LC,Sc,no,yes,no,no,no,no,no
+Didelphimorphia,Didelphidae,Marmosa,Marmosa phaea,Abreu et al. 2023,Micoureus,Micoureus phaeus,Wilson & Reeder,native,VU,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Marmosa,Marmosa rapposa,Abreu et al. 2023,NA,NA,NA,native,?,Sc,yes,no,yes,no,yes,no,no
+Didelphimorphia,Didelphidae,Marmosa,Marmosa rutteri,Abreu et al. 2023,NA,NA,NA,native,?,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Marmosa,Marmosa waterhousei,Abreu et al. 2023,Marmosa,Marmosa murina,NCBI,native,LC,Sc,yes,no,no,no,yes,no,no
+Didelphimorphia,Didelphidae,Marmosops,Marmosops bishopi,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,yes,no,yes,no,no,no,no
+Didelphimorphia,Didelphidae,Marmosops,Marmosops caucae,Abreu et al. 2023,Marmosops,Marmosops impavidus,Wilson & Reeder,native,LC,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Marmosops,Marmosops incanus,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,no,yes,yes,yes,no,no,no
+Didelphimorphia,Didelphidae,Marmosops,Marmosops marina,Abreu et al. 2023,NA,NA,NA,native,?,Sc,yes,no,yes,no,no,no,no
+Didelphimorphia,Didelphidae,Marmosops,Marmosops noctivagus,Abreu et al. 2023,Marmosops,Marmosops dorothea,IUCN,native,LC,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Marmosops,Marmosops ocellatus,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,no,no,yes,no,no,no,no
+Didelphimorphia,Didelphidae,Marmosops,Marmosops parvidens,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Marmosops,Marmosops paulensis,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,no,yes,no,no,no,no,no
+Didelphimorphia,Didelphidae,Marmosops,Marmosops pinheiroi,Abreu et al. 2023,Marmosops,Marmosops woodalli,Wilson & Reeder,native,LC,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Marmosops,Marmosops woodalli,Abreu et al. 2023,Marmosops,Marmosops pinheiroi,Wilson & Reeder,native,LC,Sc,yes,no,yes,no,no,no,no
+Didelphimorphia,Didelphidae,Metachirus,Metachirus aritanai,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Metachirus,Metachirus myosuros,Abreu et al. 2023,Metachirus,Metachirus nudicaudatus,Wilson & Reeder,native,LC,Te,yes,yes,no,no,yes,no,no
+Didelphimorphia,Didelphidae,Metachirus,Metachirus nudicaudatus,Abreu et al. 2023,Metachirus,Metachirus myosuros,SBMZ,native,LC,Te,yes,yes,yes,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis americana,Abreu et al. 2023,Monodelphis,Monodelphis umbristriatus,IUCN,native,LC,Te,no,yes,yes,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis arlindoi,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis brevicaudata,Abreu et al. 2023,Monodelphis,Monodelphis orinoci,IUCN,native,LC,Te,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis brevicaudata,Abreu et al. 2023,Monodelphis,Monodelphis touan,SBMZ,native,LC,Te,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis dimidiata,Abreu et al. 2023,Monodelphis,Monodelphis sorex,IUCN,native,LC,Te,no,yes,no,yes,yes,yes,yes
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis domestica,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,yes,yes,yes,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis emiliae,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis glirina,Abreu et al. 2023,Monodelphis,Monodelphis maraxina,IUCN,native,LC,Te,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis iheringi,Abreu et al. 2023,NA,NA,NA,native,DD,Te,no,yes,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis kunsi,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,yes,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis peruviana,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis pinocchio,Abreu et al. 2023,NA,NA,NA,native,?,Te,no,yes,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis ronaldi,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis saci,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis scalops,Abreu et al. 2023,Monodelphis,Monodelphis theresa,IUCN,native,LC,Te,no,yes,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis touan,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis unistriata,Abreu et al. 2023,Monodelphis,Monodelphis unistriatus,IUCN,native,CR,Te,no,yes,yes,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis vossi,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Philander,Philander andersoni,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Philander,Philander canus,Abreu et al. 2023,Philander,Philander opossum,Wilson & Reeder,native,LC,Sc,yes,no,yes,no,yes,no,no
+Didelphimorphia,Didelphidae,Philander,Philander mcilhennyi,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Philander,Philander opossum,Abreu et al. 2023,Philander,Philander canus,SBMZ,native,LC,Sc,yes,no,yes,no,no,no,no
+Didelphimorphia,Didelphidae,Philander,Philander pebas,Abreu et al. 2023,NA,NA,NA,native,?,Sc,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Philander,Philander quica,Abreu et al. 2023,Philander,Philander frenatus,Wilson & Reeder,native,LC,Sc,no,yes,no,no,no,no,no
+Didelphimorphia,Didelphidae,Thylamys,Thylamys karimii,Abreu et al. 2023,NA,NA,NA,native,VU,Sc,no,no,yes,yes,no,no,no
+Didelphimorphia,Didelphidae,Thylamys,Thylamys macrurus,Abreu et al. 2023,Thylamys,Thylamys macrura,IUCN,native,NT,Sc,no,no,yes,no,yes,no,no
+Didelphimorphia,Didelphidae,Thylamys,Thylamys velutinus,Abreu et al. 2023,NA,NA,NA,native,NT,Sc,no,no,yes,no,no,no,no
+Lagomorpha,Leporidae,Sylvilagus,Sylvilagus brasiliensis,Abreu et al. 2023,Sylvilagus,Sylvilagus tapetillus,SBMZ,native,EN,Te,yes,yes,yes,yes,yes,yes,yes
+Lagomorpha,Leporidae,Sylvilagus,Sylvilagus minensis,Abreu et al. 2023,Sylvilagus,Sylvilagus brasiliensis,Wilson & Reeder,native,EN,Te,no,no,no,yes,yes,yes,no
+Lagomorpha,Leporidae,Sylvilagus,Sylvilagus paraguensis,Abreu et al. 2023,Sylvilagus,Sylvilagus brasiliensis,Wilson & Reeder,native,EN,Te,no,no,no,yes,yes,yes,no
+Lagomorpha,Leporidae,Sylvilagus,Sylvilagus tapetillus,Abreu et al. 2023,Sylvilagus,Sylvilagus brasiliensis,Wilson & Reeder,native,VU,Te,no,no,no,yes,yes,yes,no
+Perissodactyla,Tapiriidae,Tapirus,Tapirus terrestris,Abreu et al. 2023,NA,NA,NA,native,VU,Te,yes,yes,yes,yes,yes,no,no
+Pilosa,Bradypodidae,Bradypus,Bradypus crinitus,Abreu et al. 2023,Bradypus,Bradypus torquatus,Wilson & Reeder,native,VU,Ar,no,yes,no,no,no,no,no
+Pilosa,Bradypodidae,Bradypus,Bradypus torquatus,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,no,yes,no,no,no,no,no
+Pilosa,Bradypodidae,Bradypus,Bradypus tridactylus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Pilosa,Bradypodidae,Bradypus,Bradypus variegatus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,yes,yes,no,no,no,no
+Pilosa,Choloepodidae,Choloepus,Choloepus didactylus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Pilosa,Choloepodidae,Choloepus,Choloepus hoffmanni,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Pilosa,Cyclopedidae,Cyclopes,Cyclopes didactylus,Abreu et al. 2023,Cyclopes,Cyclopes ida,SBMZ,native,LC,Ar,yes,yes,yes,no,no,no,no
+Pilosa,Cyclopedidae,Cyclopes,Cyclopes ida,Abreu et al. 2023,Cyclopes,Cyclopes didactylus,Wilson & Reeder,native,LC,Ar,yes,no,no,no,no,no,no
+Pilosa,Cyclopedidae,Cyclopes,Cyclopes rufus,Abreu et al. 2023,NA,NA,NA,native,?,Ar,yes,no,no,no,no,no,no
+Pilosa,Cyclopedidae,Cyclopes,Cyclopes thomasi,Abreu et al. 2023,NA,NA,NA,native,?,Ar,yes,no,no,no,no,no,no
+Pilosa,Cyclopedidae,Cyclopes,Cyclopes xinguensis,Abreu et al. 2023,NA,NA,NA,native,?,Ar,yes,no,no,no,no,no,no
+Pilosa,Myrmecophagidae,Myrmecophaga,Myrmecophaga tridactyla,Abreu et al. 2023,NA,NA,NA,native,VU,Te,yes,yes,yes,yes,yes,yes,yes
+Pilosa,Myrmecophagidae,Tamandua,Tamandua tetradactyla,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,yes,yes,yes,yes,yes,yes,yes
+Primates,Atelidae,Alouatta,Alouatta belzebul,Abreu et al. 2023,Alouatta,Alouatta nigerrima,SBMZ,native,VU,Ar,yes,yes,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta belzebul,Abreu et al. 2023,Alouatta,Alouatta ululata,SBMZ,native,VU,Ar,yes,yes,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta belzebul,Abreu et al. 2023,Mycetes,Mycetes bicolor,IUCN,native,VU,Ar,yes,yes,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta caraya,Abreu et al. 2023,NA,NA,NA,native,NT,Ar,no,yes,yes,yes,yes,yes,yes
+Primates,Atelidae,Alouatta,Alouatta discolor,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta guariba,Abreu et al. 2023,Alouatta,Alouatta fusca,IUCN,native,VU,Ar,no,yes,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta juara,Abreu et al. 2023,Alouatta,Alouatta seniculus,SBMZ,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta macconnelli,Abreu et al. 2023,Alouatta,Alouatta seniculus,SBMZ,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta nigerrima,Abreu et al. 2023,Alouatta,Alouatta belzebul,SBMZ,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta nigerrima,Abreu et al. 2023,Mycetes,Mycetes caraya,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta puruensis,Abreu et al. 2023,Alouatta,Alouatta seniculus,SBMZ,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta seniculus,Abreu et al. 2023,Alouatta,Alouatta juara,SBMZ,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta seniculus,Abreu et al. 2023,Alouatta,Alouatta macconnelli,SBMZ,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta seniculus,Abreu et al. 2023,Alouatta,Alouatta puruensis,SBMZ,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta seniculus,Abreu et al. 2023,Simia,Simia seniculus,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Alouatta,Alouatta ululata,Abreu et al. 2023,Alouatta,Alouatta belzebul,SBMZ,native,EN,Ar,yes,no,yes,yes,no,no,no
+Primates,Atelidae,Ateles,Ateles belzebuth,Abreu et al. 2023,Ateles,Ateles marginatus,SBMZ,native,EN,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Ateles,Ateles chamek,Abreu et al. 2023,Ateles,Ateles longimembris,IUCN,native,EN,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Ateles,Ateles marginatus,Abreu et al. 2023,Ateles,Ateles belzebuth,IUCN,native,EN,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Ateles,Ateles paniscus,Abreu et al. 2023,Ateles,Ateles ater,IUCN,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Atelidae,Brachyteles,Brachyteles arachnoides,Abreu et al. 2023,NA,NA,NA,native,CR,Ar,no,yes,no,no,no,no,no
+Primates,Atelidae,Brachyteles,Brachyteles hypoxanthus,Abreu et al. 2023,NA,NA,NA,native,CR,Ar,no,yes,no,no,no,no,no
+Primates,Atelidae,Lagothrix,Lagothrix lagothricha,Abreu et al. 2023,Lagothrix,Lagothrix lugens,IUCN,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Aotus,Aotus azarae,Abreu et al. 2023,Aotus,Aotus azarai,NCBI,native,LC,Ar,yes,no,yes,no,yes,no,no
+Primates,Cebidae,Aotus,Aotus azarae,Abreu et al. 2023,Simia,Simia azarae,IUCN,native,LC,Ar,yes,no,yes,no,yes,no,no
+Primates,Cebidae,Aotus,Aotus infulatus,Abreu et al. 2023,Aotus,Aotus azarai,NCBI,native,LC,Ar,yes,no,yes,no,no,no,no
+Primates,Cebidae,Aotus,Aotus nancymaae,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Aotus,Aotus nigriceps,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Aotus,Aotus trivirgatus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Aotus,Aotus vociferans,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Callimico,Callimico goeldii,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Callithrix,Callithrix aurita,Abreu et al. 2023,NA,NA,NA,native,EN,Ar,no,yes,no,no,no,no,no
+Primates,Cebidae,Callithrix,Callithrix flaviceps,Abreu et al. 2023,NA,NA,NA,native,CR,Ar,no,yes,no,no,no,no,no
+Primates,Cebidae,Callithrix,Callithrix geoffroyi,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,yes,no,no,no,no,no
+Primates,Cebidae,Callithrix,Callithrix jacchus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,yes,no,no,no,no,no
+Primates,Cebidae,Callithrix,Callithrix kuhlii,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,no,yes,no,no,no,no,no
+Primates,Cebidae,Callithrix,Callithrix penicillata,Abreu et al. 2023,Callithrix,Callithrix jacchus,IUCN,native,LC,Ar,no,yes,yes,no,no,no,no
+Primates,Cebidae,Cebuella,Cebuella niveiventris,Abreu et al. 2023,Callithrix,Callithrix pygmaea,Wilson & Reeder,native,VU,Ar,no,no,no,no,no,no,no
+Primates,Cebidae,Cebuella,Cebuella pygmaea,Abreu et al. 2023,Callithrix,Callithrix pygmaea,IUCN,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Cebus,Cebus albifrons,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Cebus,Cebus kaapori,Abreu et al. 2023,Cebus,Cebus olivaceus,IUCN,native,CR,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Cebus,Cebus olivaceus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Cebus,Cebus unicolor,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Leontopithecus,Leontopithecus caissara,Abreu et al. 2023,NA,NA,NA,native,EN,Ar,no,yes,no,no,no,no,no
+Primates,Cebidae,Leontopithecus,Leontopithecus chrysomelas,Abreu et al. 2023,Leontopithecus,Leontopithecus chrysomela,IUCN,native,EN,Ar,no,yes,no,no,no,no,no
+Primates,Cebidae,Leontopithecus,Leontopithecus chrysopygus,Abreu et al. 2023,NA,NA,NA,native,EN,Ar,no,yes,no,no,no,no,no
+Primates,Cebidae,Leontopithecus,Leontopithecus rosalia,Abreu et al. 2023,NA,NA,NA,native,EN,Ar,no,yes,no,no,no,no,no
+Primates,Cebidae,Mico,Mico acariensis,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico argentatus,Abreu et al. 2023,Callithrix,Callithrix argentata,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico chrysoleucos,Abreu et al. 2023,Callithrix,Callithrix chrysoleuca,Wilson & Reeder,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico emiliae,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico humeralifer,Abreu et al. 2023,NA,NA,NA,native,NT,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico humilis,Abreu et al. 2023,Callithrix,Callithrix humilis,Wilson & Reeder,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico intermedius,Abreu et al. 2023,Callithrix,Callithrix intermedia,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico leucippe,Abreu et al. 2023,Callithrix,Callithrix argentata,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico marcai,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico mauesi,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico melanurus,Abreu et al. 2023,Callithrix,Callithrix argentata,IUCN,native,NT,Ar,yes,no,yes,no,no,no,no
+Primates,Cebidae,Mico,Mico munduruku,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,no,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico nigriceps,Abreu et al. 2023,Callithrix,Callithrix nigriceps,IUCN,native,NT,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico rondoni,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico saterei,Abreu et al. 2023,Callithrix,Callithrix saterei,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Mico,Mico schneideri,Abreu et al. 2023,NA,NA,NA,native,EN,Ar,no,no,no,no,no,no,no
+Primates,Cebidae,Simia,Pithecia monachus,Abreu et al. 2023,Simia,Simia monacha,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus bicolor,Abreu et al. 2023,Saguinus,Saguinus martinsi,SBMZ,native,CR,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus cruzlimai,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,no,no,no,no,no,no
+Primates,Cebidae,Leontocebus,Saguinus fuscicollis,Abreu et al. 2023,Leontocebus,Leontocebus cruzlimai,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus fuscicollis,Abreu et al. 2023,Leontocebus,Leontocebus fuscicollis,NCBI,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus fuscicollis,Abreu et al. 2023,Saguinus,Saguinus melanoleucus,Wilson & Reeder,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus fuscus,Abreu et al. 2023,Leontocebus,Leontocebus fuscus,IUCN,native,LC,Ar,no,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus imperator,Abreu et al. 2023,Saguinus,Saguinus subgrisescens,SBMZ,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus inustus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus kulina,Abreu et al. 2023,NA,NA,NA,native,?,,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus labiatus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus martinsi,Abreu et al. 2023,Saguinus,Saguinus bicolor,IUCN,native,NT,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus midas,Abreu et al. 2023,Saguinus,Saguinus niger,SBMZ,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus midas,Abreu et al. 2023,Saguinus,Saguinus ursulus,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus mystax,Abreu et al. 2023,Saguinus,Saguinus pileatus,Wilson & Reeder,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus niger,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus nigricollis,Abreu et al. 2023,Leontocebus,Leontocebus nigricollis,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus subgrisescens,Abreu et al. 2023,Saguinus,Saguinus imperator,Wilson & Reeder,native,LC,,yes,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus ursula,Abreu et al. 2023,Saguinus,Saguinus ursulus,IUCN,native,VU,Ar,no,no,no,no,no,no,no
+Primates,Cebidae,Saguinus,Saguinus weddelli,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,no,no,no,no,no,no
+Primates,Cebidae,Saimiri,Saimiri boliviensis,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saimiri,Saimiri cassiquiarensis,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saimiri,Saimiri collinsi,Abreu et al. 2023,Saimiri,Saimiri sciureus,SBMZ,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saimiri,Saimiri macrodon,Abreu et al. 2023,NA,NA,NA,native,?,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saimiri,Saimiri sciureus,Abreu et al. 2023,Saimiri,Saimiri collinsi,SBMZ,native,LC,Ar,yes,yes,no,no,no,no,no
+Primates,Cebidae,Saimiri,Saimiri ustus,Abreu et al. 2023,Saimiri,Saimiri madeirae,IUCN,native,NT,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Saimiri,Saimiri vanzolinii,Abreu et al. 2023,NA,NA,NA,native,EN,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Sapajus,Sapajus apella,Abreu et al. 2023,Sapajus,Sapajus macrocephalus,Wilson & Reeder,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Cebidae,Sapajus,Sapajus cay,Abreu et al. 2023,Cebus,Cebus paraguayanus,IUCN,native,VU,Ar,no,no,yes,no,yes,no,no
+Primates,Cebidae,Sapajus,Sapajus flavius,Abreu et al. 2023,NA,NA,NA,native,EN,Ar,no,yes,no,no,no,no,no
+Primates,Cebidae,Sapajus,Sapajus libidinosus,Abreu et al. 2023,NA,NA,NA,native,NT,Ar,no,yes,yes,yes,no,no,no
+Primates,Cebidae,Sapajus,Sapajus nigritus,Abreu et al. 2023,Sapajus,Sapajus robustus,SBMZ,native,NT,Ar,no,yes,no,no,no,no,no
+Primates,Cebidae,Sapajus,Sapajus robustus,Abreu et al. 2023,Sapajus,Sapajus nigritus,SBMZ,native,EN,Ar,no,yes,no,no,no,no,no
+Primates,Cebidae,Sapajus,Sapajus xanthosternos,Abreu et al. 2023,NA,NA,NA,native,CR,Ar,no,yes,no,no,no,no,no
+Primates,Pitheciidae,Cacajao,Cacajao amuna,Abreu et al. 2023,NA,NA,NA,native,?,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Cacajao,Cacajao calvus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Cacajao,Cacajao melanocephalus,Abreu et al. 2023,Simia,Simia melanocephala,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Cacajao,Cacajao novaesi,Abreu et al. 2023,Cacajao,Cacajao calvus,Wilson & Reeder,native,VU,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Cacajao,Cacajao ouakary,Abreu et al. 2023,Cacajao,Cacajao melanocephalus,Wilson & Reeder,native,LC,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Cacajao,Cacajao rubicundus,Abreu et al. 2023,Cacajao,Cacajao calvus,Wilson & Reeder,native,LC,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Cacajao,Cacajao ucayalii,Abreu et al. 2023,Cacajao,Cacajao calvus,Wilson & Reeder,native,VU,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus baptista,Abreu et al. 2023,Plecturocebus,Plecturocebus baptista,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus barbarabrownae,Abreu et al. 2023,Callicebus,Callicebus personatus,IUCN,native,CR,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus bernhardi,Abreu et al. 2023,Plecturocebus,Plecturocebus bernhardi,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus brunneus,Abreu et al. 2023,Plecturocebus,Plecturocebus brunneus,IUCN,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus caligatus,Abreu et al. 2023,Plecturocebus,Plecturocebus caligatus,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus cinerascens,Abreu et al. 2023,Plecturocebus,Plecturocebus cinerascens,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus coimbrai,Abreu et al. 2023,NA,NA,NA,native,EN,Ar,no,yes,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus cupreus,Abreu et al. 2023,Plecturocebus,Plecturocebus cupreus,NCBI,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus cupreus,Abreu et al. 2023,Plecturocebus,Plecturocebus toppini,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus donacophilus,Abreu et al. 2023,Plecturocebus,Plecturocebus donacophilus,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus grovesi,Abreu et al. 2023,NA,NA,NA,native,?,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus hoffmannsi,Abreu et al. 2023,Plecturocebus,Plecturocebus hoffmannsi,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus lucifer,Abreu et al. 2023,Cheracebus,Cheracebus lucifer,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus lugens,Abreu et al. 2023,Cheracebus,Cheracebus lugens,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus melanochir,Abreu et al. 2023,Callicebus,Callicebus personatus,IUCN,native,VU,Ar,no,yes,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus miltoni,Abreu et al. 2023,Plecturocebus,Plecturocebus miltoni,IUCN,native,DD,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus moloch,Abreu et al. 2023,Plecturocebus,Plecturocebus moloch,NCBI,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus moloch,Abreu et al. 2023,Plecturocebus,Plecturocebus toppini,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus nigrifrons,Abreu et al. 2023,Callicebus,Callicebus personatus,IUCN,native,NT,Ar,no,yes,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus pallescens,Abreu et al. 2023,Plecturocebus,Plecturocebus pallescens,IUCN,native,LC,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus parecis,Abreu et al. 2023,NA,NA,NA,native,NT,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus personatus,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,no,yes,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus regulus,Abreu et al. 2023,Cheracebus,Cheracebus regulus,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus torquatus,Abreu et al. 2023,Cheracebus,Cheracebus torquatus,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus vieirai,Abreu et al. 2023,Plecturocebus,Plecturocebus vieirai,IUCN,native,CR,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Chiropotes,Chiropotes albinasus,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Chiropotes,Chiropotes chiropotes,Abreu et al. 2023,Chiropotes,Chiropotes israelita,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Chiropotes,Chiropotes sagulatus,Abreu et al. 2023,Chiropotes,Chiropotes israelita,IUCN,native,LC,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Chiropotes,Chiropotes satanas,Abreu et al. 2023,Chiropotes,Chiropotes utahickae,SBMZ,native,EN,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Chiropotes,Chiropotes utahickae,Abreu et al. 2023,Chiropotes,Chiropotes satanas,IUCN,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Chiropotes,Chiropotes utahickae,Abreu et al. 2023,Chiropotes,Chiropotes satanus,Wilson & Reeder,native,VU,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Pithecia,Pithecia albicans,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Pithecia,Pithecia cazuzai,Abreu et al. 2023,NA,NA,NA,native,DD,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Pithecia,Pithecia chrysocephala,Abreu et al. 2023,Pithecia,Pithecia pithecia,SBMZ,native,LC,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Pithecia,Pithecia hirsuta,Abreu et al. 2023,Pithecia,Pithecia monachus,SBMZ,native,LC,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Pithecia,Pithecia inusta,Abreu et al. 2023,Pithecia,Pithecia monachus,SBMZ,native,LC,Ar,no,no,no,no,no,no,no
+Primates,Pitheciidae,Pithecia,Pithecia irrorata,Abreu et al. 2023,Pithecia,Pithecia vanzolinii,SBMZ,native,DD,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Pithecia,Pithecia monachus,Abreu et al. 2023,Pithecia,Pithecia hirsuta,SBMZ,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Pithecia,Pithecia monachus,Abreu et al. 2023,Pithecia,Pithecia inusta,SBMZ,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Pithecia,Pithecia pithecia,Abreu et al. 2023,Pithecia,Pithecia chrysocephala,SBMZ,native,LC,Ar,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Pithecia,Pithecia vanzolinii,Abreu et al. 2023,Pithecia,Pithecia irrorata,SBMZ,native,DD,Vo,no,no,no,no,no,no,no
+Rodentia,Caviidae,Cavia,Cavia aperea,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,yes,no,no,no,no
+Rodentia,Caviidae,Cavia,Cavia fulgida,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,yes,no,no,no,no
+Rodentia,Caviidae,Cavia,Cavia intermedia,Abreu et al. 2023,NA,NA,NA,native,CR,Te,no,yes,no,no,no,no,no
+Rodentia,Caviidae,Cavia,Cavia magna,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,no,yes,yes,yes,yes
+Rodentia,Caviidae,Galea,Galea flavidens,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,yes,no,no,no,no
+Rodentia,Caviidae,Galea,Galea spixii,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,yes,yes,yes,no,no,no
+Rodentia,Caviidae,Hydrochoerus,Hydrochoerus hydrochaeris,Abreu et al. 2023,Hydrochoeris,Hydrochoeris hydrochaeris,Wilson & Reeder,native,LC,SA,yes,yes,yes,yes,yes,yes,yes
+Rodentia,Caviidae,Kerodon,Kerodon acrobata,Abreu et al. 2023,NA,NA,NA,native,DD,Te,no,no,yes,no,no,no,no
+Rodentia,Caviidae,Kerodon,Kerodon rupestris,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,yes,yes,no,no,no
+Rodentia,Cricetidae,Abrawayaomys,Abrawayaomys ruschii,Abreu et al. 2023,NA,NA,NA,native,LC,SF,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Akodon,Akodon azarae,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,no,yes,yes,yes,yes
+Rodentia,Cricetidae,Akodon,Akodon cursor,Abreu et al. 2023,Akodon,Akodon serrensis,Wilson & Reeder,native,LC,Te,no,yes,yes,yes,no,no,no
+Rodentia,Cricetidae,Akodon,Akodon diauarum,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Akodon,Akodon kadiweu,Abreu et al. 2023,NA,NA,NA,native,?,Te,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Akodon,Akodon lindberghi,Abreu et al. 2023,NA,NA,NA,native,DD,Te,no,yes,yes,no,no,no,no
+Rodentia,Cricetidae,Akodon,Akodon montensis,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,yes,yes,yes,yes,yes
+Rodentia,Cricetidae,Akodon,Akodon mystax,Abreu et al. 2023,NA,NA,NA,native,DD,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Akodon,Akodon paranaensis,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,yes,no,no,yes,no
+Rodentia,Cricetidae,Akodon,Akodon reigi,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,no,yes,yes,yes,yes
+Rodentia,Cricetidae,Akodon,Akodon sanctipaulensis,Abreu et al. 2023,NA,NA,NA,native,DD,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Akodon,Akodon toba,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,no,no,yes,no,no
+Rodentia,Cricetidae,Bibimys,Bibimys labiosus,Abreu et al. 2023,NA,NA,NA,native,LC,SF,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Blarinomys,Blarinomys breviceps,Abreu et al. 2023,NA,NA,NA,native,LC,SF,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Brucepattersonius,Brucepattersonius griserufescens,Abreu et al. 2023,Brucepattersonius,Brucepattersonius albinasus,IUCN,native,DD,SF,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Brucepattersonius,Brucepattersonius iheringi,Abreu et al. 2023,Oxymycterus,Oxymycterus iheringi,IUCN,native,LC,SF,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Brucepattersonius,Brucepattersonius nebulosus,Abreu et al. 2023,NA,NA,NA,native,?,SF,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Brucepattersonius,Brucepattersonius soricinus,Abreu et al. 2023,NA,NA,NA,native,DD,SF,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Calassomys,Calassomys apicalis,Abreu et al. 2023,Lenoxus,Lenoxus apicalis,Wilson & Reeder,native,LC,Ar,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Calomys,Calomys callidus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Calomys,Calomys callosus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Calomys,Calomys cerqueirai,Abreu et al. 2023,NA,NA,NA,native,?,Te,no,yes,yes,no,no,no,no
+Rodentia,Cricetidae,Calomys,Calomys expulsus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,yes,yes,no,no,no
+Rodentia,Cricetidae,Calomys,Calomys hummelincki,Abreu et al. 2023,Baiomys,Baiomys hummelincki,Wilson & Reeder,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Calomys,Calomys laucha,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,no,yes,yes,yes,yes
+Rodentia,Cricetidae,Calomys,Calomys mattevii,Abreu et al. 2023,NA,NA,NA,native,?,Te,no,no,yes,yes,no,no,no
+Rodentia,Cricetidae,Calomys,Calomys tener,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,yes,no,no,no,no
+Rodentia,Cricetidae,Calomys,Calomys tocantinsi,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Castoria,Castoria angustidens,Abreu et al. 2023,NA,NA,NA,native,?,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Cerradomys,Cerradomys akroai,Abreu et al. 2023,NA,NA,NA,native,?,Te,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Cerradomys,Cerradomys goytaca,Abreu et al. 2023,NA,NA,NA,native,?,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Cerradomys,Cerradomys langguthi,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,yes,yes,yes,no,no,no
+Rodentia,Cricetidae,Cerradomys,Cerradomys maracajuensis,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Cerradomys,Cerradomys marinhus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Cerradomys,Cerradomys scotti,Abreu et al. 2023,Cerradomys,Cerradomys andersoni,IUCN,native,LC,Te,no,no,yes,yes,no,no,no
+Rodentia,Cricetidae,Cerradomys,Cerradomys subflavus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,yes,no,no,no,no
+Rodentia,Cricetidae,Cerradomys,Cerradomys vivoi,Abreu et al. 2023,NA,NA,NA,native,?,Te,no,yes,yes,no,no,no,no
+Rodentia,Cricetidae,Daptomys,Daptomys ferreirai,Abreu et al. 2023,NA,NA,NA,native,DD,SA,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Daptomys,Daptomys oyapocki,Abreu et al. 2023,NA,NA,NA,native,DD,SA,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Delomys,Delomys altimontanus,Abreu et al. 2023,Delomys,Delomys collinus,Wilson & Reeder,native,LC,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Delomys,Delomys dorsalis,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Delomys,Delomys sublineatus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Deltamys,Deltamys araucaria,Abreu et al. 2023,NA,NA,NA,native,?,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Deltamys,Deltamys kempi,Abreu et al. 2023,Akodon,Akodon kempi,IUCN,native,LC,Te,no,yes,no,yes,yes,yes,yes
+Rodentia,Cricetidae,Drymoreomys,Drymoreomys albimaculatus,Abreu et al. 2023,NA,NA,NA,native,NT,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Euryoryzomys,Euryoryzomys emmonsae,Abreu et al. 2023,Oryzomys,Oryzomys emmonsae,Wilson & Reeder,native,DD,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Euryoryzomys,Euryoryzomys lamia,Abreu et al. 2023,Oryzomys,Oryzomys lamia,IUCN,native,VU,Te,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Euryoryzomys,Euryoryzomys macconnelli,Abreu et al. 2023,Oryzomys,Oryzomys macconnelli,Wilson & Reeder,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Euryoryzomys,Euryoryzomys nitidus,Abreu et al. 2023,Oryzomys,Oryzomys nitidus,Wilson & Reeder,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Euryoryzomys,Euryoryzomys russatus,Abreu et al. 2023,Oryzomys,Oryzomys russatus,Wilson & Reeder,native,LC,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Gyldenstolpia,Gyldenstolpia planaltensis,Abreu et al. 2023,Kunsia,Kunsia fronto,Wilson & Reeder,native,?,SF,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Holochilus,Holochilus brasiliensis,Abreu et al. 2023,NA,NA,NA,native,LC,SA,no,yes,yes,no,no,yes,no
+Rodentia,Cricetidae,Holochilus,Holochilus chacarius,Abreu et al. 2023,NA,NA,NA,native,LC,SA,no,no,no,no,yes,no,no
+Rodentia,Cricetidae,Holochilus,Holochilus nanus,Abreu et al. 2023,Holochilus,Holochilus sciureus,Wilson & Reeder,native,LC,SA,yes,no,yes,yes,no,no,no
+Rodentia,Cricetidae,Holochilus,Holochilus oxe,Abreu et al. 2023,NA,NA,NA,native,?,SA,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Holochilus,Holochilus sciureus,Abreu et al. 2023,Holochilus,Holochilus nanus,SBMZ,native,LC,SA,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Hylaeamys,Hylaeamys megacephalus,Abreu et al. 2023,Oryzomys,Oryzomys capito,IUCN,native,LC,Te,yes,yes,yes,no,yes,no,no
+Rodentia,Cricetidae,Hylaeamys,Hylaeamys oniscus,Abreu et al. 2023,Oryzomys,Oryzomys laticeps,Wilson & Reeder,native,NT,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Hylaeamys,Hylaeamys oniscus,Abreu et al. 2023,Oryzomys,Oryzomys oniscus,IUCN,native,NT,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Hylaeamys,Hylaeamys perenensis,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Hylaeamys,Hylaeamys seuanezi,Abreu et al. 2023,Oryzomys,Oryzomys seuanezi,Wilson & Reeder,native,?,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Hylaeamys,Hylaeamys yunganus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Juliomys,Juliomys ossitenuis,Abreu et al. 2023,NA,NA,NA,native,?,Ar,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Juliomys,Juliomys pictipes,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Juliomys,Juliomys rimofrons,Abreu et al. 2023,NA,NA,NA,native,NT,Ar,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Juliomys,Juliomys ximenezi,Abreu et al. 2023,NA,NA,NA,native,?,Ar,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Juscelinomys,Juscelinomys candango,Abreu et al. 2023,NA,NA,NA,native,EX,SF,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Kunsia,Kunsia tomentosus,Abreu et al. 2023,NA,NA,NA,native,LC,SF,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Lundomys,Lundomys molitor,Abreu et al. 2023,Holochilus,Holochilus magnus,IUCN,native,LC,SA,no,no,no,yes,yes,yes,yes
+Rodentia,Cricetidae,Microakodontomys,Microakodontomys transitorius,Abreu et al. 2023,NA,NA,NA,native,EN,Te,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys aletheia,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys amoenus,Abreu et al. 2023,Neacomys,Neacomys spinosus,Wilson & Reeder,native,LC,Te,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys dubosti,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys elieceri,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys guianae,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys jau,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys marajoara,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys minutus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys musseri,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys oliveirai,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys paracou,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys vossi,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Neacomys,Neacomys xingu,Abreu et al. 2023,NA,NA,NA,native,?,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Necromys,Necromys lasiurus,Abreu et al. 2023,Bolomys,Bolomys lasiurus,IUCN,native,LC,Te,yes,yes,yes,yes,yes,yes,yes
+Rodentia,Cricetidae,Necromys,Necromys lenguarum,Abreu et al. 2023,Necromys,Necromys tapiropoanus,Wilson & Reeder,native,LC,Te,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Nectomys,Nectomys apicalis,Abreu et al. 2023,NA,NA,NA,native,LC,SA,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Nectomys,Nectomys rattus,Abreu et al. 2023,Nectomys,Nectomys melanius,IUCN,native,LC,SA,yes,yes,yes,yes,yes,no,no
+Rodentia,Cricetidae,Nectomys,Nectomys rattus,Abreu et al. 2023,Nectomys,Nectomys squamipes,SBMZ,native,LC,SA,yes,yes,yes,yes,yes,no,no
+Rodentia,Cricetidae,Nectomys,Nectomys squamipes,Abreu et al. 2023,NA,NA,NA,native,LC,SA,no,yes,yes,no,no,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys auyantepui,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys bicolor,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys catherinae,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,yes,yes,no,no,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys cleberi,Abreu et al. 2023,NA,NA,NA,native,DD,Ar,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys concolor,Abreu et al. 2023,Oryzomys,Oryzomys concolor,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys franciscorum,Abreu et al. 2023,NA,NA,NA,native,?,Ar,no,no,no,no,yes,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys mamorae,Abreu et al. 2023,Oryzomys,Oryzomys mamorae,IUCN,native,LC,Ar,no,no,yes,no,yes,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys matogrossensis,Abreu et al. 2023,NA,NA,NA,native,?,Ar,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys paricola,Abreu et al. 2023,NA,NA,NA,native,DD,Ar,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys rex,Abreu et al. 2023,Oecomys,Oecomys regalis,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys roberti,Abreu et al. 2023,Oecomys,Oecomys tapajinus,SBMZ,native,LC,Ar,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys rutilus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys superans,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys tapajinus,Abreu et al. 2023,Oecomys,Oecomys roberti,Wilson & Reeder,native,LC,Ar,yes,no,yes,no,yes,no,no
+Rodentia,Cricetidae,Oecomys,Oecomys trinitatis,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Oligoryzomys,Oligoryzomys chacoensis,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,no,no,yes,no,yes,no,no
+Rodentia,Cricetidae,Oligoryzomys,Oligoryzomys flavescens,Abreu et al. 2023,Oligoryzomys,Oligoryzomys fornesi,Wilson & Reeder,native,LC,Sc,no,yes,yes,yes,yes,yes,yes
+Rodentia,Cricetidae,Oligoryzomys,Oligoryzomys mattogrossae,Abreu et al. 2023,Oligoryzomys,Oligoryzomys microtis,Wilson & Reeder,native,LC,Sc,yes,no,yes,yes,no,no,no
+Rodentia,Cricetidae,Oligoryzomys,Oligoryzomys messorius,Abreu et al. 2023,Oligoryzomys,Oligoryzomys fulvescens,Wilson & Reeder,native,LC,Sc,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Oligoryzomys,Oligoryzomys microtis,Abreu et al. 2023,Oligoryzomys,Oligoryzomys mattogrossae,SBMZ,native,LC,Sc,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Oligoryzomys,Oligoryzomys moojeni,Abreu et al. 2023,NA,NA,NA,native,DD,Sc,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Oligoryzomys,Oligoryzomys nigripes,Abreu et al. 2023,Oligoryzomys,Oligoryzomys eliurus,IUCN,native,LC,Sc,no,yes,yes,yes,yes,yes,yes
+Rodentia,Cricetidae,Oligoryzomys,Oligoryzomys rupestris,Abreu et al. 2023,NA,NA,NA,native,DD,Sc,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Oligoryzomys,Oligoryzomys stramineus,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,no,no,yes,yes,no,no,no
+Rodentia,Cricetidae,Oligoryzomys,Oligoryzomys utiaritensis,Abreu et al. 2023,Oligoryzomys,Oligoryzomys eliurus,Wilson & Reeder,native,LC,Sc,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Oxymycterus,Oxymycterus amazonicus,Abreu et al. 2023,NA,NA,NA,native,LC,SF,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Oxymycterus,Oxymycterus caparaoe,Abreu et al. 2023,NA,NA,NA,native,?,SF,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Oxymycterus,Oxymycterus dasytrichus,Abreu et al. 2023,NA,NA,NA,native,LC,SF,no,yes,no,yes,no,no,no
+Rodentia,Cricetidae,Oxymycterus,Oxymycterus delator,Abreu et al. 2023,NA,NA,NA,native,LC,SF,no,yes,yes,yes,no,no,no
+Rodentia,Cricetidae,Oxymycterus,Oxymycterus inca,Abreu et al. 2023,NA,NA,NA,native,LC,SF,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Oxymycterus,Oxymycterus itapeby,Abreu et al. 2023,NA,NA,NA,native,?,SF,no,yes,yes,no,no,no,no
+Rodentia,Cricetidae,Oxymycterus,Oxymycterus nasutus,Abreu et al. 2023,NA,NA,NA,native,LC,SF,no,yes,no,yes,yes,yes,yes
+Rodentia,Cricetidae,Oxymycterus,Oxymycterus quaestor,Abreu et al. 2023,Oxymycterus,Oxymycterus judex,Wilson & Reeder,native,LC,SF,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Oxymycterus,Oxymycterus rufus,Abreu et al. 2023,NA,NA,NA,native,LC,SF,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Phaenomys,Phaenomys ferrugineus,Abreu et al. 2023,NA,NA,NA,native,EN,Ar,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Pseudoryzomys,Pseudoryzomys simplex,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,yes,yes,yes,no,no
+Rodentia,Cricetidae,Reithrodon,Reithrodon typicus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,no,yes,yes,yes,yes
+Rodentia,Cricetidae,Rhagomys,Rhagomys longilingua,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Rhagomys,Rhagomys rufescens,Abreu et al. 2023,NA,NA,NA,native,VU,Sc,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys baturiteensis,Abreu et al. 2023,NA,NA,NA,native,?,Ar,no,no,no,yes,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys bezerrensis,Abreu et al. 2023,NA,NA,NA,native,?,Ar,no,no,no,yes,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys caracolensis,Abreu et al. 2023,NA,NA,NA,native,?,Ar,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys cariri,Abreu et al. 2023,NA,NA,NA,native,DD,Ar,no,no,no,yes,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys cearanus,Abreu et al. 2023,Rhipidomys,Rhipidomys macrurus,Wilson & Reeder,native,LC,Ar,no,no,yes,yes,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys emiliae,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys gardneri,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys ipukensis,Abreu et al. 2023,NA,NA,NA,native,DD,Ar,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys itoan,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys leucodactylus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys macconnelli,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys macrurus,Abreu et al. 2023,Rhipidomys,Rhipidomys cearanus,SBMZ,native,LC,Ar,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys mastacalis,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,yes,yes,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys nitela,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys tribei,Abreu et al. 2023,NA,NA,NA,native,DD,Ar,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys ybyrae,Abreu et al. 2023,NA,NA,NA,native,?,Ar,yes,no,yes,no,no,no,no
+Rodentia,Cricetidae,Scapteromys,Scapteromys aquaticus,Abreu et al. 2023,Scapteromys,Scapteromys tumidus,SBMZ,native,LC,SA,no,no,no,no,no,yes,no
+Rodentia,Cricetidae,Scapteromys,Scapteromys meridionalis,Abreu et al. 2023,NA,NA,NA,native,?,SA,no,yes,no,no,no,yes,no
+Rodentia,Cricetidae,Scapteromys,Scapteromys tumidus,Abreu et al. 2023,Scapteromys,Scapteromys aquaticus,SBMZ,native,LC,SA,no,yes,no,yes,yes,yes,yes
+Rodentia,Cricetidae,Scolomys,Scolomys ucayalensis,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Sigmodon,Sigmodon alstoni,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Sooretamys,Sooretamys angouya,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Thalpomys,Thalpomys cerradensis,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Thalpomys,Thalpomys lasiotis,Abreu et al. 2023,Akodon,Akodon reinhardti,IUCN,native,LC,Te,no,no,yes,no,no,no,no
+Rodentia,Cricetidae,Thaptomys,Thaptomys nigrita,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Wiedomys,Wiedomys cerradensis,Abreu et al. 2023,NA,NA,NA,native,DD,Sc,no,no,yes,yes,no,no,no
+Rodentia,Cricetidae,Wiedomys,Wiedomys pyrrhorhinos,Abreu et al. 2023,NA,NA,NA,native,LC,Sc,no,yes,no,yes,no,no,no
+Rodentia,Cricetidae,Wilfredomys,Wilfredomys oenax,Abreu et al. 2023,NA,NA,NA,native,EN,Ar,no,yes,no,yes,yes,yes,yes
+Rodentia,Cricetidae,Zygodontomys,Zygodontomys brevicauda,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Ctenomyidae,Ctenomys,Ctenomys bicolor,Abreu et al. 2023,Ctenomys,Ctenomys minutus,Wilson & Reeder,native,DD,Fs,yes,no,no,no,no,yes,no
+Rodentia,Ctenomyidae,Ctenomys,Ctenomys flamarioni,Abreu et al. 2023,NA,NA,NA,native,EN,Fs,no,yes,no,yes,yes,yes,yes
+Rodentia,Ctenomyidae,Ctenomys,Ctenomys ibicuiensis,Abreu et al. 2023,NA,NA,NA,native,DD,Fs,no,no,no,no,no,yes,no
+Rodentia,Ctenomyidae,Ctenomys,Ctenomys lami,Abreu et al. 2023,NA,NA,NA,native,VU,Fs,no,no,no,yes,yes,yes,yes
+Rodentia,Ctenomyidae,Ctenomys,Ctenomys minutus,Abreu et al. 2023,Ctenomys,Ctenomys bicolor,SBMZ,native,DD,Fs,no,yes,no,yes,yes,yes,yes
+Rodentia,Ctenomyidae,Ctenomys,Ctenomys nattereri,Abreu et al. 2023,NA,NA,NA,native,LC,Fs,no,no,yes,no,yes,no,no
+Rodentia,Ctenomyidae,Ctenomys,Ctenomys rondoni,Abreu et al. 2023,Ctenomys,Ctenomys boliviensis,Wilson & Reeder,native,LC,Fs,yes,no,no,no,no,no,no
+Rodentia,Ctenomyidae,Ctenomys,Ctenomys torquatus,Abreu et al. 2023,NA,NA,NA,native,LC,Fs,no,no,no,yes,yes,yes,yes
+Rodentia,Cuniculidae,Cuniculus,Cuniculus paca,Abreu et al. 2023,Agouti,Agouti paca,IUCN,native,LC,Te,yes,yes,yes,yes,yes,yes,yes
+Rodentia,Dasyproctidae,Dasyprocta,Dasyprocta azarae,Abreu et al. 2023,Dasyprocta,Dasyprocta aurea,Wilson & Reeder,native,DD,Te,no,yes,yes,yes,yes,yes,yes
+Rodentia,Dasyproctidae,Dasyprocta,Dasyprocta azarae,Abreu et al. 2023,Dasyprocta,Dasyprocta catrinae,Wilson & Reeder,native,DD,Te,no,yes,yes,yes,yes,yes,yes
+Rodentia,Dasyproctidae,Dasyprocta,Dasyprocta croconota,Abreu et al. 2023,NA,NA,NA,native,DD,Te,yes,no,no,no,no,no,no
+Rodentia,Dasyproctidae,Dasyprocta,Dasyprocta fuliginosa,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Dasyproctidae,Dasyprocta,Dasyprocta iacki,Abreu et al. 2023,NA,NA,NA,native,DD,Te,no,yes,no,no,no,no,no
+Rodentia,Dasyproctidae,Dasyprocta,Dasyprocta leporina,Abreu et al. 2023,Dasyprocta,Dasyprocta cristata,IUCN,native,LC,Te,yes,yes,yes,no,no,no,no
+Rodentia,Dasyproctidae,Dasyprocta,Dasyprocta prymnolopha,Abreu et al. 2023,Dasyprocta,Dasyprocta nigriclunis,Wilson & Reeder,native,LC,Te,yes,yes,yes,yes,no,no,no
+Rodentia,Dasyproctidae,Dasyprocta,Dasyprocta variegata,Abreu et al. 2023,NA,NA,NA,native,DD,Te,yes,no,no,no,no,no,no
+Rodentia,Dasyproctidae,Myoprocta,Myoprocta acouchy,Abreu et al. 2023,Myoprocta,Myoprocta exilis,IUCN,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Dasyproctidae,Myoprocta,Myoprocta pratti,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Dinomyidae,Dinomys,Dinomys branickii,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Callistomys,Callistomys pictus,Abreu et al. 2023,Isothrix,Isothrix picta,IUCN,native,EN,Ar,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Carterodon,Carterodon sulcidens,Abreu et al. 2023,NA,NA,NA,native,DD,Fs,no,no,yes,no,no,no,no
+Rodentia,Echimyidae,Clyomys,Clyomys laticeps,Abreu et al. 2023,Clyomys,Clyomys bishopi,IUCN,native,LC,SF,no,yes,yes,no,yes,no,no
+Rodentia,Echimyidae,Dactylomys,Dactylomys boliviensis,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Dactylomys,Dactylomys dactylinus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,yes,no,no,no,no
+Rodentia,Echimyidae,Echimys,Echimys chrysurus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Echimys,Echimys vieirai,Abreu et al. 2023,NA,NA,NA,native,DD,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Euryzygomatomys,Euryzygomatomys spinosus,Abreu et al. 2023,Coendou,Coendou spinosus,SBMZ,native,LC,SF,no,yes,yes,yes,yes,yes,yes
+Rodentia,Echimyidae,Euryzygomatomys,Euryzygomatomys spinosus,Abreu et al. 2023,Euryzygomatomys,Euryzygomatomys guiara,IUCN,native,LC,SF,no,yes,yes,yes,yes,yes,yes
+Rodentia,Echimyidae,Isothrix,Isothrix bistriata,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,yes,no,no,no,no
+Rodentia,Echimyidae,Isothrix,Isothrix negrensis,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Isothrix,Isothrix pagurus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Isothrix,Isothrix sinnamariensis,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Kannabateomys,Kannabateomys amblyonyx,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,yes,yes,no,no,no,no
+Rodentia,Echimyidae,Lonchothrix,Lonchothrix emiliae,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Makalata,Makalata didelphoides,Abreu et al. 2023,Mesomys,Mesomys didelphoides,IUCN,native,LC,Ar,yes,no,yes,yes,no,no,no
+Rodentia,Echimyidae,Makalata,Makalata macrura,Abreu et al. 2023,Echimys,Echimys macrurus,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Makalata,Makalata obscura,Abreu et al. 2023,Mesomys,Mesomys obscurus,IUCN,native,DD,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Mesomys,Mesomys hispidus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Mesomys,Mesomys occultus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Mesomys,Mesomys stimulax,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Myocastor,Myocastor coypus,Abreu et al. 2023,NA,NA,NA,native,LC,SA,no,yes,no,yes,yes,yes,yes
+Rodentia,Echimyidae,Phyllomys,Phyllomys blainvilii,Abreu et al. 2023,Phyllomys,Phyllomys blainvillii,NCBI,native,LC,Ar,no,yes,yes,yes,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys brasiliensis,Abreu et al. 2023,Echimys,Echimys brasiliensis,IUCN,native,EN,Ar,no,yes,yes,no,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys centralis,Abreu et al. 2023,NA,NA,NA,native,?,Ar,no,no,yes,no,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys dasythrix,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys kerri,Abreu et al. 2023,NA,NA,NA,native,DD,Ar,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys lamarum,Abreu et al. 2023,Echimys,Echimys lamarum,IUCN,native,DD,Ar,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys lundi,Abreu et al. 2023,NA,NA,NA,native,EN,Ar,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys mantiqueirensis,Abreu et al. 2023,NA,NA,NA,native,CR,Ar,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys medius,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys nigrispinus,Abreu et al. 2023,Echimys,Echimys nigrispinus,IUCN,native,LC,Ar,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys pattoni,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys sulinus,Abreu et al. 2023,NA,NA,NA,native,DD,Ar,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys thomasi,Abreu et al. 2023,Echimys,Echimys thomasi,IUCN,native,EN,Ar,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Phyllomys,Phyllomys unicolor,Abreu et al. 2023,Echimys,Echimys unicolor,IUCN,native,CR,Ar,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys brevicauda,Abreu et al. 2023,Proechimys,Proechimys bolivianus,IUCN,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys cuvieri,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys echinothrix,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys gardneri,Abreu et al. 2023,NA,NA,NA,native,DD,Te,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys goeldii,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,yes,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys guyannensis,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys kulinae,Abreu et al. 2023,NA,NA,NA,native,DD,Te,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys longicaudatus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,yes,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys pattoni,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys quadruplicatus,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys roberti,Abreu et al. 2023,Proechimys,Proechimys oris,IUCN,native,LC,Te,yes,no,yes,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys simonsi,Abreu et al. 2023,Proechimys,Proechimys hendeei,IUCN,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys steerei,Abreu et al. 2023,NA,NA,NA,native,LC,Te,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Thrichomys,Thrichomys apereoides,Abreu et al. 2023,Nelomys,Nelomys aperoides,IUCN,native,LC,Te,no,yes,yes,no,no,no,no
+Rodentia,Echimyidae,Thrichomys,Thrichomys fosteri,Abreu et al. 2023,Thrichomys,Thrichomys pachyurus,SBMZ,native,LC,Te,no,no,yes,no,yes,no,no
+Rodentia,Echimyidae,Thrichomys,Thrichomys inermis,Abreu et al. 2023,NA,NA,NA,native,LC,Te,no,no,yes,yes,no,no,no
+Rodentia,Echimyidae,Thrichomys,Thrichomys laurentius,Abreu et al. 2023,NA,NA,NA,native,DD,Te,no,yes,no,yes,no,no,no
+Rodentia,Echimyidae,Thrichomys,Thrichomys pachyurus,Abreu et al. 2023,Thrichomys,Thrichomys fosteri,SBMZ,native,LC,Te,no,no,yes,no,yes,no,no
+Rodentia,Echimyidae,Toromys,Toromys grandis,Abreu et al. 2023,Echimys,Echimys grandis,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Trinomys albispinus,Abreu et al. 2023,Proechimys,Proechimys albispinus,IUCN,native,LC,Te,no,yes,yes,yes,no,no,no
+Rodentia,Echimyidae,Trinomys,Trinomys albispinus,Abreu et al. 2023,Trinomys,Trinomys minor,Wilson & Reeder,native,LC,Te,no,yes,yes,yes,no,no,no
+Rodentia,Echimyidae,Trinomys,Trinomys dimidiatus,Abreu et al. 2023,Proechimys,Proechimys dimidiatus,IUCN,native,LC,Te,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Trinomys,Trinomys eliasi,Abreu et al. 2023,NA,NA,NA,native,NT,Te,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Trinomys,Trinomys gratiosus,Abreu et al. 2023,Trinomys,Trinomys bonafidei,Wilson & Reeder,native,LC,Te,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Trinomys,Trinomys gratiosus,Abreu et al. 2023,Trinomys,Trinomys panema,Wilson & Reeder,native,LC,Te,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Trinomys,Trinomys iheringi,Abreu et al. 2023,Proechimys,Proechimys iheringi,IUCN,native,LC,Te,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Trinomys,Trinomys mirapitanga,Abreu et al. 2023,NA,NA,NA,native,DD,Te,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Trinomys,Trinomys moojeni,Abreu et al. 2023,NA,NA,NA,native,EN,Te,no,yes,yes,no,no,no,no
+Rodentia,Echimyidae,Trinomys,Trinomys paratus,Abreu et al. 2023,NA,NA,NA,native,DD,Te,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Trinomys setosus,Abreu et al. 2023,Proechimys,Proechimys setosus,IUCN,native,LC,Te,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Trinomys,Trinomys setosus,Abreu et al. 2023,Trinomys,Trinomys elegans,Wilson & Reeder,native,LC,Te,no,yes,no,no,no,no,no
+Rodentia,Echimyidae,Trinomys,Trinomys yonenagae,Abreu et al. 2023,NA,NA,NA,native,EN,Te,no,no,no,yes,no,no,no
+Rodentia,Erethizontidae,Chaetomys,Chaetomys subspinosus,Abreu et al. 2023,NA,NA,NA,native,VU,Ar,no,yes,no,no,no,no,no
+Rodentia,Erethizontidae,Coendou,Coendou baturitensis,Abreu et al. 2023,NA,NA,NA,native,DD,Ar,yes,no,yes,yes,no,no,no
+Rodentia,Erethizontidae,Coendou,Coendou bicolor,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Erethizontidae,Coendou,Coendou ichillus,Abreu et al. 2023,NA,NA,NA,native,DD,Ar,yes,no,no,no,no,no,no
+Rodentia,Erethizontidae,Coendou,Coendou insidiosus,Abreu et al. 2023,Sphiggurus,Sphiggurus pallidus,IUCN,native,LC,Ar,no,yes,no,no,no,no,no
+Rodentia,Erethizontidae,Coendou,Coendou longicaudatus,Abreu et al. 2023,NA,NA,NA,native,?,Ar,yes,no,yes,no,no,no,no
+Rodentia,Erethizontidae,Coendou,Coendou melanurus,Abreu et al. 2023,Sphiggurus,Sphiggurus melanurus,IUCN,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Erethizontidae,Coendou,Coendou nycthemera,Abreu et al. 2023,Coendou,Coendou koopmani,IUCN,native,DD,Ar,yes,no,no,no,no,no,no
+Rodentia,Erethizontidae,Coendou,Coendou prehensilis,Abreu et al. 2023,Coendou,Coendou sanctamartae,IUCN,native,LC,Ar,yes,yes,yes,no,no,no,no
+Rodentia,Erethizontidae,Coendou,Coendou roosmalenorum,Abreu et al. 2023,Sphiggurus,Sphiggurus roosmalenorum,IUCN,native,DD,Ar,yes,no,no,no,no,no,no
+Rodentia,Erethizontidae,Coendou,Coendou speratus,Abreu et al. 2023,NA,NA,NA,native,EN,Ar,no,yes,no,no,no,no,no
+Rodentia,Erethizontidae,Coendou,Coendou spinosus,Abreu et al. 2023,Euryzygomatomys,Euryzygomatomys spinosus,SBMZ,native,LC,Ar,no,yes,yes,no,no,no,no
+Rodentia,Erethizontidae,Coendou,Coendou spinosus,Abreu et al. 2023,Sphiggurus,Sphiggurus villosus,IUCN,native,LC,Ar,no,yes,yes,no,no,no,no
+Rodentia,Sciuridae,Guerlinguetus,Guerlinguetus aestuans,Abreu et al. 2023,Guerlinguetus,Guerlinguetus alphonsei,Wilson & Reeder,native,?,Sc,yes,yes,no,no,no,no,no
+Rodentia,Sciuridae,Guerlinguetus,Guerlinguetus aestuans,Abreu et al. 2023,Guerlinguetus,Guerlinguetus gilvigularis,Wilson & Reeder,native,?,Sc,yes,yes,no,no,no,no,no
+Rodentia,Sciuridae,Guerlinguetus,Guerlinguetus aestuans,Abreu et al. 2023,Guerlinguetus,Guerlinguetus henseli,Wilson & Reeder,native,?,Sc,yes,yes,no,no,no,no,no
+Rodentia,Sciuridae,Guerlinguetus,Guerlinguetus aestuans,Abreu et al. 2023,Guerlinguetus,Guerlinguetus ingrami,Wilson & Reeder,native,?,Sc,yes,yes,no,no,no,no,no
+Rodentia,Sciuridae,Guerlinguetus,Guerlinguetus aestuans,Abreu et al. 2023,Guerlinguetus,Guerlinguetus poaiae,Wilson & Reeder,native,?,Sc,yes,yes,no,no,no,no,no
+Rodentia,Sciuridae,Guerlinguetus,Guerlinguetus brasiliensis,Abreu et al. 2023,NA,NA,NA,native,?,Sc,no,yes,no,no,no,no,no
+Rodentia,Sciuridae,Hadrosciurus,Hadrosciurus ignitus,Abreu et al. 2023,Guerlinguetus,Guerlinguetus ignitus,Wilson & Reeder,native,LC,Sc,yes,no,no,no,no,no,no
+Rodentia,Sciuridae,Hadrosciurus,Hadrosciurus igniventris,Abreu et al. 2023,Urosciurus,Urosciurus igniventris,Wilson & Reeder,native,LC,Sc,yes,no,no,no,no,no,no
+Rodentia,Sciuridae,Hadrosciurus,Hadrosciurus pyrrhinus,Abreu et al. 2023,NA,NA,NA,native,DD,Sc,yes,no,no,no,no,no,no
+Rodentia,Sciuridae,Hadrosciurus,Hadrosciurus spadiceus,Abreu et al. 2023,Urosciurus,Urosciurus spadiceus,Wilson & Reeder,native,LC,Sc,yes,no,yes,no,yes,no,no
+Rodentia,Sciuridae,Microsciurus,Microsciurus flaviventer,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Rodentia,Sciuridae,Sciurillus,Sciurillus pusillus,Abreu et al. 2023,NA,NA,NA,native,LC,Ar,yes,no,no,no,no,no,no
+Sirenia,Trichechidae,Trichechus,Trichechus inunguis,Abreu et al. 2023,NA,NA,NA,native,VU,Aq,yes,no,no,no,no,no,no
+Sirenia,Trichechidae,Trichechus,Trichechus manatus,Abreu et al. 2023,NA,NA,NA,native,VU,Aq,no,yes,no,no,no,no,no
+Artiodactyla,Cervidae,Mazama,Mazama bororo,Wilson & Reeder 2005,NA,NA,NA,native,VU,,no,yes,no,no,no,no,no
+Chiroptera,Phyllostomidae,Lonchophylla,Lonchophylla thomasi,Wilson & Reeder 2005,Hsunycteris,Hsunycteris thomasi,NCBI,native,LC,,yes,no,yes,no,no,no,no
+Chiroptera,Phyllostomidae,Micronycteris,Micronycteris brosseti,Wilson & Reeder 2005,NA,NA,NA,native,DD,,no,yes,no,no,no,no,no
+Chiroptera,Phyllostomidae,Mimon,Mimon crenulatum,Wilson & Reeder 2005,Gardnerycteris,Gardnerycteris crenulatum,NCBI,native,LC,,yes,yes,yes,no,no,no,no
+Chiroptera,Vespertilionidae,Lasiurus,Lasiurus cinereus,Wilson & Reeder 2005,Aeorestes,Aeorestes cinereus,NCBI,native,LC,Vo,yes,yes,yes,no,no,no,no
+Cingulata,Chlamyphoridae,Cabassous,Cabassous chacoensis,Wilson & Reeder 2005,NA,NA,NA,native,NT,,no,no,no,no,no,no,no
+Cingulata,Dasypodidae,Dasypus,Dasypus hybridus,Wilson & Reeder 2005,NA,NA,NA,native,NT,,no,yes,no,yes,yes,yes,yes
+Didelphimorphia,Didelphidae,Marmosops,Marmosops neblina,Wilson & Reeder 2005,NA,NA,NA,native,LC,,yes,no,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis rubida,Wilson & Reeder 2005,Monodelphis,Monodelphis umbristriata,Wilson & Reeder,native,?,,no,yes,no,no,no,no,no
+Didelphimorphia,Didelphidae,Monodelphis,Monodelphis umbristriata,Wilson & Reeder 2005,Monodelphis,Monodelphis rubida,Wilson & Reeder,native,?,,no,no,yes,no,no,no,no
+DIDELPHIMORPHIA,,Micoureus,Micoureus regina,Wilson & Reeder 2005,Marmosa,Marmosa regina,NCBI,native,LC,,yes,no,no,no,no,no,no
+Primates,Atelidae,Lagothrix,Lagothrix cana,Wilson & Reeder 2005,NA,NA,NA,native,?,,yes,no,no,no,no,no,no
+Primates,Atelidae,Lagothrix,Lagothrix poeppigii,Wilson & Reeder 2005,NA,NA,NA,native,?,,yes,no,no,no,no,no,no
+Primates,Cebidae,Callithrix,Callithrix manicorensis,Wilson & Reeder 2005,Mico,Mico manicorensis,IUCN,native,VU,,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus dubius,Wilson & Reeder 2005,Plecturocebus,Plecturocebus dubius,NCBI,native,LC,,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus purinus,Wilson & Reeder 2005,Cheracebus,Cheracebus purinus,NCBI,native,LC,,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Callicebus,Callicebus stephennashi,Wilson & Reeder 2005,NA,NA,NA,native,?,,yes,no,no,no,no,no,no
+Primates,Pitheciidae,Chiropotes,Chiropotes israelita,Wilson & Reeder 2005,NA,NA,NA,native,?,,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Bolomys,Bolomys urichi,Wilson & Reeder 2005,Necromys,Necromys urichi,Wilson & Reeder,native,LC,,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Brucepattersonius,Brucepattersonius igniventris,Wilson & Reeder 2005,NA,NA,NA,native,DD,,no,yes,no,no,no,no,no
+Rodentia,Cricetidae,Necromys,Necromys urichi,Wilson & Reeder 2005,Bolomys,Bolomys urichi,Wilson & Reeder,native,LC,,yes,no,no,no,no,no,no
+Rodentia,Cricetidae,Rhipidomys,Rhipidomys wetzeli,Wilson & Reeder 2005,NA,NA,NA,native,LC,,yes,no,no,no,no,no,no
+Rodentia,Ctenomyidae,Ctenomys,Ctenomys brasiliensis,Wilson & Reeder 2005,NA,NA,NA,native,DD,,no,no,yes,no,no,no,no
+Rodentia,Echimyidae,Proechimys,Proechimys hoplomyoides,Wilson & Reeder 2005,NA,NA,NA,native,DD,,yes,no,no,no,no,no,no
+RODENTIA,Muroidea,Noronhomys,Noronhomys vespuccii,Wilson & Reeder 2005,NA,NA,NA,native,EX,,no,no,no,no,no,no,no
+RODENTIA,Muroidea,Podoxymys,Podoxymys roraimae,Wilson & Reeder 2005,NA,NA,NA,native,VU,,yes,no,no,no,no,no,no
+Rodentia,Sciuridae,Guerlinguetus,Guerlinguetus alphonsei,Wilson & Reeder 2005,Guerlinguetus,Guerlinguetus aestuans,Wilson & Reeder,native,?,,no,yes,no,no,no,no,no
+Rodentia,Sciuridae,Guerlinguetus,Guerlinguetus gilvigularis,Wilson & Reeder 2005,Guerlinguetus,Guerlinguetus aestuans,Wilson & Reeder,native,?,,yes,no,no,no,no,no,no
+Rodentia,Sciuridae,Guerlinguetus,Guerlinguetus henseli,Wilson & Reeder 2005,Guerlinguetus,Guerlinguetus aestuans,Wilson & Reeder,native,?,,no,yes,no,yes,yes,yes,yes
+Rodentia,Sciuridae,Guerlinguetus,Guerlinguetus ingrami,Wilson & Reeder 2005,Guerlinguetus,Guerlinguetus aestuans,Wilson & Reeder,native,?,,no,yes,no,no,no,no,no
+Rodentia,Sciuridae,Guerlinguetus,Guerlinguetus poaiae,Wilson & Reeder 2005,Guerlinguetus,Guerlinguetus aestuans,Wilson & Reeder,native,?,,no,no,yes,no,no,no,no
+Artiodactyla,Bovidae,Bubalus,Bubalus bubalis,Da Rosa et al. 2017,NA,NA,NA,exotic,?,,yes,yes,yes,no,no,no,no
+Artiodactyla,Bovidae,Capra,Capra hircus,Da Rosa et al. 2017,NA,NA,NA,exotic,?,,no,yes,no,no,no,no,no
+Artiodactyla,Cervidae,Axis,Axis axis,Da Rosa et al. 2017,NA,NA,NA,exotic,LC,,no,yes,no,no,no,no,no
+Artiodactyla,Cervidae,Cervus,Cervus unicolor,Da Rosa et al. 2017,Rusa,Rusa unicolor,da Rosa,exotic,VU,,no,yes,no,no,no,no,no
+Artiodactyla,Cervidae,Rusa,Rusa timorensis,Da Rosa et al. 2017,NA,NA,NA,exotic,VU,,yes,yes,yes,no,no,no,no
+Artiodactyla,Cervidae,Rusa,Rusa unicolor,Da Rosa et al. 2017,Cervus,Cervus unicolor,da Rosa,exotic,VU,,yes,yes,yes,no,no,no,no
+Artiodactyla,Suidae,Sus,Sus scrofa,Da Rosa et al. 2017,NA,NA,NA,exotic,LC,,yes,yes,yes,no,no,no,no
+Carnivora,Canidae,Canis,Canis familiaris,Da Rosa et al. 2017,Canis,Canis lupus,da Rosa,exotic,LC,,yes,yes,yes,no,no,no,no
+Carnivora,Canidae,Canis,Canis lupus,Da Rosa et al. 2017,Canis,Canis familiaris,da Rosa,exotic,LC,,yes,yes,yes,no,no,no,no
+Carnivora,Felidae,Felis,Felis catus,Da Rosa et al. 2017,NA,NA,NA,exotic,?,,yes,yes,yes,no,no,no,no
+Lagomorpha,Leporidae,Lepus,Lepus europaeus,Da Rosa et al. 2017,NA,NA,NA,exotic,LC,,no,yes,yes,no,no,no,no
+Lagomorpha,Leporidae,Lepus,Lepus granatensis,Da Rosa et al. 2017,NA,NA,NA,exotic,LC,,yes,yes,yes,no,no,no,no
+Lagomorpha,Leporidae,Oryctolagus,Oryctolagus cuniculus,Da Rosa et al. 2017,NA,NA,NA,exotic,EN,,yes,yes,yes,no,no,no,no
+Perissodactyla,Equidae,Equus,Equus caballus,Da Rosa et al. 2017,NA,NA,NA,exotic,?,,yes,yes,yes,no,no,no,no
+Rodentia,Caviidae,Cavia,Cavia porcellus,Da Rosa et al. 2017,NA,NA,NA,exotic,?,,yes,yes,yes,no,no,no,no
+Rodentia,Cricetidae,Mesocricetus,Mesocricetus auratus,Da Rosa et al. 2017,NA,NA,NA,exotic,EN,,yes,yes,yes,no,no,no,no
+Rodentia,Muridae,Mus,Mus musculus,Da Rosa et al. 2017,NA,NA,NA,exotic,LC,,yes,yes,yes,no,no,no,no
+Rodentia,Muridae,Rattus,Rattus norvegicus,Da Rosa et al. 2017,NA,NA,NA,exotic,LC,,yes,yes,yes,no,no,no,no
+Rodentia,Muridae,Rattus,Rattus rattus,Da Rosa et al. 2017,NA,NA,NA,exotic,LC,,yes,yes,yes,no,no,no,no
+Artiodactyla,Bovidae,Bos,Bos taurus,NA,NA,NA,NA,exotic,?,,yes,yes,yes,no,no,no,no
+Primates,Hominidae,Homo,Homo sapiens,NA,NA,NA,NA,exotic,?,,yes,yes,yes,no,no,no,no
