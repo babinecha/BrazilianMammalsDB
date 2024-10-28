@@ -10,10 +10,10 @@ Spreadsheet containing the customized reference database for barcoding and metab
 
 3) All_Scripts_28-10-24.txt
 Scripts for:
-1. Compilation of sequences obtainded from GenBank and BOLD for COI, RNA12S, RNA16S, and mitogenomes from Brazilian mammals (suplemented with other classes)
-2. Compilation of taxonomic information of sequences obtained from GenBank and BOLD
-3. Edit of Database for PIMBA (Oliveira et al. 2021), PROTAX (Somervuo et al. 2017) and blastn (Altschul et al. 1990).
-4. Identification of sequences using PIMBA (Oliveira et al. 2021), PROTAX (Somervuo et al. 2017) and blastn (Altschul et al. 1990).
+- Compilation of sequences obtainded from GenBank and BOLD for COI, RNA12S, RNA16S, and mitogenomes from Brazilian mammals (suplemented with other classes)
+- Compilation of taxonomic information of sequences obtained from GenBank and BOLD
+- Edit of Database for PIMBA (Oliveira et al. 2021), PROTAX (Somervuo et al. 2017) and blastn (Altschul et al. 1990).
+- Identification of sequences using PIMBA (Oliveira et al. 2021), PROTAX (Somervuo et al. 2017) and blastn (Altschul et al. 1990).
 
 4) Customized reference database for metabarcoding of Brazilian mammals (PIMBA format)
 - ALL_CLASS_COIgenome.fasta
